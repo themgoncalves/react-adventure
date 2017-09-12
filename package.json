@@ -1,7 +1,7 @@
 {
-  "name": "react-webpack-starter",
+  "name": "react-redux-webpack-starter",
   "version": "1.0.0",
-  "description": "React Webpack 3 Stater",
+  "description": "React Redux Webpack 3 Stater",
   "main": "index.js",
   "directories": {
     "test": "tests"
