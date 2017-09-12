@@ -1,7 +1,4 @@
-﻿window.Tether = require('tether');
-require('bootstrap');
-
-import React from 'react';
+﻿import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
@@ -12,8 +9,11 @@ import reducers from './app/reducers';
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 
+window.Tether = require('tether');
+require('bootstrap');
+
 ReactDOM.render(
-    <Provider store={createStoreWithMiddleware(reducers)}>
-        <App />
-    </Provider>
-    , document.getElementById('react-app'));
+  <Provider store={createStoreWithMiddleware(reducers)}>
+    <App />
+  </Provider>
+  , document.getElementById('react-app'));
