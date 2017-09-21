@@ -1,4 +1,4 @@
-# React 16 beta-5, Redux and Webpack 3 Starter Pack
+# React 16 rc-2, Redux and Webpack 3 Starter Pack
 
 ### Documentations
 
