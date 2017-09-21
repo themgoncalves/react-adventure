@@ -15,7 +15,7 @@ const PORT = process.env.PORT || '8080';
 
 loaders.push({
     test: /\.scss$/,
-    loaders: ['style-loader', 'css-loader?importLoaders=1', 'sass-loader'],
+    loader: ExtractTextPlugin.extract({fallback: 'style-loader', use : 'css-loader?sourceMap&minimize&localIdentName=[local]___[hash:base64:5]!postcss-loader!sass-loader?outputStyle=expanded'}),
     exclude: ['node_modules']
 });
 

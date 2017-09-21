@@ -11,7 +11,7 @@ const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plug
 
 loaders.push({
     test: /\.scss$/,
-    loader: ExtractTextPlugin.extract({fallback: 'style-loader', use : 'css-loader?sourceMap&minimize&localIdentName=[local]___[hash:base64:5]!sass-loader?outputStyle=expanded'}),
+    loader: ExtractTextPlugin.extract({fallback: 'style-loader', use : 'css-loader?sourceMap&minimize&localIdentName=[local]___[hash:base64:5]!postcss-loader!sass-loader?outputStyle=expanded'}),
     exclude: ['node_modules']
 });
 
