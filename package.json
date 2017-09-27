@@ -8,7 +8,9 @@
     "start": "webpack-dev-server --progress --profile --colors",
     "lint": "eslint --ext js --ext jsx src || exit 0",
     "dev": " webpack-dashboard -- webpack-dev-server",
-    "test": ""
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "keywords": [
     "react",
@@ -22,8 +24,8 @@
     "bootstrap": "^4.0.0-alpha.6",
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
-    "react": "^16.0.0-rc.2",
-    "react-dom": "^16.0.0-rc.2",
+    "react": "^16.0.0-rc.3",
+    "react-dom": "^16.0.0-rc.3",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
@@ -32,6 +34,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
+    "babel-jest": "^21.2.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.8",
@@ -47,6 +50,8 @@
     "compression-webpack-plugin": "^1.0.0",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.7",
+    "enzyme": "^3.0.0",
+    "enzyme-adapter-react-16": "^1.0.0",
     "eslint": "^4.3.0",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-plugin-import": "^2.7.0",
@@ -56,11 +61,13 @@
     "file-loader": "^0.11.2",
     "html-webpack-include-assets-plugin": "0.0.7",
     "html-webpack-plugin": "^2.30.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^21.2.0",
     "loglevel": "^1.4.1",
     "node-sass": "^4.5.3",
     "postcss-loader": "^2.0.6",
     "react-hot-loader": "^3.0.0-beta.7",
-    "react-test-renderer": "^15.6.1",
+    "react-test-renderer": "^16.0.0-rc.3",
     "regenerator-runtime": "^0.11.0",
     "sass-loader": "^6.0.6",
     "scss": "^0.2.4",
@@ -71,5 +78,14 @@
     "webpack-cleanup-plugin": "^0.5.1",
     "webpack-dashboard": "^1.0.0-5",
     "webpack-dev-server": "^2.7.1"
+  },
+  "jest": {
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.(scss|less|css)$": "identity-obj-proxy"
+    }
   }
 }
