@@ -1,7 +1,7 @@
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/check-it-out.svg)](http://forthebadge.com)
 
 # React 16 Redux Starter Pack
-[![GitHub issues](https://img.shields.io/github/issues/themgoncalves/react-redux-webpack-starter.svg)](https://github.com/themgoncalves/react-redux-webpack-starter/issues) [![GitHub stars](https://img.shields.io/github/stars/themgoncalves/react-redux-webpack-starter.svg)](https://github.com/themgoncalves/react-redux-webpack-starter/stargazers) [![GitHub forks](https://img.shields.io/github/forks/themgoncalves/react-redux-webpack-starter.svg)](https://github.com/themgoncalves/react-redux-webpack-starter/network) 
+[![Dependency Status](https://gemnasium.com/badges/github.com/themgoncalves/react-redux-webpack-starter.svg)](https://gemnasium.com/github.com/themgoncalves/react-redux-webpack-starter) [![GitHub issues](https://img.shields.io/github/issues/themgoncalves/react-redux-webpack-starter.svg)](https://github.com/themgoncalves/react-redux-webpack-starter/issues) [![GitHub stars](https://img.shields.io/github/stars/themgoncalves/react-redux-webpack-starter.svg)](https://github.com/themgoncalves/react-redux-webpack-starter/stargazers) [![GitHub forks](https://img.shields.io/github/forks/themgoncalves/react-redux-webpack-starter.svg)](https://github.com/themgoncalves/react-redux-webpack-starter/network) 
 
 
 Just clone or download it and start coding. No  more project initial set-up needed.
