@@ -10,7 +10,7 @@
 
 Just clone or download it and start coding. No  more project initial set-up needed.
 
-### Main Features
+## Main Features
 
 * [React 16](https://facebook.github.io/react/)
 * [Redux](http://redux.js.org/)
@@ -30,7 +30,7 @@ Just clone or download it and start coding. No  more project initial set-up need
 
 There is two methods to get started with the repo.
 
-#### Familiar with Git?
+### Familiar with Git?
 
 Just clone the repo with the following commands:
 ```
@@ -38,19 +38,19 @@ Just clone the repo with the following commands:
 > cd react-redux-webpack-starter
 ```
 
-#### Not familiar Git?
+### Not familiar Git?
 
 That is ok, just [Click here](https://github.com/themgoncalves/react-redux-webpack-starter/archive/master.zip) to download this repo in zip file and then extract the file in your favorite location.
 
 
-## Installation
+# Installation
 
 ```js
 cd react-redux-webpack-starter
 npm install
 ```
 
-### Starting the project
+## Starting the project
 
 There is two ways to start the project:
 
@@ -65,7 +65,7 @@ npm run dev
 ```
 
 
-### Running tests
+## Running tests
 
 ```js
 npm test
