@@ -62,6 +62,7 @@ module.exports = {
             $: 'jquery',
             jQuery: 'jquery',
             'window.jQuery': 'jquery',
+            Popper: ['popper.js', 'default'],
         }),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',

@@ -24,6 +24,7 @@
     "bootstrap": "^4.0.0-alpha.6",
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
+    "popper.js": "^1.12.5",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
@@ -80,12 +81,30 @@
     "webpack-dev-server": "^2.7.1"
   },
   "jest": {
+    "setupFiles": [
+      "<rootDir>/jest-setup-env.js"
+    ],
     "moduleDirectories": [
       "node_modules",
       "src"
     ],
     "moduleNameMapper": {
-      "^.+\\.(scss|less|css)$": "identity-obj-proxy"
-    }
+      "^.+\\.(scss|less|css)$": "identity-obj-proxy",
+      "^.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/file-mock.js"
+    },
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/app/**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!src/app/lib/**",
+      "!src/scss/**",
+      "!**/coverage/**"
+    ],
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text-summary",
+      "html"
+    ]
   }
 }
