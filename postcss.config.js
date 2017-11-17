@@ -7,10 +7,11 @@ const AUTOPREFIXER_BROWSERS = [
     'iOS >= 7',
     'Opera >= 12',
     'Safari >= 7.1',
-];
-
-module.exports = {
+  ];
+  
+  module.exports = {
     plugins: [
-        require('autoprefixer')({ browsers: AUTOPREFIXER_BROWSERS })
-    ]
-}
+      require('autoprefixer')({ browsers: AUTOPREFIXER_BROWSERS }),
+    ],
+  };
+  
