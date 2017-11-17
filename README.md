@@ -18,6 +18,8 @@ Just clone or download it and start coding. No  more project initial set-up need
 * [Webpack 3](https://webpack.js.org/)
 * [webpack-bundle-analyzer](https://github.com/th0r/webpack-bundle-analyzer)
 * [webpack-dashboard](https://github.com/FormidableLabs/webpack-dashboard)
+* [react-router-dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
+* [React Loadable](https://github.com/thejameskyle/react-loadable)
 * [Jest](https://facebook.github.io/jest/)
 * [Enzyme](https://github.com/airbnb/enzyme)
 * [Babel](https://babeljs.io)
