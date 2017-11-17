@@ -2,5 +2,8 @@
  * Import all variables into a single scss file
  * Created by Marcos Gonçalves <https://github.com/themgoncalves/>
  */
+// Load mixins
+@import 'mixins';
 
- @import 'variables-bootstrap';
+// Load Bootstrap variables
+@import 'vars-bootstrap';
