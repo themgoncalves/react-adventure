@@ -17,6 +17,7 @@ Just clone or download it and start coding. No  more project initial set-up need
 * [React 16](https://facebook.github.io/react/)
 * [Redux](http://redux.js.org/)
 * [Redux Thunk](https://github.com/gaearon/redux-thunk)
+* [React Helmet](https://github.com/nfl/react-helmet)
 * [Webpack 3](https://webpack.js.org/)
 * [webpack-bundle-analyzer](https://github.com/th0r/webpack-bundle-analyzer)
 * [webpack-dashboard](https://github.com/FormidableLabs/webpack-dashboard)
