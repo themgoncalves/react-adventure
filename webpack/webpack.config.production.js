@@ -10,9 +10,9 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
 
 loaders.push({
-    test: /\.scss$/,
-    loader: ExtractTextPlugin.extract({fallback: 'style-loader', use : 'css-loader?sourceMap&minimize&localIdentName=[local]___[hash:base64:5]!postcss-loader!sass-loader?outputStyle=expanded'}),
-    exclude: ['node_modules']
+  test: /\.scss$/,
+  loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader?sourceMap&minimize&localIdentName=[local]___[hash:base64:5]!postcss-loader!sass-loader?outputStyle=expanded' }),
+  exclude: ['node_modules'],
 });
 
 module.exports = {
