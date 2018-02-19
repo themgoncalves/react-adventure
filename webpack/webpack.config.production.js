@@ -78,6 +78,7 @@ module.exports = {
       name: 'vendor',
       chunks: ['app'],
       minChunks: ({ resource }) => /node_modules/.test(resource),
+      async: true,
     }),
     new ExtractTextPlugin({
       disable: process.env.NODE_ENV === 'development',
