@@ -18,7 +18,7 @@ Just clone or download it and start coding. No  more project initial set-up need
 * [Redux](http://redux.js.org/)
 * [Redux Thunk](https://github.com/gaearon/redux-thunk)
 * [React Helmet](https://github.com/nfl/react-helmet)
-* [Webpack 3](https://webpack.js.org/)
+* [Webpack 4](https://webpack.js.org/)
 * [webpack-bundle-analyzer](https://github.com/th0r/webpack-bundle-analyzer)
 * [webpack-dashboard](https://github.com/FormidableLabs/webpack-dashboard)
 * [react-router-dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
