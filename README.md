@@ -64,13 +64,27 @@ There is two ways to start the project:
 npm start
 ```
 
+or
+
+```js
+yarn start
+```
+
 2) With Webpack Dev Server:
 ```js
-npm run dev
+npm run start:dev
+```
+
+or 
+
+```js
+yarn start:dev
 ```
 
 
 ## Running tests
+
+Form NPM
 
 ```js
 npm test
@@ -78,4 +92,16 @@ npm test
 or 
 ```js
 npm run test:watch
+```
+
+YARN
+
+Form NPM
+
+```js
+yarn test
+```
+or 
+```js
+yarn test:watch
 ```
