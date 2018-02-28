@@ -1,4 +1,3 @@
-require('babel-polyfill');
 const webpack = require('webpack');
 const path = require('path');
 const loaders = require('./webpack.loaders');
@@ -44,6 +43,17 @@ module.exports = {
   module: {
     loaders,
   },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
+    },
+  },
   plugins: [
     new WebpackCleanupPlugin(),
     new webpack.optimize.ModuleConcatenationPlugin(),
@@ -74,12 +84,6 @@ module.exports = {
     }),
     new webpack.IgnorePlugin(/^\.\/locale$/, [/moment$/]),
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      chunks: ['app'],
-      minChunks: ({ resource }) => /node_modules/.test(resource),
-      async: true,
-    }),
     new ExtractTextPlugin({
       disable: process.env.NODE_ENV === 'development',
       filename: 'assets/css/[name].[contenthash].css',

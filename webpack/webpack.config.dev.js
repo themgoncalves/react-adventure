@@ -1,20 +1,18 @@
 
-
-require('babel-polyfill');
 const webpack = require('webpack');
 const path = require('path');
-const loaders = require('./webpack.loaders');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const DashboardPlugin = require('webpack-dashboard/plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
+const rules = require('./webpack.rules');
 
 const HOST = process.env.HOST || '127.0.0.1';
 const PORT = process.env.PORT || '8080';
 
-loaders.push({
+rules.push({
   test: /\.scss$/,
   loader: ExtractTextPlugin.extract({
     fallback: 'style-loader',
@@ -48,7 +46,7 @@ module.exports = {
     },
   },
   module: {
-    loaders,
+    rules,
   },
   devServer: {
     contentBase: './public',
@@ -58,6 +56,17 @@ module.exports = {
     historyApiFallback: true,
     port: PORT,
     host: HOST,
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
+    },
   },
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
@@ -69,11 +78,6 @@ module.exports = {
       jQuery: 'jquery',
       'window.jQuery': 'jquery',
       Popper: ['popper.js', 'default'],
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      chunks: ['app'],
-      minChunks: ({ resource }) => /node_modules/.test(resource),
     }),
     new BundleAnalyzerPlugin(),
     new ExtractTextPlugin({
