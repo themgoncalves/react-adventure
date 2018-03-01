@@ -1,6 +1,6 @@
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/check-it-out.svg)](http://forthebadge.com)
 
-# React 16 Redux Async Starter Pack
+# React Redux Async Component Starter Kit
 [![Dependency Status](https://gemnasium.com/badges/github.com/themgoncalves/react-redux-webpack-starter.svg)](https://gemnasium.com/github.com/themgoncalves/react-redux-webpack-starter) 
 [![Known Vulnerabilities](https://snyk.io/test/github/themgoncalves/react-redux-webpack-starter/badge.svg)](https://snyk.io/test/github/themgoncalves/react-redux-webpack-starter)
 [![GitHub issues](https://img.shields.io/github/issues/themgoncalves/react-redux-webpack-starter.svg)](https://github.com/themgoncalves/react-redux-webpack-starter/issues) 
@@ -10,7 +10,7 @@
 
 Just clone or download it and start coding. No  more project initial set-up needed!
 
-**Ready for Async requests!!!!** Enjoy it.
+**Ready for Async Component Requests!!!!** Enjoy it.
 
 ## Main Features
 
