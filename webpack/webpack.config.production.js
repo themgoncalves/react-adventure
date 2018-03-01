@@ -1,14 +1,14 @@
 const webpack = require('webpack');
-const path = require('path');
-const loaders = require('./webpack.loaders');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
+const path = require('path');
+const rules = require('./webpack.rules');
 
-loaders.push({
+rules.push({
   test: /\.scss$/,
   loader: ExtractTextPlugin.extract({
     fallback: 'style-loader',
@@ -30,7 +30,7 @@ module.exports = {
   devtool: 'cheap-module-source-map',
   output: {
     publicPath: './',
-    path: path.join(__dirname, 'public'),
+    path: path.join(__dirname, '../public'),
     filename: 'assets/js/[name].bundle.[hash].js',
     chunkFilename: 'assets/js/[name].[hash].[chunkhash].chunk.js',
   },
@@ -41,9 +41,10 @@ module.exports = {
     },
   },
   module: {
-    loaders,
+    rules,
   },
   optimization: {
+    nodeEnv: 'production',
     splitChunks: {
       cacheGroups: {
         commons: {
@@ -53,6 +54,7 @@ module.exports = {
         },
       },
     },
+    minimize: true,
   },
   plugins: [
     new WebpackCleanupPlugin(),
@@ -67,20 +69,6 @@ module.exports = {
       jQuery: 'jquery',
       'window.jQuery': 'jquery',
       Popper: ['popper.js', 'default'],
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      mangle: true,
-      compress: {
-        warnings: false,
-        pure_getters: true,
-        unsafe: true,
-        unsafe_comps: true,
-        screw_ie8: true,
-      },
-      output: {
-        comments: false,
-      },
-      exclude: [/\.min\.js$/gi],
     }),
     new webpack.IgnorePlugin(/^\.\/locale$/, [/moment$/]),
     new webpack.optimize.OccurrenceOrderPlugin(),

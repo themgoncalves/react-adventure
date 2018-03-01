@@ -58,6 +58,7 @@ module.exports = {
     host: HOST,
   },
   optimization: {
+    nodeEnv: 'development',
     splitChunks: {
       cacheGroups: {
         commons: {

@@ -4,7 +4,7 @@
   "description": "React Redux Webpack 3 Stater",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.config.production.js --progress --profile --colors",
+    "build": "NODE_ENV=production webpack --progress --profile --colors",
     "start": "webpack-dev-server --progress --profile --colors",
     "start:dev": " webpack-dashboard -- webpack-dev-server",
     "lint": "eslint --ext js --ext jsx src || exit 0",
