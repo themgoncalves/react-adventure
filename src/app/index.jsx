@@ -9,15 +9,7 @@ import { Route } from 'react-router';
 
 //Components import
 import Header from './component/header';
-import Loadable from "./hoc/loadable";
-
-const AsyncHome = Loadable({
-  loader: () => import(/* webpackChunkName: "home" */ './routes/home')
-});
-
-const AsyncAwesome = Loadable({
-  loader: () => import(/* webpackChunkName: "awesome" */ './routes/awesome')
-});
+import { AsyncHome, AsyncAwesome } from './routes';
 
 /**
  * RootApp stateless component
