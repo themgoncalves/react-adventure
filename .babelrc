@@ -31,7 +31,8 @@
     "test": {
       "plugins": [
         "transform-runtime",
-        "transform-class-properties"
+        "transform-class-properties",
+        "dynamic-import-node"
       ]
     }
   }

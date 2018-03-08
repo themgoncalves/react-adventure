@@ -5,23 +5,27 @@
  */
 
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { Route } from 'react-router';
 
-  /**
-   * App stateless component
-   * @function
-   * @public
-   * @see {@link https://github.com/airbnb/javascript/tree/master/react#class-vs-reactcreateclass-vs-stateless} for further information
-   */
-function App() {
-  /**
-   * Handles button click in async operation
-   * @private
-   */
-  const handleButtonClick = async () => {
-    document.querySelector('body').style.backgroundColor = '#117bf3';
-    document.querySelector('body').style.color = '#ffffff';
-  };
+//Components import
+import Header from './component/header';
+import Loadable from "./hoc/loadable";
+
+const AsyncHome = Loadable({
+  loader: () => import(/* webpackChunkName: "home" */ './routes/home')
+});
+
+const AsyncAwesome = Loadable({
+  loader: () => import(/* webpackChunkName: "awesome" */ './routes/awesome')
+});
+
+/**
+ * RootApp stateless component
+ * @function
+ * @public
+ * @see {@link https://github.com/airbnb/javascript/tree/master/react#class-vs-reactcreateclass-vs-stateless} for further information
+ */
+function RootApp() {
 
   /**
    * Render JSX
@@ -30,14 +34,14 @@ function App() {
    * @return {Any} React Element
    */
   return (
-    <div>
-      <Helmet>
-        <title>React Redux Starter Pack</title>
-      </Helmet>
-      App works!<br />
-      <button onClick={handleButtonClick}>Async button</button>
-    </div>
+    <React.Fragment>
+      <Header />
+      <div className="container-fluid">
+        <Route path="/" exact component={AsyncHome} />
+        <Route path="/awesome" exact component={AsyncAwesome} />
+      </div>
+    </React.Fragment>
   );
-};
+}
 
-export default App;
+export default RootApp;
