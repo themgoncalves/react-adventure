@@ -4,9 +4,9 @@
   "description": "React Redux Async Component Starter Kit",
   "main": "index.js",
   "scripts": {
-    "build": "NODE_ENV=production webpack --progress --profile --colors",
-    "start": "webpack-dev-server --progress --profile --colors",
-    "start:dev": " webpack-dashboard -- webpack-dev-server",
+    "build": "NODE_ENV=production webpack --mode production  --progress --profile --colors",
+    "start": "webpack-dev-server --mode development --progress --profile --colors",
+    "start:dev": " webpack-dashboard --mode development -- webpack-dev-server",
     "lint": "eslint --ext js --ext jsx src || exit 0",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -22,6 +22,7 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.0.0",
+    "history": "^4.7.2",
     "jquery": "^3.3.1",
     "lodash": "^4.17.5",
     "popper.js": "^1.12.9",
@@ -30,7 +31,9 @@
     "react-helmet": "^5.2.0",
     "react-loadable": "^5.3.1",
     "react-redux": "^5.0.7",
+    "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.9",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "tether": "^1.4.3"
@@ -40,6 +43,7 @@
     "babel-core": "^6.26.0",
     "babel-jest": "^22.4.1",
     "babel-loader": "^7.1.4",
+    "babel-plugin-dynamic-import-node": "^1.2.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.13",
     "babel-plugin-transform-runtime": "^6.23.0",
