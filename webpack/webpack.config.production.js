@@ -5,6 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
+const SriPlugin = require('webpack-subresource-integrity');
 const path = require('path');
 const rules = require('./webpack.rules');
 
@@ -33,6 +34,7 @@ module.exports = {
     path: path.join(__dirname, '../public'),
     filename: 'assets/js/[name].bundle.[hash].js',
     chunkFilename: 'assets/js/[name].[hash].[chunkhash].chunk.js',
+    crossOriginLoading: 'anonymous',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -63,6 +65,10 @@ module.exports = {
       'process.env': {
         NODE_ENV: '"production"',
       },
+    }),
+    new SriPlugin({
+      hashFuncNames: ['sha256', 'sha384'],
+      enabled: process.env.NODE_ENV === 'production',
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',

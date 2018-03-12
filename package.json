@@ -84,7 +84,8 @@
     "webpack-cleanup-plugin": "^0.5.1",
     "webpack-cli": "^2.0.10",
     "webpack-dashboard": "^1.1.1",
-    "webpack-dev-server": "^3.1.0"
+    "webpack-dev-server": "^3.1.0",
+    "webpack-subresource-integrity": "^1.1.0-rc.2"
   },
   "jest": {
     "setupFiles": [
