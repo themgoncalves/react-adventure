@@ -28,7 +28,6 @@ module.exports = {
       './src/index.jsx',
     ],
   },
-  devtool: 'cheap-module-source-map',
   output: {
     publicPath: './',
     path: path.join(__dirname, '../public'),
@@ -45,6 +44,14 @@ module.exports = {
   module: {
     rules,
   },
+  performance: {
+    hints: 'error',
+    maxAssetSize: 250000,
+    maxEntrypointSize: 400000,
+    assetFilter: function (assetFilename) {
+      return assetFilename.endsWith('.css') || assetFilename.endsWith('.js');
+    },
+  },
   optimization: {
     nodeEnv: 'production',
     splitChunks: {
@@ -58,6 +65,7 @@ module.exports = {
     },
     minimize: true,
   },
+  target: "web",
   plugins: [
     new WebpackCleanupPlugin(),
     new webpack.optimize.ModuleConcatenationPlugin(),

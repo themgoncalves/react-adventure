@@ -31,7 +31,7 @@ module.exports = {
         './src/index.jsx',
       ],
   },
-  devtool: 'cheap-module-source-map',
+  devtool: 'cheap-module-eval-source-map',
   output: {
     publicPath: '/',
     path: path.join(__dirname, 'public'),
@@ -48,14 +48,13 @@ module.exports = {
   module: {
     rules,
   },
-  devServer: {
-    contentBase: './public',
-    noInfo: true,
-    hot: true,
-    inline: true,
-    historyApiFallback: true,
-    port: PORT,
-    host: HOST,
+  performance: {
+    hints: 'warning',
+    maxAssetSize: 250000,
+    maxEntrypointSize: 4500000,
+    assetFilter: function (assetFilename) {
+      return assetFilename.endsWith('.css') || assetFilename.endsWith('.js');
+    },
   },
   optimization: {
     nodeEnv: 'development',
@@ -68,6 +67,16 @@ module.exports = {
         },
       },
     },
+  },
+  target: "web",
+  devServer: {
+    contentBase: './public',
+    noInfo: true,
+    hot: true,
+    inline: true,
+    historyApiFallback: true,
+    port: PORT,
+    host: HOST,
   },
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
