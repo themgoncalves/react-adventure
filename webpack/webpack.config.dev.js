@@ -50,8 +50,8 @@ module.exports = {
   },
   performance: {
     hints: 'warning',
-    maxAssetSize: 250000,
-    maxEntrypointSize: 4500000,
+    maxAssetSize: 450000,
+    maxEntrypointSize: 8500000,
     assetFilter: function (assetFilename) {
       return assetFilename.endsWith('.css') || assetFilename.endsWith('.js');
     },
@@ -92,7 +92,7 @@ module.exports = {
     new BundleAnalyzerPlugin(),
     new ExtractTextPlugin({
       disable: process.env.NODE_ENV === 'development',
-      filename: 'assets/css/[name].[contenthash].css',
+      filename: 'assets/css/[name].[hash].css',
       allChunks: true,
     }),
     new webpack.IgnorePlugin(/^\.\/locale$/, [/moment$/]),

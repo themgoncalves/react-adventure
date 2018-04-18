@@ -88,7 +88,7 @@ module.exports = {
     new webpack.optimize.OccurrenceOrderPlugin(),
     new ExtractTextPlugin({
       disable: process.env.NODE_ENV === 'development',
-      filename: 'assets/css/[name].[contenthash].css',
+      filename: 'assets/css/[name].[hash].css',
       allChunks: true,
     }),
     new CopyWebpackPlugin([
