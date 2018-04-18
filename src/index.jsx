@@ -1,6 +1,6 @@
 ﻿/*
  * React App initial set-up
- * Created by Marcos Gonçalves <https://github.com/themgoncalves/>
+ * @author Marcos Gonçalves <https://github.com/themgoncalves/> <marx_souza@yahoo.com.br>
  */
 
  //Import all Javascript related files first
@@ -8,10 +8,10 @@ import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Route } from 'react-router';
 import createHistory from 'history/createBrowserHistory';
-import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux';
+import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
 import thunk from 'redux-thunk';
 import reducers from './app/reducers';
 import Loadable from './app/hoc/loadable';
@@ -22,7 +22,7 @@ import 'bootstrap';
 const history = createHistory();
 
 const AsyncApp = Loadable({
-  loader: () => import(/* webpackChunkName: "root" */ './app')
+  loader: () => import(/* webpackChunkName: "root", webpackPreload: true */ './app')
 });
 
 //Import all CSS related files
@@ -30,10 +30,7 @@ import './scss/bootstrap.scss';
 import './scss/index.scss';
 
 const createStoreWithMiddleware = createStore(
-  combineReducers({
-    ...reducers,
-    router: routerReducer
-  }),
+  reducers,
   applyMiddleware(thunk, routerMiddleware(history))
 );
 

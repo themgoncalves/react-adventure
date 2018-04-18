@@ -1,6 +1,6 @@
 /**
  * React Redux Async Component Starter Kit
- * @author Marcons Goncalves <marx_souza@yahoo.com.br>
+ * @author Marcos Gonçalves <marx_souza@yahoo.com.br>
  * @version 1.2.01
  */
 
