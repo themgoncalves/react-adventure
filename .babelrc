@@ -9,7 +9,8 @@
       {
         "production": {
           "plugins": [
-            "transform-react-remove-prop-types"
+            "transform-react-remove-prop-types",
+            "transform-react-constant-elements"
           ]
         },
         "targets": {
@@ -25,7 +26,7 @@
   "plugins": [
     "transform-runtime",
     "transform-class-properties",
-    ["webpack-alias", {"config": "./webpack.config.js"}]
+    ["webpack-alias", { "config": "./webpack.config.js" }]
   ],
   "env": {
     "test": {
