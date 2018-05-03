@@ -1,0 +1,8 @@
+{
+  "title": {
+    "maxlength": 70
+  },
+  "description": {
+    "maxlength": 155
+  }
+}
