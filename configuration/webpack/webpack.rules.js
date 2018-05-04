@@ -1,3 +1,6 @@
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
+
 module.exports = [
   {
     test: /\.jsx?$/,
@@ -8,6 +11,17 @@ module.exports = [
     test: /\.css$/,
     loaders: ['style-loader', 'css-loader?importLoaders=1'],
     exclude: ['node_modules'],
+  },
+  {
+    test: /\.scss$/,
+    loader: ExtractTextPlugin.extract({
+      fallback: 'style-loader',
+      use: 'css-loader?sourceMap&minimize!postcss-loader!sass-loader?outputStyle=expanded',
+    }),
+    exclude: /(node_modules|bower_components)/,
+    include: [
+      path.resolve(__dirname, '../../source/styles'),
+    ],
   },
   {
     test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,

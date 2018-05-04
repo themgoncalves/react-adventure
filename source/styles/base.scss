@@ -1,0 +1,17 @@
+/**
+ * React Redux Async starter kit
+ * @author Marcos Gonçalves <marx_souza@yahoo.com.br>
+ * @version 2.0.1
+ */
+
+// Load theme variables
+@import 'vars';
+
+body {
+  background-color: #fff;
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  font-weight: $font-normal;
+  line-height: $base-line-height;
+}

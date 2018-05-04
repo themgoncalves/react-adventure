@@ -12,16 +12,6 @@ const rules = require('./webpack.rules');
 const HOST = process.env.HOST || '127.0.0.1';
 const PORT = process.env.PORT || '8080';
 
-rules.push({
-  test: /\.scss$/,
-  loader: ExtractTextPlugin.extract({
-    fallback: 'style-loader',
-    use: 'css-loader?sourceMap&minimize!postcss-loader!sass-loader?outputStyle=expanded',
-  }),
-  exclude: ['node_modules'],
-});
-
-
 module.exports = {
   entry: {
     app:
@@ -41,8 +31,14 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
-      scss: path.resolve(__dirname, 'source/scss/'),
-      static: path.resolve(__dirname, './source/static'),
+      styles: path.resolve(__dirname, '../../source/styles/'),
+      static: path.resolve(__dirname, '../../source/static'),
+      components: path.resolve(__dirname, '../../source/app/components'),
+      containers: path.resolve(__dirname, '../../source/app/containers'),
+      decorators: path.resolve(__dirname, '../../source/app/decorators'),
+      hoc: path.resolve(__dirname, '../../source/app/hoc'),
+      screens: path.resolve(__dirname, '../../source/app/screens'),
+      services: path.resolve(__dirname, '../../source/app/services'),
     },
   },
   module: {
@@ -92,8 +88,8 @@ module.exports = {
     new webpack.IgnorePlugin(/^\.\/locale$/, [/moment$/]),
     new DashboardPlugin(),
     new CopyWebpackPlugin([
-      { from: './source/static', 
-        to: 'assets', 
+      { from: './source/static',
+        to: 'assets',
         ignore:
         [
           '*.css',

@@ -13,11 +13,11 @@ const LoginScreenAsync = Loadable({
 });
 
 const LoginRoute = [
-  { 
+  {
     path: '/login',
     exact: true,
     component: LoginScreenAsync
   }
-]
+];
 
 export default LoginRoute;
