@@ -6,12 +6,17 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
+import styled from 'styled-components';
 
 function Login() {
   return (
-    <div>Login Screen</div>
+    <div>Login Screen <LoginButton>Olá</LoginButton></div>
   );
 }
+
+const LoginButton = styled.button`
+  background-color: ${props => props.theme.primary};
+`;
 
 const mapStateToProps = ({ user }) => ({
   user,

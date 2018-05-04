@@ -7,7 +7,7 @@
 //Base Colors
 $primary:   #5caaff;
 $secondary: #dfe6ec;
-$warning:   #fff009;
+$warning:   #fdc800;
 $danger:    #fb4d7b;
 
 // Typography
@@ -23,3 +23,18 @@ $font-semibold:    600;
 $font-bold:        700;
 $base-line-height: 1.5;
 $headings:         (6, 5, 4, 3, 2, 1);
+
+
+
+// Grid breakpoints - as seen in "~bootstrap/scss/_variables.scss"
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576,
+        md: 768,
+        lg: 992,
+        xl: 1200
+) !default;

@@ -4,18 +4,16 @@
  * @version 2.0.1
  */
 
+
 import React from 'react';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
 import { renderRoutes } from 'react-router-config';
 import { ThemeProvider } from 'styled-components';
 import PropTypes from 'prop-types';
+import routes from './routes';
 
-import LoginRoute from '../login/route';
-import HomeRoute from '../home/route';
-
-const routes = Array.concat(LoginRoute, HomeRoute);
-
+//Application Theme
 const theme = require('sass-extract-loader?{"plugins": ["sass-extract-js"]}!styles/_vars.scss');
 
 export default function Root({ store, history }) {

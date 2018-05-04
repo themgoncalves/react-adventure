@@ -11,8 +11,10 @@ import { connect } from 'react-redux';
 function Home(props) {
   return (
     <div>
-      Home Component
+      Home Component<br />
       <Link to="/login">Login</Link>
+      <br />
+      <Link to="/this-page-do-not-exists">Not Found</Link>
     </div>
   );
 }

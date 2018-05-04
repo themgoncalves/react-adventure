@@ -7,6 +7,11 @@
 // Load theme variables
 @import 'vars';
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   background-color: #fff;
   color: $base-font-color;
@@ -14,4 +19,12 @@ body {
   font-size: $base-font-size;
   font-weight: $font-normal;
   line-height: $base-line-height;
+}
+
+img {
+  &.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
 }
