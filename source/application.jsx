@@ -7,11 +7,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { history } from './app/services';
-import Root from './app/screens/root';
+import { history } from 'services';
+import Root from 'screens/root';
 import configureStore from './app/store';
 
-import './scss/responsive-grid.scss';
+import 'styles/reset.scss';
+import 'styles/responsive-grid.scss';
+import 'styles/base.scss';
 
 const store = configureStore(history);
 
