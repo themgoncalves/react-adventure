@@ -5,19 +5,18 @@
  */
 
 import React from 'react';
-import { Route } from 'react-router';
-import Loadable from '../../hoc/loadable';
+import Loadable from 'hoc/loadable';
 
 const HomeScreenAsync = Loadable({
   loader: () => import(/* webpackChunkName: "home" */ './screen')
 });
 
 const HomeRoute = [
-  { 
+  {
     path: '/',
     exact: true,
     component: HomeScreenAsync
   }
-]
+];
 
 export default HomeRoute;

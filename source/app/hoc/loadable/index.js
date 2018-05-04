@@ -5,7 +5,7 @@
  */
 
 import L from 'react-loadable';
-import Loading from '../../components/loading';
+import Loading from 'components/loading';
 
 /**
  * High Order Component wrapping react-loadable
