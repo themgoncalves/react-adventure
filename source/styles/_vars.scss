@@ -4,11 +4,20 @@
  * @version 2.0.1
  */
 
-//Base Colors
-$primary:   #5caaff;
-$secondary: #dfe6ec;
-$warning:   #fdc800;
-$danger:    #fb4d7b;
+//Base Colors & Palette
+$colors: (
+        primary:   #3D89F7,
+        secondary: #dfe6ec,
+        warning:   #fdc800,
+        danger:    #fb4d7b,
+        palette: (
+                color1: rgba(5, 102, 141, 1),
+                color2: rgba(2, 128, 144, 1),
+                color3: rgba(0, 168, 150, 1),
+                color4: rgba(2, 195, 154, 1),
+                color5: rgba(240, 243, 189, 1)
+        )
+) !default;
 
 // Typography
 $font-mono:        'Courier', monospace;
@@ -25,12 +34,43 @@ $base-line-height: 1.5;
 $headings:         (6, 5, 4, 3, 2, 1);
 
 
+// Background Gradients
+// Source uiGradients <https://uigradients.com/#eXpresso>
+$gradients: (
+        // Source <https://uigradients.com/#Mauve>
+        mauve: (
+              base-color: #42275a,
+              gradient: linear-gradient(to right, #42275a, #734b6d)
+        ),
+        // Source <https://uigradients.com/#Royal>
+        royal: (
+                base-color: #141e30,
+                gradient: linear-gradient(to right, #141e30, #243b55)
+        ),
+        // Source <https://uigradients.com/#Vanusa>
+        vanusa: (
+                base-color: #DA4453,
+                gradient: linear-gradient(to right, #89216B, #DA4453)
+
+        ),
+        // Source <https://uigradients.com/#eXpresso>
+        expresso: (
+                base-color: #ad5389,
+                gradient: linear-gradient(to right, #3c1053, #ad5389)
+
+        ),
+        // Source <https://uigradients.com/#DIMIGO>
+        dimigo: (
+                base-color: #ec008c,
+                gradient: linear-gradient(to right, #ec008c, #fc6767)
+        )
+) !default;
+
 
 // Grid breakpoints - as seen in "~bootstrap/scss/_variables.scss"
 //
 // Define the minimum dimensions at which your layout will change,
 // adapting to different screen sizes, for use in media queries.
-
 $grid-breakpoints: (
         xs: 0,
         sm: 576,

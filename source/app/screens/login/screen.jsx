@@ -6,17 +6,43 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import styled from 'styled-components';
+import {
+  MainWrapper,
+  LoginWrapper,
+  TheMgoncalvesLogo,
+  FormWrapper,
+  FormItem,
+  ForgotPassword,
+  LoginButton,
+} from './styles';
 
 function Login() {
   return (
-    <div>Login Screen <LoginButton>Olá</LoginButton></div>
+    <MainWrapper>
+      <div className="container">
+        <div className="row">
+          <LoginWrapper className="col-10 offset-1 col-md-8 offset-md-2 col-lg-5 offset-lg-3">
+            <TheMgoncalvesLogo src={require("static/images/themgoncalves-white.png")} alt="themgoncalves logo" />
+            <FormWrapper>
+              <FormItem>
+                <input type="text" placeholder="Your @username" />
+              </FormItem>
+              <FormItem>
+                <input type="password" placeholder="Your password" />
+              </FormItem>
+              <FormItem textAlign="right">
+                <ForgotPassword href="javascript:void(0);">Forgot your password?</ForgotPassword>
+              </FormItem>
+              <FormItem>
+                <LoginButton>Sign in</LoginButton>
+              </FormItem>
+            </FormWrapper>
+          </LoginWrapper>
+        </div>
+      </div>
+    </MainWrapper>
   );
 }
-
-const LoginButton = styled.button`
-  background-color: ${props => props.theme.primary};
-`;
 
 const mapStateToProps = ({ user }) => ({
   user,
