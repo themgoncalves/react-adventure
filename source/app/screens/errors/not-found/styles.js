@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import mediaBreakpoint from 'hoc/media-breakpoint';
 
 const MainWrapper = styled.div`
-  background-color: ${props => props.theme.warning};
+  background: ${props => props.theme.gradients.expresso.baseColor}; 
+  background: ${props => props.theme.gradients.expresso.gradient}; 
   height: 100%;
 `;
 
@@ -46,6 +47,7 @@ const ErrorTitle = styled.h2`
 
 const GoBackButton = styled(Link)`
   background-color: white;
+  color: ${props => props.theme.colors.warning};
   display: inline-block;
   padding: 10px 36px;
   margin-top: 30px;
