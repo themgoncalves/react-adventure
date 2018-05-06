@@ -7,10 +7,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Helmet } from "react-helmet";
+import ProjectInfo from '../../../../package.json';
 
 function Home(props) {
   return (
     <div>
+      <Helmet>
+        <title>Home | {ProjectInfo.description}</title>
+      </Helmet>
       Home Component<br />
       <Link to="/login">Login</Link>
       <br />
