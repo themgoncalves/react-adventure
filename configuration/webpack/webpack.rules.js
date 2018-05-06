@@ -48,6 +48,12 @@ module.exports = [
           name: '[path][name]-[hash:8].[ext]',
         },
       },
+      {
+        loader: 'image-webpack-loader',
+        options: {
+          bypassOnDebug: true,
+        },
+      },
     ],
   },
 ];

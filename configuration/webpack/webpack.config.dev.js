@@ -62,6 +62,10 @@ module.exports = {
           chunks: 'all',
           minChunks: 2,
         },
+        default: {
+          minChunks: 2,
+          reuseExistingChunk: true,
+        },
       },
     },
   },

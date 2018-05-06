@@ -51,6 +51,7 @@ module.exports = {
   },
   optimization: {
     nodeEnv: 'production',
+    minimize: true,
     splitChunks: {
       cacheGroups: {
         commons: {
@@ -59,9 +60,12 @@ module.exports = {
           chunks: 'all',
           minChunks: 2,
         },
+        default: {
+          minChunks: 2,
+          reuseExistingChunk: true,
+        },
       },
     },
-    minimize: true,
   },
   target: 'web',
   plugins: [
