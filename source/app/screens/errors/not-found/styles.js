@@ -12,12 +12,23 @@ const ErrorImageWrapper = styled.div`
   padding: 110px 0;
   > div {
     flex: 1;
+    > img {
+      margin: 0 auto;
+    }
     ${mediaBreakpoint.min.lg`
       &:first-child {
         padding-left: 100px;
       }
       &:last-child {
         padding-right: 100px;
+      }
+    `}
+    ${mediaBreakpoint.min.xl`
+      &:first-child {
+        padding-left: 140px;
+      }
+      &:last-child {
+        padding-right: 140px;
       }
     `}
   }
