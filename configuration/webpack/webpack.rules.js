@@ -39,23 +39,15 @@ module.exports = [
     loader: 'url-loader?limit=10000&mimetype=application/octet-stream',
   },
   {
-    test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+    test: /\.(jpe?g|png|gif|svg|pdf|ico)$/,
     exclude: /(node_modules|bower_components)/,
-    loader: 'url-loader?limit=10000&mimetype=image/svg+xml',
-  },
-  {
-    test: /\.gif/,
-    exclude: /(node_modules|bower_components)/,
-    loader: 'url-loader?limit=10000&mimetype=image/gif',
-  },
-  {
-    test: /\.jpg/,
-    exclude: /(node_modules|bower_components)/,
-    loader: 'url-loader?limit=10000&mimetype=image/jpg',
-  },
-  {
-    test: /\.png/,
-    exclude: /(node_modules|bower_components)/,
-    loader: 'url-loader?limit=10000&mimetype=image/png',
+    use: [
+      {
+        loader: 'file-loader',
+        options: {
+          name: '[path][name]-[hash:8].[ext]',
+        },
+      },
+    ],
   },
 ];
