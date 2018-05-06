@@ -1,3 +1,4 @@
+require('dotenv').config(); // Loads environment variables from a .env file into process.env
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackCleanupPlugin = require('webpack-cleanup-plugin');

@@ -1,4 +1,4 @@
-
+require('dotenv').config(); // Loads environment variables from a .env file into process.env
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -84,7 +84,9 @@ module.exports = {
     new webpack.NamedModulesPlugin(),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new BundleAnalyzerPlugin(),
+    new BundleAnalyzerPlugin({
+      analyzerHost: HOST,
+    }),
     new ExtractTextPlugin({
       disable: process.env.NODE_ENV === 'development',
       filename: 'css/[name].[hash].css',
