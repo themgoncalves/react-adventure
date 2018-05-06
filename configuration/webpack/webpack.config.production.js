@@ -21,8 +21,8 @@ module.exports = {
   output: {
     publicPath: '/',
     path: path.join(__dirname, '../../public'),
-    filename: 'assets/js/[name].bundle.[hash].js',
-    chunkFilename: 'assets/js/[name].[hash].[chunkhash].chunk.js',
+    filename: 'js/[name].bundle.[hash].js',
+    chunkFilename: 'js/[name].[hash].[chunkhash].chunk.js',
     crossOriginLoading: 'anonymous',
   },
   resolve: {
@@ -57,12 +57,13 @@ module.exports = {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
           chunks: 'all',
+          minChunks: 2,
         },
       },
     },
     minimize: true,
   },
-  target: "web",
+  target: 'web',
   plugins: [
     new WebpackCleanupPlugin(),
     new webpack.optimize.ModuleConcatenationPlugin(),
@@ -79,27 +80,16 @@ module.exports = {
     new webpack.optimize.OccurrenceOrderPlugin(),
     new ExtractTextPlugin({
       disable: process.env.NODE_ENV === 'development',
-      filename: 'assets/css/[name].[hash].css',
+      filename: 'css/[name].[hash].css',
       allChunks: true,
     }),
     new CopyWebpackPlugin([
-      { from: './static',
-        to: 'assets',
-        ignore:
-        [
-          '*.css',
-          '*.scss',
-          '*.sass',
-          '*.txt',
-          'favicon.ico',
-        ]
-      },
       { from: './static/robots.txt', to: '' },
     ], {
       copyUnmodified: false,
     }),
     new HtmlWebpackPlugin({
-      template: './index.hbs',
+      template: './source/index.hbs',
       favicon: './static/images/favicon.ico',
       minify: {
         collapseWhitespace: true,

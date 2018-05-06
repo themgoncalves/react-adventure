@@ -25,8 +25,8 @@ module.exports = {
   output: {
     publicPath: '/',
     path: path.join(__dirname, '../../public'),
-    filename: 'assets/js/[name].bundle.js',
-    chunkFilename: 'assets/js/[name].chunk.js',
+    filename: 'js/[name].bundle.js',
+    chunkFilename: 'js/[name].chunk.js',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -60,11 +60,12 @@ module.exports = {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
           chunks: 'all',
+          minChunks: 2,
         },
       },
     },
   },
-  target: "web",
+  target: 'web',
   devServer: {
     contentBase: './public',
     noInfo: true,
@@ -82,23 +83,12 @@ module.exports = {
     new BundleAnalyzerPlugin(),
     new ExtractTextPlugin({
       disable: process.env.NODE_ENV === 'development',
-      filename: 'assets/css/[name].[hash].css',
+      filename: 'css/[name].[hash].css',
       allChunks: true,
     }),
     new webpack.IgnorePlugin(/^\.\/locale$/, [/moment$/]),
     new DashboardPlugin(),
     new CopyWebpackPlugin([
-      { from: './static',
-        to: 'assets',
-        ignore:
-        [
-          '*.css',
-          '*.scss',
-          '*.sass',
-          '*.txt',
-          'favicon.ico',
-        ]
-      },
       { from: './static/robots.txt', to: '' },
     ], {
       copyUnmodified: false,
