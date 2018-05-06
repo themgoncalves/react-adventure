@@ -32,7 +32,7 @@ module.exports = {
     extensions: ['.js', '.jsx'],
     alias: {
       styles: path.resolve(__dirname, '../../source/styles/'),
-      static: path.resolve(__dirname, '../../source/static'),
+      static: path.resolve(__dirname, '../../static'),
       components: path.resolve(__dirname, '../../source/app/components'),
       containers: path.resolve(__dirname, '../../source/app/containers'),
       decorators: path.resolve(__dirname, '../../source/app/decorators'),
@@ -88,7 +88,7 @@ module.exports = {
     new webpack.IgnorePlugin(/^\.\/locale$/, [/moment$/]),
     new DashboardPlugin(),
     new CopyWebpackPlugin([
-      { from: './source/static',
+      { from: './static',
         to: 'assets',
         ignore:
         [
@@ -99,13 +99,13 @@ module.exports = {
           'favicon.ico',
         ]
       },
-      { from: './source/static/robots.txt', to: '' },
+      { from: './static/robots.txt', to: '' },
     ], {
       copyUnmodified: false,
     }),
     new HtmlWebpackPlugin({
       template: './source/index.hbs',
-      favicon: './source/static/favicon.ico',
+      favicon: './static/images/favicon.ico',
       minify: {
         collapseWhitespace: true,
         preserveLineBreaks: true,
