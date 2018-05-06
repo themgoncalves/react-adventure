@@ -26,6 +26,7 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.1.1",
+    "color": "^3.0.0",
     "history": "^4.7.2",
     "lodash": "^4.17.10",
     "prop-types": "^15.6.1",
@@ -63,6 +64,7 @@
     "copy-webpack-plugin": "^4.5.1",
     "css-loader": "^0.28.11",
     "cypress": "^2.1.0",
+    "dotenv": "^5.0.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.19.1",
