@@ -26,6 +26,10 @@ import {
 } from './styles';
 
 function Login() {
+  function handleForgotPwdClick() {
+    alert('This is just a mock feature :)');
+  }
+
   return (
     <React.Fragment>
       <Helmet>
@@ -44,7 +48,7 @@ function Login() {
                   <Input type="password" placeholder="Your password" />
                 </FormItem>
                 <FormItem textAlign="right">
-                  <ForgotPassword href="javascript:void(0);">Forgot your password?</ForgotPassword> { /* eslint-disable-line no-script-url */}
+                  <ForgotPassword href="javascript:void(0);" onClick={handleForgotPwdClick}>Forgot your password?</ForgotPassword> { /* eslint-disable-line no-script-url */}
                 </FormItem>
                 <FormItem>
                   <Button>Sign in</Button>
