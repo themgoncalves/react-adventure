@@ -4,6 +4,7 @@
  * @version 2.0.1
  */
 
+/* eslint-disable global-require */
 switch (process.env.NODE_ENV) {
   case 'prod':
   case 'production':

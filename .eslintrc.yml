@@ -1,6 +1,19 @@
 ---
+  env:
+    browser: true
+    node: true
   extends:
-    - "airbnb"
-    - "plugin:jsx-a11y/recommended"
+    - airbnb
+    - plugin:jsx-a11y/recommended
   plugins:
-    - "jsx-a11y"
+    - jsx-a11y
+  settings:
+    import/resolver: webpack
+  parser: babel-eslint
+  parserOptions:
+    sourceType: module
+    allowImportExportEverywhere: false
+    codeFrame: false
+  globals:
+    window: false
+    document: false

@@ -2,6 +2,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 
 module.exports = [
+  // {
+  //   enforce: 'pre', // To be safe, you can use enforce: "pre" section to check source files, not modified by other loaders (like babel-loader)
+  //   test: /\.jsx?$/,
+  //   exclude: /(node_modules|bower_components|public\/)/,
+  //   loader: 'eslint-loader',
+  // },
   {
     test: /\.jsx?$/,
     exclude: /(node_modules|bower_components|public\/)/,

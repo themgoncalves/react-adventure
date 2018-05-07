@@ -13,8 +13,8 @@ import { ThemeProvider } from 'styled-components';
 import PropTypes from 'prop-types';
 import routes from './routes';
 
-//Application Theme
-const theme = require('sass-extract-loader?{"plugins": ["sass-extract-js"]}!styles/_vars.scss');
+// Application Theme
+const theme = require('sass-extract-loader?{"plugins": ["sass-extract-js"]}!styles/_vars.scss'); // eslint-disable-line import/no-webpack-loader-syntax
 
 export default function Root({ store, history }) {
   return (

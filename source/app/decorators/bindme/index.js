@@ -7,7 +7,7 @@
 export default (target, key, descriptor) => {
   if (!target[key] && {}.toString.call(target[key]) !== '[object Function]') {
     throw new Error('@bindme decorator can only be applied to functions', target);
-  };
+  }
 
   let fn = descriptor.value;
   let definingProperty = false;
@@ -16,11 +16,11 @@ export default (target, key, descriptor) => {
     configurable: true,
 
     get() {
-      if (definingProperty || this === target.prototype || this.hasOwnProperty(key) || typeof fn !== 'function') {
+      if (definingProperty || this === target.prototype || Object.prototype.hasOwnProperty.call(this, key) || typeof fn !== 'function') {
         return fn;
       }
 
-      let boundFn = fn.bind(this);
+      const boundFn = fn.bind(this);
       definingProperty = true;
       Object.defineProperty(this, key, {
         configurable: true,
@@ -30,13 +30,13 @@ export default (target, key, descriptor) => {
         set(value) {
           fn = value;
           delete this[key];
-        }
+        },
       });
       definingProperty = false;
       return boundFn;
     },
     set(value) {
       fn = value;
-    }
+    },
   };
 };

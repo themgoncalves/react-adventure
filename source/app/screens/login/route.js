@@ -4,19 +4,18 @@
  * @version 2.0.1
  */
 
-import React from 'react';
 import Loadable from '../../hoc/loadable';
 
 const LoginScreenAsync = Loadable({
-  loader: () => import(/* webpackChunkName: "login", webpackPrefetch: true */ './screen.jsx')
+  loader: () => import(/* webpackChunkName: "login", webpackPrefetch: true */ './screen.jsx'),
 });
 
 const LoginRoute = [
   {
     path: '/login',
     exact: true,
-    component: LoginScreenAsync
-  }
+    component: LoginScreenAsync,
+  },
 ];
 
 export default LoginRoute;

@@ -7,10 +7,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Helmet } from "react-helmet";
+import { Helmet } from 'react-helmet';
 import ProjectInfo from '../../../../package.json';
 
-function Home(props) {
+/* eslint-disable jsx-a11y/anchor-is-valid */
+function Home() {
   return (
     <div>
       <Helmet>

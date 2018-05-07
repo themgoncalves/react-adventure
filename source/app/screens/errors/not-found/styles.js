@@ -63,7 +63,7 @@ const GoBackButton = styled(Link)`
     box-shadow: 0 0 0 0.2rem ${props => color(props.theme.colors.warning).fade(0.6).toString()};
   }
   &:active {
-    background-color: ${props => color('#fff').darken(0.1).toString()}; 
+    background-color: ${color('#fff').darken(0.1).toString()}; 
   }
 `;
 

@@ -9,11 +9,15 @@ import ReactDOM from 'react-dom';
 
 import { history } from 'services';
 import Root from 'screens/root';
-import configureStore from './app/store';
 
+// Import styles
 import 'styles/reset.scss';
 import 'styles/responsive-grid.scss';
 import 'styles/base.scss';
+
+
+import configureStore from './app/store';
+
 
 const store = configureStore(history);
 

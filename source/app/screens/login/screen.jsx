@@ -6,7 +6,13 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import { Helmet } from "react-helmet";
+import { Helmet } from 'react-helmet';
+import Button from 'components/button';
+
+// Import Images
+import TheMgoncalvesLogoImage from 'static/images/themgoncalves-white.png';
+
+// Import Project Information
 import ProjectInfo from '../../../../package.json';
 
 import {
@@ -16,7 +22,6 @@ import {
   FormWrapper,
   FormItem,
   ForgotPassword,
-  LoginButton,
 } from './styles';
 
 function Login() {
@@ -29,7 +34,7 @@ function Login() {
         <div className="container">
           <div className="row">
             <LoginWrapper className="col-10 offset-1 col-md-8 offset-md-2 col-lg-5 offset-lg-3">
-              <TheMgoncalvesLogo src={require("static/images/themgoncalves-white.png")} alt="themgoncalves logo" />
+              <TheMgoncalvesLogo src={TheMgoncalvesLogoImage} alt="themgoncalves logo" />
               <FormWrapper>
                 <FormItem>
                   <input type="text" placeholder="Your @username" />
@@ -38,10 +43,10 @@ function Login() {
                   <input type="password" placeholder="Your password" />
                 </FormItem>
                 <FormItem textAlign="right">
-                  <ForgotPassword href="javascript:void(0);">Forgot your password?</ForgotPassword>
+                  <ForgotPassword href="javascript:void(0);">Forgot your password?</ForgotPassword> { /* eslint-disable-line no-script-url */}
                 </FormItem>
                 <FormItem>
-                  <LoginButton>Sign in</LoginButton>
+                  <Button>Sign in</Button>
                 </FormItem>
               </FormWrapper>
             </LoginWrapper>

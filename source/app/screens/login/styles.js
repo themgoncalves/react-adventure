@@ -30,7 +30,7 @@ const FormWrapper = styled.ul`
 const FormItem = styled.li`
   width: 100%;
   margin-bottom: 16px;
-  text-align: ${props => props.textAlign = 'right' ? 'right' : 'left'};
+  text-align: ${props => (props.textAlign === 'right' ? 'right' : 'left')};
   > input[type=text],
   > input[type=password] {
     background-color: white;
@@ -56,26 +56,6 @@ const ForgotPassword = styled.a`
   }
 `;
 
-const LoginButton = styled.button`
-  background-color: ${props => props.theme.colors.warning}; 
-  color: white;
-  width: 100%;
-  margin-top: 20px;
-  padding: 10px 26px;
-  border: none;
-  border-radius: 4px;
-  transition: all ease 0.3s;
-
-  &:focus,
-  &:hover {
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem ${props => color(props.theme.colors.warning).fade(0.6).toString()};
-  }
-  &:active {
-    background-color: ${props => color(props.theme.colors.warning).darken(0.2).toString()}; 
-  }
-`;
-
 export {
   MainWrapper,
   LoginWrapper,
@@ -83,5 +63,4 @@ export {
   FormWrapper,
   FormItem,
   ForgotPassword,
-  LoginButton,
 };
