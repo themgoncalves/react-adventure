@@ -7,7 +7,7 @@
 import Loadable from 'hoc/loadable';
 
 const NotFoundScreenAsync = Loadable({
-  loader: () => import(/* webpackChunkName: "home" */ './screen'),
+  loader: () => import(/* webpackChunkName: "error-not-found" */ './screen'),
 });
 
 const Error404Route = [

@@ -8,7 +8,7 @@ const MainWrapper = styled.div`
 
 const LoginWrapper = styled.div`
   background-color: transparent;
-  margin-top: 180px;
+  margin-top: 40px;
   padding-top: 20px;
   padding-bottom: 20px;
   border-radius: 8px;
