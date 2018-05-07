@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import color from 'color';
 import mediaBreakpoint from 'hoc/media-breakpoint';
 
 const MainWrapper = styled.div`
@@ -55,8 +56,14 @@ const GoBackButton = styled(Link)`
   text-transform: capitalize;
   border-radius: 6px;
   transition: all ease 0.3s;
-  &:hover{
-    box-shadow: 0 10px 12px -6px #c09c14;
+
+  &:focus,
+  &:hover {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem ${props => color(props.theme.colors.warning).fade(0.6).toString()};
+  }
+  &:active {
+    background-color: ${props => color('#fff').darken(0.1).toString()}; 
   }
 `;
 

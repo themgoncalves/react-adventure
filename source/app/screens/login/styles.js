@@ -36,12 +36,13 @@ const FormItem = styled.li`
     background-color: white;
     width: 100%;
     padding: 8px 16px;
-    outline: none;
     border-radius: 3px;
     border: solid 1px #54265A;
     transition: all ease 0.3s;
     &:focus {
-      border-color: ${props => props.theme.colors.primary};
+      outline: 0;
+      border-color: ${props => props.theme.colors.warning};
+      box-shadow: 0 0 0 0.2rem ${props => color(props.theme.colors.warning).fade(0.6).toString()};
     }
   }
 `;
