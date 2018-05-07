@@ -4,9 +4,10 @@
  * @version 2.0.1
  */
 
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
+import animate from 'decorators/animate';
 import Button from 'components/button';
 import Input from 'components/input';
 
@@ -25,41 +26,44 @@ import {
   ForgotPassword,
 } from './styles';
 
-function Login() {
-  function handleForgotPwdClick() {
+@animate
+class Login extends Component {
+  handleForgotPwdClick() {
     alert('This is just a mock feature :)');
   }
 
-  return (
-    <React.Fragment>
-      <Helmet>
-        <title>Login | {ProjectInfo.description}</title>
-      </Helmet>
-      <MainWrapper>
-        <div className="container">
-          <div className="row">
-            <LoginWrapper className="col-10 offset-1 col-md-8 offset-md-2 col-lg-5 offset-lg-3">
-              <TheMgoncalvesLogo src={TheMgoncalvesLogoImage} alt="themgoncalves logo" />
-              <FormWrapper>
-                <FormItem>
-                  <Input type="text" placeholder="Your @username" />
-                </FormItem>
-                <FormItem>
-                  <Input type="password" placeholder="Your password" />
-                </FormItem>
-                <FormItem textAlign="right">
-                  <ForgotPassword href="javascript:void(0);" onClick={handleForgotPwdClick}>Forgot your password?</ForgotPassword> { /* eslint-disable-line no-script-url */}
-                </FormItem>
-                <FormItem>
-                  <Button>Sign in</Button>
-                </FormItem>
-              </FormWrapper>
-            </LoginWrapper>
+  render() {
+    return (
+      <React.Fragment>
+        <Helmet>
+          <title>Login | {ProjectInfo.description}</title>
+        </Helmet>
+        <MainWrapper>
+          <div className="container">
+            <div className="row">
+              <LoginWrapper className="col-10 offset-1 col-md-8 offset-md-2 col-lg-5 offset-lg-3">
+                <TheMgoncalvesLogo src={TheMgoncalvesLogoImage} alt="themgoncalves logo" />
+                <FormWrapper>
+                  <FormItem>
+                    <Input type="text" placeholder="Your @username" />
+                  </FormItem>
+                  <FormItem>
+                    <Input type="password" placeholder="Your password" />
+                  </FormItem>
+                  <FormItem textAlign="right">
+                    <ForgotPassword href="javascript:void(0);" onClick={this.handleForgotPwdClick}>Forgot your password?</ForgotPassword> { /* eslint-disable-line no-script-url */}
+                  </FormItem>
+                  <FormItem>
+                    <Button>Sign in</Button>
+                  </FormItem>
+                </FormWrapper>
+              </LoginWrapper>
+            </div>
           </div>
-        </div>
-      </MainWrapper>
-    </React.Fragment>
-  );
+        </MainWrapper>
+      </React.Fragment>
+    );
+  }
 }
 
 const mapStateToProps = ({ user }) => ({
