@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import color from 'color';
 
 const MainWrapper = styled.div`
   background: ${props => props.theme.gradients.expresso.baseColor}; 
@@ -31,20 +30,6 @@ const FormItem = styled.li`
   width: 100%;
   margin-bottom: 16px;
   text-align: ${props => (props.textAlign === 'right' ? 'right' : 'left')};
-  > input[type=text],
-  > input[type=password] {
-    background-color: white;
-    width: 100%;
-    padding: 8px 16px;
-    border-radius: 3px;
-    border: solid 1px #54265A;
-    transition: all ease 0.3s;
-    &:focus {
-      outline: 0;
-      border-color: ${props => props.theme.colors.warning};
-      box-shadow: 0 0 0 0.2rem ${props => color(props.theme.colors.warning).fade(0.6).toString()};
-    }
-  }
 `;
 
 const ForgotPassword = styled.a`
