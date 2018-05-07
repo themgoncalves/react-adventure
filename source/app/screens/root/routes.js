@@ -1,3 +1,9 @@
+/**
+ * React Redux Async starter kit
+ * @author Marcos Gonçalves <marx_souza@yahoo.com.br>
+ * @version 2.0.1
+ */
+
 // Application Routes
 import Error404Route from '../errors/not-found/route';
 import LoginRoute from '../login/route';
