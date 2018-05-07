@@ -74,6 +74,16 @@ const ButtonStyled = styled.button`
       color: ${props => color(props.theme.colors.secondary).darken(0.2).toString()};
     `};
   }
+  &[disabled] {
+    background-color: ${props => color('#fff').darken(0.3).toString()};
+    color: ${color('#fff').darken(0.46).toString()};
+    text-shadow: 0 1px 1px ${color('#fff').darken(0.15).toString()};
+    &:focus,
+    &:hover {
+      outline: 0;
+      box-shadow: none;
+    }
+  }
 `;
 
 Button.propTypes = {
