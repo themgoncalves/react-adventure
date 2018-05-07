@@ -6,31 +6,45 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 const Loading = (props) => {
   if (props.error) {
-    return (<div>Error! <button onClick={props.retry}>Retry</button></div>);
+    return (<LoadingWrapper><LoadingText>Error!</LoadingText></LoadingWrapper>);
   } else if (props.timedOut) {
-    return (<div>Taking a long time... <button onClick={props.retry}>Retry</button></div>);
+    return (<LoadingWrapper><LoadingText>Loading... it's taking a while now...</LoadingText></LoadingWrapper>);
   } else if (props.pastDelay) {
-    return (<div>Loading...</div>);
+    return (<LoadingWrapper><LoadingText>Loading...</LoadingText></LoadingWrapper>);
   }
 
-  return null;
+  return <LoadingWrapper><LoadingText>Loading...</LoadingText></LoadingWrapper>;
 };
+
+const LoadingWrapper = styled.div`
+  background: ${props => props.theme.gradients.expresso.baseColor}; 
+  background: ${props => props.theme.gradients.expresso.gradient}; 
+  display: table;
+  width: 100%;
+  height: 100%;
+`;
+
+const LoadingText = styled.span`
+  color: white;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+`;
 
 Loading.propTypes = {
   error: PropTypes.bool,
   timedOut: PropTypes.bool,
   pastDelay: PropTypes.bool,
-  retry: PropTypes.func,
 };
 
 Loading.defaultProps = {
   error: false,
   timedOut: false,
   pastDelay: false,
-  retry: () => false,
 };
 
 export default Loading;
