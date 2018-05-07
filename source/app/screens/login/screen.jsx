@@ -8,6 +8,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import Button from 'components/button';
+import Input from 'components/input';
 
 // Import Images
 import TheMgoncalvesLogoImage from 'static/images/themgoncalves-white.png';
@@ -37,10 +38,10 @@ function Login() {
               <TheMgoncalvesLogo src={TheMgoncalvesLogoImage} alt="themgoncalves logo" />
               <FormWrapper>
                 <FormItem>
-                  <input type="text" placeholder="Your @username" />
+                  <Input type="text" placeholder="Your @username" />
                 </FormItem>
                 <FormItem>
-                  <input type="password" placeholder="Your password" />
+                  <Input type="password" placeholder="Your password" />
                 </FormItem>
                 <FormItem textAlign="right">
                   <ForgotPassword href="javascript:void(0);">Forgot your password?</ForgotPassword> { /* eslint-disable-line no-script-url */}
