@@ -9,6 +9,7 @@ const defaultState =  {
 };
 
 export default function(state = defaultState, action) {
+  console.log('ACTION', action.type);
   switch(action.type) {
     case AUTH_USER:
       return { ...state, isAuthenticated: true };

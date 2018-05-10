@@ -33,6 +33,7 @@ class Home extends Component {
           <MenuItem><Link to="/">Home</Link></MenuItem>
           <MenuItem><Link to="/restricted-area">Restricted Area</Link></MenuItem>
             <MenuItem><Link to="/not-exiting-route">Not Found Page (404)</Link></MenuItem>
+            <MenuItem><Link to="/login">Login</Link></MenuItem>
             <MenuItem><a href="https://github.com/themgoncalves/react-redux-async-starter-kit" target="_black">GitHub</a></MenuItem>
           </Menu>
         </div>

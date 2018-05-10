@@ -8,9 +8,11 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
+import { push } from 'react-router-redux';
 import animate from 'decorators/animate';
 import Button from 'components/button';
 import Input from 'components/input';
+import { signinUser } from '../../actions';
 
 // Import Images
 import TheMgoncalvesLogoImage from 'static/images/themgoncalves-white.png';
@@ -29,10 +31,19 @@ import {
 
 @animate
 class Login extends Component {
+  state = {
+    email: '',
+    password: ''
+  }
+
   handleForgotPwdClick() {
     alert('This is just a mock feature :)');
   }
 
+  handleSignin = () => {
+    this.props.signinUser({email: this.state.email, password: this.state.password});
+  }
+  
   render() {
     return (
       <React.Fragment>
@@ -46,16 +57,16 @@ class Login extends Component {
                 <Link to="/"><TheMgoncalvesLogo src={TheMgoncalvesLogoImage} alt="themgoncalves logo" /></Link>
                 <FormWrapper>
                   <FormItem>
-                    <Input type="text" placeholder="Your @username" />
+                    <Input type="text" placeholder="Your @username" value={this.state.email} onChange={(e) => this.setState({email: e.target.value})} />
                   </FormItem>
                   <FormItem>
-                    <Input type="password" placeholder="Your password" />
+                    <Input type="password" placeholder="Your password" value={this.state.password} onChange={(e) => this.setState({password: e.target.value})} />
                   </FormItem>
                   <FormItem textAlign="right">
                     <ForgotPassword href="javascript:void(0);" onClick={this.handleForgotPwdClick}>Forgot your password?</ForgotPassword> { /* eslint-disable-line no-script-url */}
                   </FormItem>
                   <FormItem>
-                    <Button>Sign in</Button>
+                    <Button onClick={this.handleSignin}>Sign in</Button>
                   </FormItem>
                 </FormWrapper>
               </LoginWrapper>
@@ -67,8 +78,8 @@ class Login extends Component {
   }
 }
 
-const mapStateToProps = ({ user }) => ({
-  user,
+const mapStateToProps = ({ auth }) => ({
+  auth,
 });
 
-export default connect(mapStateToProps)(Login);
+export default connect(mapStateToProps, { signinUser })(Login);

@@ -12,6 +12,7 @@ import styled, { injectGlobal } from 'styled-components';
 import auth from 'decorators/auth';
 import animate from 'decorators/animate';
 import ProjectInfo from '../../../../package.json';
+import { signoutUser } from '../../actions';
 
 import Background from 'static/images/background/pure-minimal.png';
 import TheMgoncavesLogoImage from 'static/images/themgoncalves.png';
@@ -19,7 +20,11 @@ import TheMgoncavesLogoImage from 'static/images/themgoncalves.png';
 /* eslint-disable jsx-a11y/anchor-is-valid */
 @auth
 @animate
-class Home extends Component {
+class RestrictedArea extends Component {
+  handleLogout = () => {
+    this.props.signoutUser();
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -32,6 +37,7 @@ class Home extends Component {
           </HeaderWrapper>
           <Message>
             Welcome to the <span>restricted area</span>
+            <a href="javascript:void(0);" onClick={this.handleLogout}>Logout</a>
           </Message>
         </div>
       </React.Fragment>
@@ -72,8 +78,8 @@ const Message = styled.div`
   }
 `;
 
-const mapStateToProps = ({ user }) => ({
-  user,
+const mapStateToProps = ({ auth }) => ({
+  auth,
 });
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps, { signoutUser })(RestrictedArea);

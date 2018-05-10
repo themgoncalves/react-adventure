@@ -6,29 +6,25 @@ import LoginRoute from 'screens/login/route';
 
 const Auth = (WrappedComponent) => {
   class Authentication extends PureComponent {
-    state = {
-      isAuthenticated: this.props.auth.isAuthenticated,
-    }
+    state = { }
      
     componentDidMount() {
-      if (!this.state.isAuthenticated) {
+      if (!this.props.auth.isAuthenticated) {
         this.props.dispatch(push('/login'));
       }
     }
 
     componentDidUpdate(prevProps, prevState) {
-      console.log('prevProps', prevProps);
-      console.log('prevState', prevState);
-      if (prevProps.auth.isAuthenticated !== prevState.isAuthenticated) {
+      if (prevProps.auth.isAuthenticated !== this.props.auth.isAuthenticated) {
         if (!this.props.auth.isAuthenticated) {
-          this.props.dispatch(push(LoginRoute.path));
+          this.props.dispatch(push('/login'));
         }
       }
     }
 
     render() {
       return (
-        <WrappedComponent />
+        <WrappedComponent {...this.props} />
       )
     }
   }
