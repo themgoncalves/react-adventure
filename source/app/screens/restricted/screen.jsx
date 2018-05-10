@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import styled, { injectGlobal } from 'styled-components';
+import auth from 'decorators/auth';
 import animate from 'decorators/animate';
 import ProjectInfo from '../../../../package.json';
 
@@ -16,25 +17,22 @@ import Background from 'static/images/background/pure-minimal.png';
 import TheMgoncavesLogoImage from 'static/images/themgoncalves.png';
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
-
+@auth
 @animate
 class Home extends Component {
   render() {
     return (
       <React.Fragment>
         <Helmet>
-          <title>Home | {ProjectInfo.description}</title>
+          <title>Restricted Area | {ProjectInfo.description}</title>
         </Helmet>
         <div className="container-fluid">
           <HeaderWrapper className="col-12">
             <TheMgoncalvesLogo src={TheMgoncavesLogoImage} />
           </HeaderWrapper>
-          <Menu>
-          <MenuItem><Link to="/">Home</Link></MenuItem>
-          <MenuItem><Link to="/restricted-area">Restricted Area</Link></MenuItem>
-            <MenuItem><Link to="/not-exiting-route">Not Found Page (404)</Link></MenuItem>
-            <MenuItem><a href="https://github.com/themgoncalves/react-redux-async-starter-kit" target="_black">GitHub</a></MenuItem>
-          </Menu>
+          <Message>
+            Welcome to the <span>restricted area</span>
+          </Message>
         </div>
       </React.Fragment>
     );
@@ -60,26 +58,17 @@ const TheMgoncalvesLogo = styled.img`
   margin: 0 auto;
 `;
 
-const Menu = styled.ul`
-  width: 100%;
-  list-style: none;
-  margin: 0;
-  padding:0;
+const Message = styled.div`
   text-align: center;
-  font-size: 12px;
   text-transform: uppercase;
-`;
+  font-size: 22px;
+  font-weight: bold;
 
-const MenuItem = styled.li`
-  display: inline-block;
-  padding: 0 10px;
-  border-right: solid 1px #000;
-  > a {
-    color: black;
-  }
-
-  &:last-child{
-    border-right: none;
+  > span {
+    background-color: ${props => props.theme.colors.danger};
+    color: white;
+    padding: 2px 10px;
+    font-weight: normal;
   }
 `;
 

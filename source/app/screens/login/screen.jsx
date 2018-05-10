@@ -5,6 +5,7 @@
  */
 
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import animate from 'decorators/animate';
@@ -42,7 +43,7 @@ class Login extends Component {
           <div className="container">
             <div className="row">
               <LoginWrapper className="col-10 offset-1 col-md-8 offset-md-2 col-lg-5 offset-lg-3">
-                <TheMgoncalvesLogo src={TheMgoncalvesLogoImage} alt="themgoncalves logo" />
+                <Link to="/"><TheMgoncalvesLogo src={TheMgoncalvesLogoImage} alt="themgoncalves logo" /></Link>
                 <FormWrapper>
                   <FormItem>
                     <Input type="text" placeholder="Your @username" />
