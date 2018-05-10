@@ -31,6 +31,7 @@ module.exports = {
     alias: {
       styles: path.resolve(__dirname, '../../source/styles/'),
       static: path.resolve(__dirname, '../../static'),
+      actions: path.resolve(__dirname, '../../source/app/actions'),
       components: path.resolve(__dirname, '../../source/app/components'),
       containers: path.resolve(__dirname, '../../source/app/containers'),
       decorators: path.resolve(__dirname, '../../source/app/decorators'),

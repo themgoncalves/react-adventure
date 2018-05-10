@@ -10,6 +10,7 @@ import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import styled, { injectGlobal } from 'styled-components';
 import animate from 'decorators/animate';
+import { signoutUser } from '../../actions';
 import ProjectInfo from '../../../../package.json';
 
 import Background from 'static/images/background/pure-minimal.png';
@@ -19,6 +20,10 @@ import TheMgoncavesLogoImage from 'static/images/themgoncalves.png';
 
 @animate
 class Home extends Component {
+  handleLogout = () => {
+    this.props.signoutUser();
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -33,7 +38,14 @@ class Home extends Component {
           <MenuItem><Link to="/">Home</Link></MenuItem>
           <MenuItem><Link to="/restricted-area">Restricted Area</Link></MenuItem>
             <MenuItem><Link to="/not-exiting-route">Not Found Page (404)</Link></MenuItem>
-            <MenuItem><Link to="/login">Login</Link></MenuItem>
+            {!this.props.auth.isAuthenticated ?
+              (
+                <MenuItem><Link to="/login">Login</Link></MenuItem>
+              ) : 
+              (
+                <MenuItem><a href="javascript:void(0);" onClick={this.handleLogout}>Logout</a></MenuItem>
+              )
+            }
             <MenuItem><a href="https://github.com/themgoncalves/react-redux-async-starter-kit" target="_black">GitHub</a></MenuItem>
           </Menu>
         </div>
@@ -84,8 +96,8 @@ const MenuItem = styled.li`
   }
 `;
 
-const mapStateToProps = ({ user }) => ({
-  user,
+const mapStateToProps = ({ auth }) => ({
+  auth,
 });
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps, { signoutUser })(Home);
