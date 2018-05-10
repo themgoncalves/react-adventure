@@ -8,11 +8,11 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
-import { push } from 'react-router-redux';
+import PropTypes from 'prop-types';
 import animate from 'decorators/animate';
 import Button from 'components/button';
 import Input from 'components/input';
-import { signinUser } from '../../actions';
+import { signinUser } from 'actions';
 
 // Import Images
 import TheMgoncalvesLogoImage from 'static/images/themgoncalves-white.png';
@@ -31,19 +31,23 @@ import {
 
 @animate
 class Login extends Component {
-  state = {
-    email: '',
-    password: ''
+  static propTypes = {
+    signinUser: PropTypes.func.isRequired,
   }
 
-  handleForgotPwdClick() {
-    alert('This is just a mock feature :)');
+  state = {
+    email: '',
+    password: '',
+  }
+
+  handleForgotPwdClick = () => {
+    alert('This is just a mock feature :)'); // eslint-disable-line no-alert
   }
 
   handleSignin = () => {
-    this.props.signinUser({email: this.state.email, password: this.state.password});
+    this.props.signinUser({ email: this.state.email, password: this.state.password });
   }
-  
+
   render() {
     return (
       <React.Fragment>
@@ -54,13 +58,13 @@ class Login extends Component {
           <div className="container">
             <div className="row">
               <LoginWrapper className="col-10 offset-1 col-md-8 offset-md-2 col-lg-5 offset-lg-3">
-                <Link to="/"><TheMgoncalvesLogo src={TheMgoncalvesLogoImage} alt="themgoncalves logo" /></Link>
+                <Link to="/"><TheMgoncalvesLogo src={TheMgoncalvesLogoImage} alt="themgoncalves logo" /></Link> { /* eslint-disable-line jsx-a11y/anchor-is-valid */}
                 <FormWrapper>
                   <FormItem>
-                    <Input type="text" placeholder="Your @username" value={this.state.email} onChange={(e) => this.setState({email: e.target.value})} />
+                    <Input type="text" placeholder="Your @username" value={this.state.email} onChange={e => this.setState({ email: e.target.value })} />
                   </FormItem>
                   <FormItem>
-                    <Input type="password" placeholder="Your password" value={this.state.password} onChange={(e) => this.setState({password: e.target.value})} />
+                    <Input type="password" placeholder="Your password" value={this.state.password} onChange={e => this.setState({ password: e.target.value })} />
                   </FormItem>
                   <FormItem textAlign="right">
                     <ForgotPassword href="javascript:void(0);" onClick={this.handleForgotPwdClick}>Forgot your password?</ForgotPassword> { /* eslint-disable-line no-script-url */}

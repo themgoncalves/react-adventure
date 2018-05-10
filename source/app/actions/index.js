@@ -6,11 +6,11 @@ import {
 } from './types';
 
 
-export function signinUser({ email, password }) {
-  return function(dispatch) {
+export function signinUser() {
+  return function (dispatch) { // eslint-disable-line func-names
     dispatch({ type: AUTH_USER });
     dispatch(push('/'));
-  }
+  };
 }
 
 export function signoutUser() {

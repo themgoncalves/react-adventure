@@ -8,7 +8,7 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
 function animate(WrappedComponent) {
-  return function (props) {
+  return function (props) { // eslint-disable-line func-names
     return (
       <PageFadeInWrapper>
         <WrappedComponent {...props} />

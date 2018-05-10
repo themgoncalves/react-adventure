@@ -10,16 +10,20 @@ import styled from 'styled-components';
 import animate from 'decorators/animate';
 
 @animate
-class Loading extends Component  {
+class Loading extends Component {
   render() {
     if (this.props.error) {
       return (<LoadingWrapper><LoadingText>Error!</LoadingText></LoadingWrapper>);
     } else if (this.props.timedOut) {
-      return (<LoadingWrapper><LoadingText>Loading... it's taking a while now...</LoadingText></LoadingWrapper>);
+      return (
+        <LoadingWrapper>
+          <LoadingText>Loading... it is taking a while now...</LoadingText>
+        </LoadingWrapper>
+      );
     } else if (this.props.pastDelay) {
       return (<LoadingWrapper><LoadingText>Loading...</LoadingText></LoadingWrapper>);
     }
-  
+
     return <LoadingWrapper><LoadingText>Loading...</LoadingText></LoadingWrapper>;
   }
 }

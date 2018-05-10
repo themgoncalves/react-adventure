@@ -5,22 +5,27 @@
  */
 
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
+import PropTypes from 'prop-types';
 import styled, { injectGlobal } from 'styled-components';
 import auth from 'decorators/auth';
 import animate from 'decorators/animate';
-import ProjectInfo from '../../../../package.json';
-import { signoutUser } from '../../actions';
+import { signoutUser } from 'actions';
 
 import Background from 'static/images/background/pure-minimal.png';
 import TheMgoncavesLogoImage from 'static/images/themgoncalves.png';
+
+import ProjectInfo from '../../../../package.json';
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 @auth
 @animate
 class RestrictedArea extends Component {
+  static propTypes = {
+    signoutUser: PropTypes.func.isRequired,
+  }
+
   handleLogout = () => {
     this.props.signoutUser();
   }
@@ -37,20 +42,21 @@ class RestrictedArea extends Component {
           </HeaderWrapper>
           <Message>
             Welcome to the <span>restricted area</span>
-            <a href="javascript:void(0);" onClick={this.handleLogout}>Logout</a>
+            <a href="javascript:void(0);" onClick={this.handleLogout}>Logout</a> {/* eslint-disable-line no-script-url */}
           </Message>
         </div>
       </React.Fragment>
     );
   }
 }
-
+/* eslint-disable no-unused-expressions */
 injectGlobal`
   body {
     background: white url(${Background}) no-repeat center center fixed;
     background-size: cover;
   }
 `;
+/* eslint-enable no-unused-expressions */
 
 const HeaderWrapper = styled.div`
   background-color: #F3F1F1;
@@ -78,8 +84,8 @@ const Message = styled.div`
   }
 `;
 
-const mapStateToProps = ({ auth }) => ({
-  auth,
+const mapStateToProps = state => ({
+  auth: state.auth,
 });
 
 export default connect(mapStateToProps, { signoutUser })(RestrictedArea);
