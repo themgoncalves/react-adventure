@@ -12,7 +12,7 @@ import PropTypes from 'prop-types';
 import animate from 'decorators/animate';
 import Button from 'components/button';
 import Input from 'components/input';
-import { signinUser } from 'actions';
+import { authenticateUser } from 'actions';
 
 // Import Images
 import TheMgoncalvesLogoImage from 'static/images/themgoncalves-white.png';
@@ -32,7 +32,14 @@ import {
 @animate
 class Login extends Component {
   static propTypes = {
-    signinUser: PropTypes.func.isRequired,
+    authenticateUser: PropTypes.func.isRequired,
+    auth: PropTypes.shape({
+      requesting: PropTypes.bool,
+      successful: PropTypes.bool,
+      messages: PropTypes.array,
+      errors: PropTypes.array,
+      isAuthenticated: PropTypes.bool,
+    }).isRequired,
   }
 
   state = {
@@ -45,7 +52,7 @@ class Login extends Component {
   }
 
   handleSignin = () => {
-    this.props.signinUser({ email: this.state.email, password: this.state.password });
+    this.props.authenticateUser({ email: this.state.email, password: this.state.password });
   }
 
   render() {
@@ -86,4 +93,4 @@ const mapStateToProps = ({ auth }) => ({
   auth,
 });
 
-export default connect(mapStateToProps, { signinUser })(Login);
+export default connect(mapStateToProps, { authenticateUser })(Login);

@@ -6,7 +6,6 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import { history } from 'services';
 import Root from 'screens/root';
 
@@ -15,11 +14,12 @@ import 'styles/reset.scss';
 import 'styles/responsive-grid.scss';
 import 'styles/base.scss';
 
-
 import configureStore from './app/store';
+import rootSaga from './app/sagas';
 
 
 const store = configureStore(history);
+store.runSaga(rootSaga);
 
 ReactDOM.render(
   <Root

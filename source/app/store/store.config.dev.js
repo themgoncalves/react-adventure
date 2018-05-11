@@ -5,7 +5,7 @@
  */
 
 import { createStore, applyMiddleware, compose } from 'redux';
-import thunk from 'redux-thunk';
+import createSagaMiddleware, { END } from 'redux-saga';
 import { createLogger } from 'redux-logger';
 import { routerMiddleware } from 'react-router-redux';
 import rootReducer from '../reducers';
@@ -35,11 +35,13 @@ export default function configureStore(history) {
     : mock);
     /* eslint-enable no-underscore-dangle */
 
+  const sagaMiddleware = typeof createSagaMiddleware === 'function' ? createSagaMiddleware() : createSagaMiddleware.default();
+
   const store = createStore(
     rootReducer,
     compose(
       applyMiddleware(
-        thunk,
+        sagaMiddleware,
         routerMiddleware(history),
         createLogger(),
       ),
@@ -54,6 +56,9 @@ export default function configureStore(history) {
       store.replaceReducer(nextRootReducer);
     });
   }
+
+  store.runSaga = sagaMiddleware.run;
+  store.close = () => store.dispatch(END);
 
   return store;
 }

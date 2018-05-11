@@ -10,9 +10,7 @@ import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import animate from 'decorators/animate';
 import PropTypes from 'prop-types';
-
-import { signoutUser } from 'actions';
-
+import { unauthenticateUser } from 'actions';
 import TheMgoncavesLogoImage from 'static/images/themgoncalves-white.png';
 import GitHubIcon from 'static/images/icons/github.svg';
 
@@ -31,12 +29,18 @@ import {
 @animate
 class Home extends Component {
   static propTypes = {
-    auth: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
-    signoutUser: PropTypes.func.isRequired,
+    unauthenticateUser: PropTypes.func.isRequired,
+    auth: PropTypes.shape({
+      requesting: PropTypes.bool,
+      successful: PropTypes.bool,
+      messages: PropTypes.array,
+      errors: PropTypes.array,
+      isAuthenticated: PropTypes.bool,
+    }).isRequired,
   }
 
   handleLogout = () => {
-    this.props.signoutUser();
+    this.props.unauthenticateUser();
   }
 
   render() {
@@ -82,4 +86,4 @@ const mapStateToProps = ({ auth }) => ({
   auth,
 });
 
-export default connect(mapStateToProps, { signoutUser })(Home);
+export default connect(mapStateToProps, { unauthenticateUser })(Home);

@@ -30,6 +30,7 @@ const Menu = styled.ul`
 const MenuItem = styled.li`
   display: inline-block;
   padding: 0 20px;
+  margin-bottom: 10px;
   border-right: solid 1px #606368;
   > a {
     color: white;
