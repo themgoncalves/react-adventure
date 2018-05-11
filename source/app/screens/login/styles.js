@@ -7,8 +7,7 @@
 import styled from 'styled-components';
 
 const MainWrapper = styled.div`
-  background: ${props => props.theme.gradients.expresso.baseColor}; 
-  background: ${props => props.theme.gradients.expresso.gradient}; 
+  background-color: ${props => props.theme.colors.palette.color6};
   height: 100%;
 `;
 

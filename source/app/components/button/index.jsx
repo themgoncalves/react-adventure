@@ -41,7 +41,7 @@ const ButtonStyled = styled.button`
   margin-top: 20px;
   padding: 10px 26px;
   border: none;
-  border-radius: 4px;
+  border-radius: 3px;
   transition: all ease 0.3s;
 
   &:focus,

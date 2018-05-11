@@ -6,14 +6,18 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import animate from 'decorators/animate';
+import { LoadingWrapper, LoadingText } from './styles';
 
 @animate
 class Loading extends Component {
   render() {
     if (this.props.error) {
-      return (<LoadingWrapper><LoadingText>Error!</LoadingText></LoadingWrapper>);
+      return (
+        <LoadingWrapper>
+          <LoadingText>Error!</LoadingText>
+        </LoadingWrapper>
+      );
     } else if (this.props.timedOut) {
       return (
         <LoadingWrapper>
@@ -21,27 +25,20 @@ class Loading extends Component {
         </LoadingWrapper>
       );
     } else if (this.props.pastDelay) {
-      return (<LoadingWrapper><LoadingText>Loading...</LoadingText></LoadingWrapper>);
+      return (
+        <LoadingWrapper>
+          <LoadingText>Loading...</LoadingText>
+        </LoadingWrapper>
+      );
     }
 
-    return <LoadingWrapper><LoadingText>Loading...</LoadingText></LoadingWrapper>;
+    return (
+      <LoadingWrapper>
+        <LoadingText>Loading...</LoadingText>
+      </LoadingWrapper>
+    );
   }
 }
-
-const LoadingWrapper = styled.div`
-  background: ${props => props.theme.gradients.expresso.baseColor}; 
-  background: ${props => props.theme.gradients.expresso.gradient}; 
-  display: table;
-  width: 100%;
-  height: 100%;
-`;
-
-const LoadingText = styled.span`
-  color: white;
-  text-align: center;
-  display: table-cell;
-  vertical-align: middle;
-`;
 
 Loading.propTypes = {
   error: PropTypes.bool,

@@ -17,27 +17,13 @@ const Logo = styled.img`
   margin: 0 auto;
 `;
 
-const Menu = styled.ul`
-  width: 100%;
-  list-style: none;
-  margin: 0;
-  padding:0;
+const Message = styled.div`
+  background-color: ${props => props.theme.colors.danger};
+  font-size: 18px;
+  font-weight: 200;
   text-align: center;
-  font-size: 12px;
   text-transform: uppercase;
+  padding: 2px 0;
 `;
 
-const MenuItem = styled.li`
-  display: inline-block;
-  padding: 0 20px;
-  border-right: solid 1px #606368;
-  > a {
-    color: white;
-  }
-
-  &:last-child{
-    border-right: none;
-  }
-`;
-
-export { MainWrapper, HeaderWrapper, Logo, Menu, MenuItem };
+export { MainWrapper, HeaderWrapper, Logo, Message };

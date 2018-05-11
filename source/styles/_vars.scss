@@ -16,7 +16,8 @@ $colors: (
                 color2: rgba(2, 128, 144, 1),
                 color3: rgba(0, 168, 150, 1),
                 color4: rgba(2, 195, 154, 1),
-                color5: rgba(240, 243, 189, 1)
+                color5: rgba(240, 243, 189, 1),
+                color6: #202B3A,
         )
 ) !default;
 
@@ -64,6 +65,10 @@ $gradients: (
         dimigo: (
                 base-color: #ec008c,
                 gradient: linear-gradient(to right, #ec008c, #fc6767)
+        ),
+        brady: (
+              base-color: #00c3ff,
+              gradient: linear-gradient(to right, #ffff1c, #00c3ff)
         )
 ) !default;
 

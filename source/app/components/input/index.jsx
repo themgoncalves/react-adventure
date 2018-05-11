@@ -20,7 +20,7 @@ const InputStyled = styled.input`
   width: 100%;
   padding: 8px 14px;
   border: none;
-  border-radius: 4px;
+  border-radius: 3px;
   transition: all ease 0.3s;
   &:focus,
   &:active {

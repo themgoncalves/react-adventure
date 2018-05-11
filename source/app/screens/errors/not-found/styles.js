@@ -10,8 +10,7 @@ import color from 'color';
 import mediaBreakpoint from 'hoc/media-breakpoint';
 
 const MainWrapper = styled.div`
-  background: ${props => props.theme.gradients.expresso.baseColor}; 
-  background: ${props => props.theme.gradients.expresso.gradient}; 
+  background-color: ${props => props.theme.colors.palette.color6};
   height: 100%;
 `;
 
@@ -54,7 +53,7 @@ const ErrorTitle = styled.h2`
 
 const GoBackButton = styled(Link)`
   background-color: white;
-  color: ${props => props.theme.colors.warning};
+  color: ${props => props.theme.colors.primary};
   display: inline-block;
   padding: 10px 36px;
   margin-top: 30px;
@@ -66,7 +65,7 @@ const GoBackButton = styled(Link)`
   &:focus,
   &:hover {
     outline: 0;
-    box-shadow: 0 0 0 0.2rem ${props => color(props.theme.colors.warning).fade(0.6).toString()};
+    box-shadow: 0 0 0 0.2rem ${props => color(props.theme.colors.secondary).fade(0.6).toString()};
   }
   &:active {
     background-color: ${color('#fff').darken(0.1).toString()}; 

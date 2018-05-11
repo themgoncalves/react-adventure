@@ -13,27 +13,28 @@ import PropTypes from 'prop-types';
 
 import { signoutUser } from 'actions';
 
-import TheMgoncavesLogoImage from 'static/images/themgoncalves.png';
+import TheMgoncavesLogoImage from 'static/images/themgoncalves-white.png';
 import GitHubIcon from 'static/images/icons/github.svg';
 
 import ProjectInfo from '../../../../package.json';
 
 import {
+  MainWrapper,
   HeaderWrapper,
-  TheMgoncalvesLogo,
+  Logo,
   Menu,
   MenuItem,
 } from './styles';
 
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
-
 @animate
 class Home extends Component {
   static propTypes = {
     auth: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
     signoutUser: PropTypes.func.isRequired,
   }
+
   handleLogout = () => {
     this.props.signoutUser();
   }
@@ -44,30 +45,34 @@ class Home extends Component {
         <Helmet>
           <title>Home | {ProjectInfo.description}</title>
         </Helmet>
-        <div className="container-fluid">
-          <HeaderWrapper className="col-12">
-            <TheMgoncalvesLogo src={TheMgoncavesLogoImage} />
-          </HeaderWrapper>
-          <Menu>
-            <MenuItem><Link to="/">Home</Link></MenuItem>
-            <MenuItem><Link to="/restricted-area">Restricted Area</Link></MenuItem>
-            <MenuItem><Link to="/not-exiting-route">Not Found Page (404)</Link></MenuItem>
-            {!this.props.auth.isAuthenticated ?
-              (
-                <MenuItem><Link to="/login">Login</Link></MenuItem>
-              ) :
-              (
-                <MenuItem><a href="javascript:void(0);" onClick={this.handleLogout}>Logout</a></MenuItem> // eslint-disable-line no-script-url
-              )
-            }
-            <MenuItem>
-              <a href="https://github.com/themgoncalves/react-redux-async-starter-kit" target="_black"> {/* eslint-disable-line no-script-url */}
-                <img src={GitHubIcon} height={16} alt="GitHub icon" />
-                GitHub
-              </a>
-            </MenuItem>
-          </Menu>
-        </div>
+        <MainWrapper>
+          <div className="container">
+            <div className="row">
+              <HeaderWrapper className="col-12">
+                <Logo src={TheMgoncavesLogoImage} alt="TheMgoncalves logo" />
+              </HeaderWrapper>
+              <Menu>
+                <MenuItem><Link to="/">Home</Link></MenuItem>
+                <MenuItem><Link to="/restricted-area">Restricted Area</Link></MenuItem>
+                <MenuItem><Link to="/not-exiting-route">Not Found Page (404)</Link></MenuItem>
+                {!this.props.auth.isAuthenticated ?
+                  (
+                    <MenuItem><Link to="/login">Login</Link></MenuItem>
+                  ) :
+                  (
+                    <MenuItem><a href="javascript:void(0);" onClick={this.handleLogout}>Logout</a></MenuItem> // eslint-disable-line no-script-url
+                  )
+                }
+                <MenuItem>
+                  <a href="https://github.com/themgoncalves/react-redux-async-starter-kit" target="_black"> {/* eslint-disable-line no-script-url */}
+                    <img src={GitHubIcon} height={16} alt="GitHub icon" style={{ marginRight: '6px' }} />
+                    GitHub
+                  </a>
+                </MenuItem>
+              </Menu>
+            </div>
+          </div>
+        </MainWrapper>
       </React.Fragment>
     );
   }
