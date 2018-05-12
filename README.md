@@ -5,18 +5,20 @@
 [![Build Status][travis-image]][travis-url]
 [![Downloads Stats][npm-downloads]][npm-url]
 
-<div align="center"><img src="./static/images/themgoncalves.png" /></div>
+<div style="margin: 40px 0;" align="center"><img src="./static/images/themgoncalves.png" /></div>
 
 One to two paragraph statement about your product and what it does.
 
 ![](./static/images/screens-shots/main.png)
 
-Check out the Application's Network:
-![](./static/images/screens-shots/app-network-demo.gif)
-
 ## Tech Stack
 
 What
+
+## Network Demo
+
+Check out the Application's Network:
+![](./static/images/screens-shots/app-network-demo.gif)
 
 ## Installation
 
