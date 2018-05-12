@@ -1,107 +1,87 @@
-[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/check-it-out.svg)](http://forthebadge.com)
+<img align="center" src="./static/images/themgoncalves.png" />
 
-# React Redux Async Component Starter Kit
-[![Dependency Status](https://gemnasium.com/badges/github.com/themgoncalves/react-redux-webpack-starter.svg)](https://gemnasium.com/github.com/themgoncalves/react-redux-webpack-starter) 
-[![Known Vulnerabilities](https://snyk.io/test/github/themgoncalves/react-redux-webpack-starter/badge.svg)](https://snyk.io/test/github/themgoncalves/react-redux-webpack-starter)
-[![GitHub issues](https://img.shields.io/github/issues/themgoncalves/react-redux-webpack-starter.svg)](https://github.com/themgoncalves/react-redux-webpack-starter/issues) 
-[![GitHub stars](https://img.shields.io/github/stars/themgoncalves/react-redux-webpack-starter.svg)](https://github.com/themgoncalves/react-redux-webpack-starter/stargazers) 
-[![GitHub forks](https://img.shields.io/github/forks/themgoncalves/react-redux-webpack-starter.svg)](https://github.com/themgoncalves/react-redux-webpack-starter/network) 
+# React Redux Async Blueprint
+> Best patterns & tech stack ready for use. Ideal for big & small applications
 
+[![NPM Version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
+[![Downloads Stats][npm-downloads]][npm-url]
 
-Just clone or download it and start coding. No  more project initial set-up needed!
+One to two paragraph statement about your product and what it does.
 
-**Ready for Async Component Requests!!!!** Enjoy it.
+![](./static/images/screens-shots/main.png)
 
-## Main Features
+Check out the Application's Network:
+![](./static/images/screens-shots/app-network-demo.gif)
 
-* [React 16](https://facebook.github.io/react/)
-* [Redux](http://redux.js.org/)
-* [Redux Thunk](https://github.com/gaearon/redux-thunk)
-* [React Helmet](https://github.com/nfl/react-helmet)
-* [Webpack 4](https://webpack.js.org/)
-* [webpack-bundle-analyzer](https://github.com/th0r/webpack-bundle-analyzer)
-* [webpack-dashboard](https://github.com/FormidableLabs/webpack-dashboard)
-* [react-router-dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
-* [React Loadable](https://github.com/thejameskyle/react-loadable)
-* [Jest](https://facebook.github.io/jest/)
-* [Enzyme](https://github.com/airbnb/enzyme)
-* [Babel](https://babeljs.io)
-* [babel-plugin-webpack-alias](https://github.com/trayio/babel-plugin-webpack-alias)
-* [babel-plugin-transform-react-remove-prop-types](https://github.com/oliviertassinari/babel-plugin-transform-react-remove-prop-types)
-* [ESLint with Airbnb ECMAScript 6+ and React rules](https://www.npmjs.com/package/eslint-config-airbnb)
-* [SCSS](http://sass-lang.com)
+## Tech Stack
 
-## Introduction
+What
 
-There is two methods to get started with the repo.
+## Installation
 
-### Familiar with Git?
+For NPM users:
 
-Just clone the repo with the following commands:
-```
-> git clone https://github.com/themgoncalves/react-redux-webpack-starter.git
-> cd react-redux-webpack-starter
-```
-
-### Not familiar Git?
-
-That is ok, just [Click here](https://github.com/themgoncalves/react-redux-webpack-starter/archive/master.zip) to download this repo in zip file and then extract the file in your favorite location.
-
-
-# Installation
-
-```js
-cd react-redux-webpack-starter
+```javascript
 npm install
 ```
 
-## Starting the project
+For YARN users:
 
-There is two ways to start the project:
-
-1) Without Webpack Dev Server:
-```js
-npm start
+```javascript
+yarn install
 ```
 
-or
+## Usage example
 
-```js
-yarn start
-```
+A few motivating and useful examples of how your product can be used. Spice this up with code blocks and potentially more screenshots.
 
-2) With Webpack Dev Server:
-```js
-npm run start:dev
-```
+_For more examples and usage, please refer to the [Wiki][wiki]._
 
-or 
+## Development setup
 
-```js
-yarn start:dev
-```
+Describe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
 
-
-## Running tests
-
-Form NPM
-
-```js
+```sh
+make install
 npm test
 ```
-or 
-```js
-npm run test:watch
-```
 
-YARN
+## Release History
 
-Form NPM
+* 0.2.1
+    * CHANGE: Update docs (module code remains unchanged)
+* 0.2.0
+    * CHANGE: Remove `setDefaultXYZ()`
+    * ADD: Add `init()`
+* 0.1.1
+    * FIX: Crash when calling `baz()` (Thanks @GenerousContributorName!)
+* 0.1.0
+    * The first proper release
+    * CHANGE: Rename `foo()` to `bar()`
+* 0.0.1
+    * Work in progress
 
-```js
-yarn test
-```
-or 
-```js
-yarn test:watch
-```
+## Meta
+
+Marcos Gonçalves – [LinkedIn](http://linkedin.com/in/themgoncalves/) – [Website](http://www.themgoncalves.com)
+
+Distributed under the XYZ license. See ``LICENSE`` for more information.
+
+[https://github.com/yourname/github-link](https://github.com/dbader/)
+
+## Contributing
+
+1. Fork it (<http://github.com/themgoncalves/react-redux-async-starter-kit/fork>)
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am ':sparkles: Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request
+
+<!-- Markdown link & img dfn's -->
+[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/datadog-metrics
+[npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
+[travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
+[travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
+[wiki]: https://github.com/yourname/yourproject/wiki
