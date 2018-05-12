@@ -53,7 +53,9 @@ class Home extends Component {
           <div className="container">
             <div className="row">
               <HeaderWrapper className="col-12">
-                <Logo src={TheMgoncavesLogoImage} alt="TheMgoncalves logo" />
+                <Link to="/">
+                  <Logo src={TheMgoncavesLogoImage} alt="TheMgoncalves logo" />
+                </Link>
               </HeaderWrapper>
               <Menu>
                 <MenuItem><Link to="/">Home</Link></MenuItem>

@@ -5,6 +5,7 @@
  */
 
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import auth from 'decorators/auth';
 import animate from 'decorators/animate';
@@ -34,7 +35,9 @@ class RestrictedArea extends Component {
           <div className="container">
             <div className="row">
               <HeaderWrapper className="col-12">
+              <Link to="/">
                 <Logo src={TheMgoncavesLogoImage} alt="TheMgoncalves logo" />
+              </Link>
               </HeaderWrapper>
               <Message className="col-12">
                 Welcome to the <span>restricted area</span>
