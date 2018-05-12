@@ -1,11 +1,11 @@
-<img align="center" src="./static/images/themgoncalves.png" />
-
 # React Redux Async Blueprint
 > Best patterns & tech stack ready for use. Ideal for big & small applications
 
 [![NPM Version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
 [![Downloads Stats][npm-downloads]][npm-url]
+
+<div align="center"><img src="./static/images/themgoncalves.png" /></div>
 
 One to two paragraph statement about your product and what it does.
 
