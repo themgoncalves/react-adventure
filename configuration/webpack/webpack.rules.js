@@ -45,7 +45,11 @@ module.exports = [
     loader: 'url-loader?limit=10000&mimetype=application/octet-stream',
   },
   {
-    test: /\.(jpe?g|png|gif|svg|pdf|ico)$/,
+    test: /\.svg$/,
+    loader: 'svgr/webpack',
+  },
+  {
+    test: /\.(jpe?g|png|gif|pdf|ico)$/,
     exclude: /(node_modules|bower_components)/,
     use: [
       {

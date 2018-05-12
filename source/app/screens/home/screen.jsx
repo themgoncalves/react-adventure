@@ -71,7 +71,7 @@ class Home extends Component {
                 }
                 <MenuItem>
                   <a href="https://github.com/themgoncalves/react-redux-async-starter-kit" target="_black"> {/* eslint-disable-line no-script-url */}
-                    <img src={GitHubIcon} height={16} alt="GitHub icon" style={{ marginRight: '6px' }} />
+                    <GitHubIcon height={14} stroke="#fff" />
                     GitHub
                   </a>
                 </MenuItem>
