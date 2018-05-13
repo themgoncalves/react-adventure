@@ -34,7 +34,7 @@
       "plugins": [
         "transform-runtime",
         "transform-class-properties",
-        "dynamic-import-node"
+        ["webpack-alias", { "config": "./webpack.config.js" }]
       ]
     }
   }
