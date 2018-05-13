@@ -1,131 +1,273 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Home /> Should match snapshot 1`] = `
-ShallowWrapper {
-  "length": 1,
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Connect(Component)
-    store={
+exports[`<Home /> should match snapshot 1`] = `
+.c0 {
+  height: 100%;
+  width: 100%;
+  -webkit-animation: bcCCNc 1s cubic-bezier(0.390,0.575,0.565,1.000) both;
+  animation: bcCCNc 1s cubic-bezier(0.390,0.575,0.565,1.000) both;
+}
+
+.c1 {
+  background-color: rgb(32,43,58);
+  height: 100%;
+  color: white;
+}
+
+.c2 {
+  height: 100%;
+  margin: 120px 0 80px;
+}
+
+.c3 {
+  display: block;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.c4 {
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.c5 {
+  display: inline-block;
+  padding: 0 20px;
+  margin-bottom: 10px;
+  border-right: solid 1px #606368;
+}
+
+.c5 > a {
+  color: white;
+}
+
+.c5:last-child {
+  border-right: none;
+}
+
+<StaticRouter
+  basename=""
+  context={Object {}}
+  location="/"
+>
+  <Router
+    history={
       Object {
-        "close": [Function],
-        "dispatch": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "runSaga": [Function],
-        "subscribe": [Function],
-        Symbol(observable): [Function],
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+        },
+        "push": [Function],
+        "replace": [Function],
       }
     }
-  />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "function",
-    "props": Object {
-      "auth": Object {
-        "errors": Array [],
-        "isAuthenticated": false,
-        "messages": Array [],
-        "requesting": false,
-        "successful": false,
-      },
-      "store": Object {
-        "close": [Function],
-        "dispatch": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "runSaga": [Function],
-        "subscribe": [Function],
-        Symbol(observable): [Function],
-      },
-      "storeSubscription": Subscription {
-        "listeners": Object {
-          "clear": [Function],
-          "get": [Function],
-          "notify": [Function],
-          "subscribe": [Function],
-        },
-        "onStateChange": [Function],
-        "parentSub": undefined,
-        "store": Object {
-          "close": [Function],
-          "dispatch": [Function],
-          "getState": [Function],
-          "replaceReducer": [Function],
-          "runSaga": [Function],
-          "subscribe": [Function],
-          Symbol(observable): [Function],
-        },
-        "unsubscribe": [Function],
-      },
-      "unauthenticateUser": [Function],
-    },
-    "ref": null,
-    "rendered": null,
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "auth": Object {
+  >
+    <Component
+      auth={
+        Object {
           "errors": Array [],
           "isAuthenticated": false,
           "messages": Array [],
           "requesting": false,
           "successful": false,
-        },
-        "store": Object {
-          "close": [Function],
-          "dispatch": [Function],
-          "getState": [Function],
-          "replaceReducer": [Function],
-          "runSaga": [Function],
-          "subscribe": [Function],
-          Symbol(observable): [Function],
-        },
-        "storeSubscription": Subscription {
-          "listeners": Object {
-            "clear": [Function],
-            "get": [Function],
-            "notify": [Function],
-            "subscribe": [Function],
-          },
-          "onStateChange": [Function],
-          "parentSub": undefined,
-          "store": Object {
-            "close": [Function],
-            "dispatch": [Function],
-            "getState": [Function],
-            "replaceReducer": [Function],
-            "runSaga": [Function],
-            "subscribe": [Function],
-            Symbol(observable): [Function],
-          },
-          "unsubscribe": [Function],
-        },
-        "unauthenticateUser": [Function],
-      },
-      "ref": null,
-      "rendered": null,
-      "type": [Function],
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-      },
-    },
-  },
-}
+        }
+      }
+      unauthenticateUser={[MockFunction]}
+    >
+      <styled.div>
+        <div
+          className="c0"
+        >
+          <Home
+            auth={
+              Object {
+                "errors": Array [],
+                "isAuthenticated": false,
+                "messages": Array [],
+                "requesting": false,
+                "successful": false,
+              }
+            }
+            unauthenticateUser={[MockFunction]}
+          >
+            <HelmetWrapper
+              defer={true}
+              encodeSpecialCharacters={true}
+            >
+              <SideEffect(NullComponent)
+                defer={true}
+                encodeSpecialCharacters={true}
+                title={
+                  Array [
+                    "Home | ",
+                    "React Redux Async Component Starter Kit",
+                  ]
+                }
+                titleAttributes={Object {}}
+              >
+                <NullComponent
+                  defer={true}
+                  encodeSpecialCharacters={true}
+                  title={
+                    Array [
+                      "Home | ",
+                      "React Redux Async Component Starter Kit",
+                    ]
+                  }
+                  titleAttributes={Object {}}
+                />
+              </SideEffect(NullComponent)>
+            </HelmetWrapper>
+            <styled.div>
+              <div
+                className="c1"
+              >
+                <div
+                  className="container"
+                >
+                  <div
+                    className="row"
+                  >
+                    <styled.div
+                      className="col-12"
+                    >
+                      <div
+                        className="col-12 c2"
+                      >
+                        <Link
+                          replace={false}
+                          to="/"
+                        >
+                          <a
+                            href="/"
+                            onClick={[Function]}
+                          >
+                            <styled.img
+                              alt="TheMgoncalves logo"
+                              src="test-file-stub"
+                            >
+                              <img
+                                alt="TheMgoncalves logo"
+                                className="c3"
+                                src="test-file-stub"
+                              />
+                            </styled.img>
+                          </a>
+                        </Link>
+                      </div>
+                    </styled.div>
+                    <styled.ul>
+                      <ul
+                        className="c4"
+                      >
+                        <styled.li>
+                          <li
+                            className="c5"
+                          >
+                            <Link
+                              replace={false}
+                              to="/"
+                            >
+                              <a
+                                href="/"
+                                onClick={[Function]}
+                              >
+                                Home
+                              </a>
+                            </Link>
+                          </li>
+                        </styled.li>
+                        <styled.li>
+                          <li
+                            className="c5"
+                          >
+                            <Link
+                              replace={false}
+                              to="/restricted-area"
+                            >
+                              <a
+                                href="/restricted-area"
+                                onClick={[Function]}
+                              >
+                                Restricted Area
+                              </a>
+                            </Link>
+                          </li>
+                        </styled.li>
+                        <styled.li>
+                          <li
+                            className="c5"
+                          >
+                            <Link
+                              replace={false}
+                              to="/not-exiting-route"
+                            >
+                              <a
+                                href="/not-exiting-route"
+                                onClick={[Function]}
+                              >
+                                Not Found Page (404)
+                              </a>
+                            </Link>
+                          </li>
+                        </styled.li>
+                        <styled.li>
+                          <li
+                            className="c5"
+                          >
+                            <Link
+                              replace={false}
+                              to="/login"
+                            >
+                              <a
+                                href="/login"
+                                onClick={[Function]}
+                              >
+                                Login
+                              </a>
+                            </Link>
+                          </li>
+                        </styled.li>
+                        <styled.li>
+                          <li
+                            className="c5"
+                          >
+                            <a
+                              href="https://github.com/themgoncalves/react-redux-async-starter-kit"
+                              target="_black"
+                            >
+                               
+                              <test-file-stub
+                                height={14}
+                                stroke="#fff"
+                              />
+                              GitHub
+                            </a>
+                          </li>
+                        </styled.li>
+                      </ul>
+                    </styled.ul>
+                  </div>
+                </div>
+              </div>
+            </styled.div>
+          </Home>
+        </div>
+      </styled.div>
+    </Component>
+  </Router>
+</StaticRouter>
 `;
