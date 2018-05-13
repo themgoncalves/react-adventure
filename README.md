@@ -1,12 +1,14 @@
 # React Redux Async Blueprint
-> Best patterns & tech stack ready for use. Ideal for big & small applications
+> Best patterns & tech stack ready for use. Ideal for big & small applications.
 
 [![NPM Version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
 [![Downloads Stats][npm-downloads]][npm-url]
-
-<div style="margin: 40px 0;" align="center"><img src="./static/images/themgoncalves.png" /></div>
-
+<br />
+<br />
+<div align="center"><img src="./static/images/themgoncalves.png" /></div>
+<br />
+<br />
 One to two paragraph statement about your product and what it does.
 
 ![](./static/images/screens-shots/main.png)
@@ -24,13 +26,13 @@ Check out the Application's Network:
 
 For NPM users:
 
-```javascript
+```sh
 npm install
 ```
 
 For YARN users:
 
-```javascript
+```sh
 yarn install
 ```
 
@@ -66,8 +68,10 @@ npm test
 
 ## Meta
 
-Marcos Gonçalves – [LinkedIn](http://linkedin.com/in/themgoncalves/) – [Website](http://www.themgoncalves.com)
+### Author
+**Marcos Gonçalves** – [LinkedIn](http://linkedin.com/in/themgoncalves/) – [Website](http://www.themgoncalves.com)
 
+### License
 Distributed under the XYZ license. See ``LICENSE`` for more information.
 
 [https://github.com/yourname/github-link](https://github.com/dbader/)
