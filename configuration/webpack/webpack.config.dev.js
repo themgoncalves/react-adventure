@@ -31,6 +31,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
+      configuration: path.resolve(__dirname, '../../configuration/'),
       styles: path.resolve(__dirname, '../../source/styles/'),
       static: path.resolve(__dirname, '../../static'),
       actions: path.resolve(__dirname, '../../source/app/actions'),
@@ -38,6 +39,7 @@ module.exports = {
       containers: path.resolve(__dirname, '../../source/app/containers'),
       decorators: path.resolve(__dirname, '../../source/app/decorators'),
       hoc: path.resolve(__dirname, '../../source/app/hoc'),
+      reducers: path.resolve(__dirname, '../../source/app/reducers'),
       screens: path.resolve(__dirname, '../../source/app/screens'),
       services: path.resolve(__dirname, '../../source/app/services'),
     },
