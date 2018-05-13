@@ -5,25 +5,44 @@
  */
 
 import React from 'react';
-import { shallow } from 'enzyme';
+import { StaticRouter } from 'react-router';
+import { mountWithTheme } from 'configuration/jest/helpers/styled-compoents';
+import { defaultState } from 'reducers/auth';
 
-import { history } from 'services';
-import configureStore from '../../store';
-import rootSaga from '../../sagas';
+import { Home } from './screen';
 
-import Home from './screen';
+const setup = () => {
+  const props = {
+    unauthenticateUser: jest.fn(),
+    auth: { ...defaultState },
+  };
+  const context = {};
+  const enzymeWrapper = mountWithTheme(
+    <StaticRouter location="/" context={context}>
+      <Home {...props} />
+    </StaticRouter>);
 
-const store = configureStore(history);
-store.runSaga(rootSaga);
-
-let wrapper;
-
-beforeEach(() => {
-  wrapper = shallow(<Home store={store} />);
-});
+  return {
+    props,
+    enzymeWrapper,
+  };
+};
 
 describe('<Home />', () => {
-  it('Should match snapshot', () => {
-    expect(wrapper).toMatchSnapshot();
+  it('should match snapshot', () => {
+    const { enzymeWrapper } = setup();
+    expect(enzymeWrapper).toMatchSnapshot();
+  });
+
+  it('should render without crash', () => {
+    const { enzymeWrapper } = setup();
+    expect(enzymeWrapper.exists()).toBeTruthy();
+  });
+
+  it('should contain menu', () => {
+    const { enzymeWrapper } = setup();
+
+    expect(enzymeWrapper.find('ul')).toHaveLength(1);
+    expect(enzymeWrapper.find('li')).toHaveLength(5);
   });
 });

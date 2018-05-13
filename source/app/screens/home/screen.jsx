@@ -27,7 +27,7 @@ import {
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 @animate
-class Home extends Component {
+export class Home extends Component {
   static propTypes = {
     unauthenticateUser: PropTypes.func.isRequired,
     auth: PropTypes.shape({

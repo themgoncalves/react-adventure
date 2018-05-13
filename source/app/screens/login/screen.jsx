@@ -30,7 +30,7 @@ import {
 } from './styles';
 
 @animate
-class Login extends Component {
+export class Login extends Component {
   static propTypes = {
     authenticateUser: PropTypes.func.isRequired,
     auth: PropTypes.shape({

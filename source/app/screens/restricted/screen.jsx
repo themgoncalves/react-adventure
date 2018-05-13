@@ -24,7 +24,7 @@ import ProjectInfo from '../../../../package.json';
 /* eslint-disable jsx-a11y/anchor-is-valid */
 @auth
 @animate
-class RestrictedArea extends Component {
+export class RestrictedArea extends Component {
   render() {
     return (
       <React.Fragment>

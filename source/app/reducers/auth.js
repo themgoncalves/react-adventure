@@ -3,7 +3,7 @@ import {
   UNAUTH_USER,
 } from '../actions/types';
 
-const defaultState = {
+export const defaultState = {
   requesting: false,
   successful: false,
   messages: [],
