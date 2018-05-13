@@ -39,7 +39,7 @@ describe('<Home />', () => {
     expect(enzymeWrapper.exists()).toBeTruthy();
   });
 
-  it('should contain menu', () => {
+  it('should contain navigation menu', () => {
     const { enzymeWrapper } = setup();
 
     expect(enzymeWrapper.find('ul')).toHaveLength(1);
