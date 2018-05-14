@@ -6,7 +6,6 @@
 
 import React from 'react';
 import { StaticRouter } from 'react-router';
-import { mountWithTheme } from 'configuration/jest/helpers/styled-compoents';
 import { defaultState } from 'reducers/auth';
 
 import { Home } from './screen';

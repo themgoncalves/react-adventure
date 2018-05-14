@@ -18,3 +18,5 @@
   globals:
     window: false
     document: false
+    shallowWithTheme: true
+    mountWithTheme: true
