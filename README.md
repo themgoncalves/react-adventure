@@ -1,25 +1,46 @@
-# React Redux Async Blueprint
-> Best patterns & tech stack ready for use. Ideal for big & small applications.
+# React Adventure
+> **React high-ending architecture & patterns** ready for use. Made for big and small projects.
 
 [![NPM Version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
 [![Downloads Stats][npm-downloads]][npm-url]
+[![Awesome][awesome-image]][awesome-url]
 <br />
 <br />
-<div align="center"><img src="./static/images/themgoncalves.png" /></div>
+<div align="center"><img src="./static/images/themgoncalves.png" alt="themgoncalves logo" /></div>
 <br />
 <br />
 One to two paragraph statement about your product and what it does.
 
 ![](./static/images/screens-shots/main.png)
 
-## Tech Stack
+## Features
 
-What
+| Feature        | Implemented  |
+| ------------- |:-------------:|
+| [Package](url)     | ✔ |e
+| [Package](url)     | ✖ |
 
-## Network Demo
+## Technological Stack
 
-Check out the Application's Network:
+### Dependencies
+
+| Frameworks        | Version  |
+| ------------- |:-------------:|
+| [Package](url)      | right-aligned |
+| [Package](url)      | right-aligned |
+
+### Development Dependencies
+
+| Frameworks        | Version  |
+| ------------- |:-------------:|
+| [Package](url)      | right-aligned |
+| [Package](url)      | right-aligned |
+
+## Asynchronous Component
+
+Take a peek on the _network_ tab and see the files being loaded by demand.
+
 ![](./static/images/screens-shots/app-network-demo.gif)
 
 ## Installation
@@ -41,6 +62,10 @@ yarn install
 A few motivating and useful examples of how your product can be used. Spice this up with code blocks and potentially more screenshots.
 
 _For more examples and usage, please refer to the [Wiki][wiki]._
+
+## Architecture
+
+Describe about the project architecture and show it's folder tree.
 
 ## Development setup
 
@@ -90,4 +115,6 @@ Distributed under the XYZ license. See ``LICENSE`` for more information.
 [npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
 [travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
+[awesome-image]: https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg
+[awesome-url]: https://github.com/themgoncalves/react-adventure
 [wiki]: https://github.com/yourname/yourproject/wiki
