@@ -7,7 +7,7 @@ function* logout() {
   yield put(push('/login'));
 }
 
-function* login(email, password) {
+function* login(email, password) { // eslint-disable-line no-unused-vars
   try {
     yield put({ type: AUTH_USER.SUCCESS });
     yield put(push('/'));

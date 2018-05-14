@@ -35,9 +35,9 @@ export class RestrictedArea extends Component {
           <div className="container">
             <div className="row">
               <HeaderWrapper className="col-12">
-              <Link to="/">
-                <Logo src={TheMgoncavesLogoImage} alt="TheMgoncalves logo" />
-              </Link>
+                <Link to="/">
+                  <Logo src={TheMgoncavesLogoImage} alt="TheMgoncalves logo" />
+                </Link>
               </HeaderWrapper>
               <Message className="col-12">
                 Welcome to the <span>restricted area</span>

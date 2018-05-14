@@ -33,13 +33,6 @@ import {
 export class Login extends Component {
   static propTypes = {
     authenticateUser: PropTypes.func.isRequired,
-    auth: PropTypes.shape({
-      requesting: PropTypes.bool,
-      successful: PropTypes.bool,
-      messages: PropTypes.array,
-      errors: PropTypes.array,
-      isAuthenticated: PropTypes.bool,
-    }).isRequired,
   }
 
   state = {

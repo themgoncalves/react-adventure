@@ -17,10 +17,7 @@ const setup = () => {
     auth: { ...defaultState },
   };
   const context = {};
-  const enzymeWrapper = mountWithTheme(
-    <StaticRouter location="/" context={context}>
-      <Home {...props} />
-    </StaticRouter>);
+  const enzymeWrapper = mountWithTheme(<StaticRouter location="/" context={context}><Home {...props} /></StaticRouter>);
 
   return {
     props,
