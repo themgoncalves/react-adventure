@@ -123,7 +123,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "run-p --race lint test",
-      "pre-push": "run-p --race lint test test:e2e"
+      "pre-push": "run-p --race lint test"
     }
   },
   "jest": {
