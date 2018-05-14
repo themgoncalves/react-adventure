@@ -113,7 +113,7 @@ exports[`<Home /> should match snapshot 1`] = `
                 title={
                   Array [
                     "Home | ",
-                    "React Redux Async Component Starter Kit",
+                    "React Adventure",
                   ]
                 }
                 titleAttributes={Object {}}
@@ -124,7 +124,7 @@ exports[`<Home /> should match snapshot 1`] = `
                   title={
                     Array [
                       "Home | ",
-                      "React Redux Async Component Starter Kit",
+                      "React Adventure",
                     ]
                   }
                   titleAttributes={Object {}}

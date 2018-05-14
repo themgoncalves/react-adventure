@@ -1,7 +1,7 @@
 {
   "name": "react-redux-async-starter-kit",
   "version": "2.0.1",
-  "description": "React Redux Async Component Starter Kit",
+  "description": "React Adventure",
   "main": "index.js",
   "scripts": {
     "build": "NODE_ENV=production webpack --mode production  --progress --profile --colors",
