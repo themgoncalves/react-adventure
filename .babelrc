@@ -1,18 +1,9 @@
 {
   "presets":
   [
-    "env",
-    "stage-1",
-    "react",
     [
       "env",
       {
-        "production": {
-          "plugins": [
-            "transform-react-remove-prop-types",
-            "transform-react-constant-elements"
-          ]
-        },
         "targets": {
           "browsers": [
             "last 2 versions",
@@ -21,7 +12,9 @@
         },
         "useBuiltIns": true
       }
-    ]
+    ],
+    "stage-1",
+    "react"
   ],
   "plugins": [
     "transform-runtime",
@@ -30,6 +23,12 @@
     ["webpack-alias", { "config": "./webpack.config.js" }]
   ],
   "env": {
+    "production": {
+      "plugins": [
+        "transform-react-remove-prop-types",
+        "transform-react-constant-elements"
+      ]
+    },
     "test": {
       "plugins": [
         "transform-runtime",
