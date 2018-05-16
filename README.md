@@ -2,7 +2,7 @@
 > **React high-ending architecture & patterns** ready for use. Made for big and small projects.
 
 [![Known Vulnerabilities][vulnerabilities-image]][vulnerabilities-url]
-[![GitHub issues][issues-image]][issues-url]
+[![GitHub issues][issues-image]][issues-url] 
 [![GitHub stars][stars-image]][stars-url]
 [![GitHub forks][forks-image]][forks-url]
 [![Awesome][awesome-image]][awesome-url]
@@ -13,7 +13,9 @@
 <div align="center"><img src="./static/images/themgoncalves.png" alt="themgoncalves logo" /></div>
 <br />
 <br />
-One to two paragraph statement about your product and what it does.
+
+We all know the struggle about _Frontend patterns_, specially when it comes to big projects, it become a mess over the time.
+For this reason we created this pattern in order to provide a **workable, maintainable and scalable environment overtime**, wrapped with the best *technological stack* and *patterns* available for developers.
 
 ![](./static/images/screens-shots/main.png)
 
@@ -83,7 +85,7 @@ One to two paragraph statement about your product and what it does.
 | [redux-logger](https://github.com/evgenyrodionov/redux-logger)      | 3.0.6 | Logger for Redux |
 | [redux-saga](https://github.com/redux-saga/redux-saga)      | 0.16.0 | An alternative side effect model for Redux apps |
 | [styled-components](https://github.com/styled-components/styled-components)      | 3.2.6 | Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps without stress |
-
+<br />
 ### Development Dependencies
 
 | Frameworks        | Version       | description  |
@@ -96,7 +98,7 @@ Babel jest plugin |
 | [babel-loader](https://github.com/babel/babel-loader)      | 7.1.4 | Webpack plugin for Babel |
 | [babel-plugin-transform-class-properties](https://babeljs.io/docs/plugins/transform-class-properties/)      | 6.24.1 | Transforms class properties |
 | [babel-plugin-transform-decorators-legacy](https://github.com/loganfsmyth/babel-plugin-transform-decorators-legacy)      | 1.3.4 | A plugin for Babel 6 that (mostly) replicates the old decorator behavior from Babel 5 |
-| [babel-plugin-transform-react-constant-elements](https://babeljs.io/docs/plugins/transform-react-constant-elements/)      | 6.23.0 | code |
+| [babel-plugin-transform-react-constant-elements](https://babeljs.io/docs/plugins/transform-react-constant-elements/)      | 6.23.0 | Treat React JSX elements as value types and hoist them to the highest scope. |
 | [babel-plugin-transform-react-remove-prop-types](https://github.com/oliviertassinari/babel-plugin-transform-react-remove-prop-types)      | 0.4.13 | Remove unnecessary React propTypes from the production build. |
 | [babel-plugin-transform-runtime](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-runtime)      | 6.23.0 | coExternalise references to helpers and built-ins, automatically polyfilling your code without polluting globals. (This plugin is recommended in a library/tool)de |
 | [babel-plugin-webpack-alias](https://github.com/trayio/babel-plugin-webpack-alias)      | 2.1.2 | babel 6 plugin which allows to use webpack resolve options |
@@ -140,7 +142,7 @@ Babel jest plugin |
 | [sass-extract-loader](https://github.com/jgranstrom/sass-extract-loader)      | 1.1.0 | Webpack loader for [sass-extract](https://github.com/jgranstrom/sass-extract). |
 | [sass-loader](https://github.com/webpack-contrib/sass-loader)      | 7.0.1 | Compiles Sass to CSS |
 | [style-loader](https://github.com/webpack-contrib/style-loader)      | 0.21.0 | code |
-| [svgr](https://github.com/smooth-code/svgr)      | 1.9.1 | Adds CSS to the DOM by injecting a <style> tag |
+| [svgr](https://github.com/smooth-code/svgr)      | 1.9.1 | Adds CSS to the DOM by injecting a <> tag |
 | [url-loader](https://github.com/webpack-contrib/url-loader)      | 1.0.1 | Loads files as `base64` encoded URL |
 | [webpack](https://webpack.js.org/)      | 4.6.0 | code |
 | [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)      | 2.11.1 | Webpack plugin and CLI utility that represents bundle content as convenient interactive zoomable treemap |
@@ -150,14 +152,38 @@ Babel jest plugin |
 | [webpack-dev-server](https://github.com/webpack/webpack-dev-server)      | 3.1.3 | Serves a webpack app. Updates the browser on changes. |
 | [webpack-subresource-integrity](https://github.com/waysact/webpack-subresource-integrity)      | 1.1.0-rc.4 | [Subresource Integrity](https://www.w3.org/TR/SRI/) (SRI) is a security feature that enables browsers to verify that files they fetch (for example, from a CDN) are delivered without unexpected manipulation. |
 
+<br />
 
-## Project Pattern
-
-We all know the struggle about Frontend patterns, specially when it comes to big projects, it become a mess over the time.
-For this reason we created this pattern in order to provide a **workable, maintainable and scalable environment overtime**, wrapped with the best *technological stack* and *patterns* available for developers.
+## React Adventure Pattern
 
 
-### Main Structure
+
+#### Motivation
+
+We all have or will work with outdated project, hard to code, maintain and to implement new stacks of technology.
+
+Usually in those projects, we face **huge JavaScripts files**, sometimes with **over than 1MB**! And this is a **huge** issue, especially for mobile uses.
+
+According to [Sam Saccone from Google](https://www.youtube.com/watch?v=RWLzUnESylc), this file would take to be read by the browser on Samsung Galaxy S7 ~850 ms and Nexus 5 in **~1700 ms**! 
+
+Besides that, we would have *scalability penalty* for such environment, costing more server power ~~and money!~~ to deliver the expected behavior.
+
+In other words, this would be an unsustainable environment we would be facing, with our resources being drained each time more, and by resources, I mean both **financial** and **human**.
+
+#### Goal
+
+As Engineers, we're constantly looking for new ways to *improve* and *add new features* to our code **without have to refactor** it.
+By this reason, we came up with this approach, which give us the ability to:
+
+Paraphrasing Steve Krug: _"Making every component, function or screen self-evident is like having good lighting in a store: **it just makes everything seem better**."_
+
+* Make every `component, function or screen self-evident`.
+* To create a `readable` code.
+* To `safely delete` legacy/unused code without effort or break the application.
+* To `easily create or update` different part of the application, in the shortest possible time.
+* Be able to `implement new techs with minimum refactory effort`.
+
+### Structure Pattern
 ```sh
 react-adventure
 ├── .github
@@ -257,73 +283,6 @@ react-adventure
 ├── yarn-error.log
 ```
 
-### React Adventure Pattern
-
-
-We strongly encourage to follow the pattern bellow, 
-
-#### Motivation
-
-
-#### Goal
-
-As Engineers, we're constantly looking for new ways to *improve* and *add new features* to our code **without have to refactor** it.
-By this reason, we came up with this approach, which give us the ability to:
-
-Paraphrasing Steve Krug: _"Making every component, function or screen self-evident is like having good lighting in a store: **it just makes everything seem better**."_
-
-* Make every `component, function or screen self-evident`.
-* To create a `readable` code.
-* To `safely delete` legacy/unused code without effort or break the application.
-* To `easily create or update` different part of the application, in the shortest possible time.
-* Be able to `implement new techs with minimum refactory effort`.
-
-#### Pattern Example
-
-```sh
-├── source                                # source folder
-│   ├── app                               # app source
-│   │   ├── actions                       # Redux Actions
-│   │   ├── components                    # react components (dumb components) for universal use
-│   │   ├── containers                    # react containers (smart components)
-│   │   ├── decorators                    # ES7 decorators
-│   │   ├── hoc
-│   │   ├── reducers                      # Redux Reducer
-│   │   ├── sagas                         # sagas (redux-saga middleware)
-│   │   ├── screens                       # screen components
-│   │   │   ├── errors                    # base screen name
-│   │   │   │   └── not-found             # screen name
-│   │   │   │       ├── route.js          # route configurations
-│   │   │   │       ├── screen.jsx        # React Screen Component
-│   │   │   │       └── styles.js         # component's styles
-│   │   │   ├── home                      # screen component
-│   │   │   │   ├── route.js              # route configurations
-│   │   │   │   ├── screen.jsx            # React Screen Component
-│   │   │   │   └── styles.js             # component's styles
-│   │   │   ├── restricted
-│   │   │   │   ├── route.js
-│   │   │   │   ├── screen.jsx
-│   │   │   │   └── styles.js
-│   │   │   └── root
-│   │   │       ├── route.js              # main app. route ⟶ import all used route into a main route
-│   │   │       └── screen.jsx            # Root Component ⟶ application setup
-│   │   ├── services
-│   │   │   └── index.js                  # application services
-│   │   ├── store
-│   │   │   ├── index.js
-│   │   │   ├── store.config.dev.js       # redux-store config for development
-│   │   │   └── store.config.prod.js      # redux-store config for production
-│   ├── styles                            # styles folder
-│   │   ├── _vars.scss                    # style-guide settings
-│   │   ├── base.scss                     # global styles, e.g. body, html, etc.
-│   │   ├── reset.scss                    # css reset/reboot, imported from bootstrap
-│   │   └── responsive-grid.scss          # bootstrap layout system import
-│   ├── application.jsx                   # index application file - main imports & setup
-│   └── index.hbs                         # base application html
-```
-
-
-
 ## Asynchronous Component Preview
 
 One of the big _features_ is the component loading by demand (asynchronous loading).
@@ -372,6 +331,7 @@ yarn lint
 #### Run the Tests Suites
 
 **Jest**
+
 ```sh
 yarn test
 ```
@@ -389,6 +349,7 @@ yarn test:watch
 yarn test:e2e
 ```
 
+<br />
 
 ## Commands available
 
@@ -435,13 +396,13 @@ Distributed under the MIT license. [Click here](/.github/LICENSE) for more infor
 
 
 
-<!-- Markdown link & img dfn's -⟶
+<!-- Markdown link & img dfn's -->
 
 [vulnerabilities-image]: https://snyk.io/test/github/themgoncalves/react-redux-webpack-starter/badge.svg
 [vulnerabilities-url]: https://snyk.io/test/github/themgoncalves/react-redux-webpack-starter
 [issues-image]: https://img.shields.io/github/issues/themgoncalves/react-redux-webpack-starter.svg
 [issues-url]: https://github.com/themgoncalves/react-redux-webpack-starter/issues
-[stars-image]:https://img.shields.io/github/stars/themgoncalves/react-redux-webpack-starter.svg
+[stars-image]: https://img.shields.io/github/stars/themgoncalves/react-redux-webpack-starter.svg
 [stars-url]: https://github.com/themgoncalves/react-redux-webpack-starter/stargazers
 [forks-image]: https://img.shields.io/github/forks/themgoncalves/react-redux-webpack-starter.svg
 [forks-url]: https://github.com/themgoncalves/react-redux-webpack-starter/network
