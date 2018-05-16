@@ -6,6 +6,8 @@
 [![GitHub stars][stars-image]][stars-url]
 [![GitHub forks][forks-image]][forks-url]
 [![Awesome][awesome-image]][awesome-url]
+[![GitHub All Releases][releases-image]][releases-url]
+
 <br />
 <br />
 <div align="center"><img src="./static/images/themgoncalves.png" alt="themgoncalves logo" /></div>
@@ -367,7 +369,7 @@ yarn lint
 ```
 
 <br />
-#### Run the Tests Suits
+#### Run the Tests Suites
 
 **Jest**
 ```sh
@@ -431,25 +433,20 @@ Distributed under the MIT license. [Click here](/.github/LICENSE) for more infor
 4. Push to the branch (`git push origin feature/fooBar`)
 5. Create a new Pull Request
 
+
+
 <!-- Markdown link & img dfn's -⟶
 
 [vulnerabilities-image]: https://snyk.io/test/github/themgoncalves/react-redux-webpack-starter/badge.svg
 [vulnerabilities-url]: https://snyk.io/test/github/themgoncalves/react-redux-webpack-starter
-
 [issues-image]: https://img.shields.io/github/issues/themgoncalves/react-redux-webpack-starter.svg
 [issues-url]: https://github.com/themgoncalves/react-redux-webpack-starter/issues
-
 [stars-image]:https://img.shields.io/github/stars/themgoncalves/react-redux-webpack-starter.svg
 [stars-url]: https://github.com/themgoncalves/react-redux-webpack-starter/stargazers
-
 [forks-image]: https://img.shields.io/github/forks/themgoncalves/react-redux-webpack-starter.svg
 [forks-url]: https://github.com/themgoncalves/react-redux-webpack-starter/network
-
-[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/datadog-metrics
-[npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
-[travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
 [awesome-image]: https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg
+[releases-image]: https://img.shields.io/github/downloads/atom/atom/total.svg
+[releases-url]: https://github.com/themgoncalves/react-redux-async-starter-kit
 [awesome-url]: https://github.com/themgoncalves/react-adventure
 [wiki]: https://github.com/yourname/yourproject/wiki
