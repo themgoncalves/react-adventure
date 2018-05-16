@@ -176,6 +176,7 @@ Because of such actual possibility, we build **React Adventure**.
 > ###### _Martin Luther King Jr._
 
 <br />
+
 #### Goal
 
 As Engineers, we're constantly looking for new ways to *improve* and *add new features* to our code **without have to refactor** it.
