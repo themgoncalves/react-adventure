@@ -124,10 +124,10 @@
   },
   "jest": {
     "setupFiles": [
-      "<rootDir>/configuration/jest/setup.env.js",
-      "<rootDir>/configuration/jest/setup.styled-components.js"
+      "<rootDir>/configurations/jest/setup.env.js",
+      "<rootDir>/configurations/jest/setup.styled-components.js"
     ],
-    "setupTestFrameworkScriptFile": "<rootDir>/configuration/jest/setup.framework.js",
+    "setupTestFrameworkScriptFile": "<rootDir>/configurations/jest/setup.framework.js",
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
@@ -137,14 +137,14 @@
     ],
     "moduleNameMapper": {
       "^.+\\.(scss|less|css)$": "identity-obj-proxy",
-      "^.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/configuration/jest/__mocks__/file.js"
+      "^.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/configurations/jest/__mocks__/file.js"
     },
     "collectCoverage": true,
     "collectCoverageFrom": [
       "source/app/**/*.{js,jsx}",
       "!**/node_modules/**",
       "!cypress/**",
-      "!configuration/**",
+      "!configurations/**",
       "!source/app/lib/**",
       "!source/scss/**",
       "!**/coverage/**"

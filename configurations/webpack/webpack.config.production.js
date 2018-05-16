@@ -29,7 +29,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
-      configuration: path.resolve(__dirname, '../../configuration/'),
+      configuration: path.resolve(__dirname, '../../configurations/'),
       styles: path.resolve(__dirname, '../../source/styles/'),
       static: path.resolve(__dirname, '../../static'),
       actions: path.resolve(__dirname, '../../source/app/actions'),
