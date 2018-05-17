@@ -42,6 +42,7 @@ For this reason we created the `React Adventure` in order to provide a **workabl
 | [Typechecking With PropTypes](https://reactjs.org/docs/typechecking-with-proptypes.html)     | ✖ | ✔ | ✖ |
 | [Output fiiles Treemap](https://github.com/webpack-contrib/webpack-bundle-analyzer)     |  ✖ | ✔ | ✖ |
 | [Assets compression served them with Content-Encoding](url)     | ✖ | ✖ | ✔ |
+| [Style Guide Centralized & Globally available](https://www.styled-components.com/docs/advanced)     | ✖ | ✔ | ✔ |
 | [HTML output minified](url)     | ✖ | ✔ | ✔ |
 | [E2E Tests](https://www.cypress.io/)     | ✔ | ✔ | ✖ |
 | [Snapshot testing](https://facebook.github.io/jest/docs/en/snapshot-testing.html)     | ✖ | ✔ | ✖ |
