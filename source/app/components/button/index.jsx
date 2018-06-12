@@ -8,7 +8,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
-import color from 'color';
+import { darken, rgba } from 'polished';
 
 function Button(props) {
   return (
@@ -23,7 +23,7 @@ const ButtonStyled = styled.button`
   `};
   ${({ secondary }) => secondary && css`
     background-color: ${props => props.theme.colors.secondary}; 
-    color: ${props => color(props.theme.colors.secondary).darken(0.6).toString()};
+    color: ${props => darken(0.6, props.theme.colors.secondary)};
   `};
   ${({ info }) => info && css`
     background-color: ${props => props.theme.colors.info}; 
@@ -48,43 +48,43 @@ const ButtonStyled = styled.button`
   &:hover {
     outline: 0;
     ${({ primary }) => primary && css`
-      box-shadow: 0 0 0 0.2rem ${props => color(props.theme.colors.primary).fade(0.6).toString()};
+      box-shadow: 0 0 0 0.2rem ${props => rgba(props.theme.colors.primary, 0.6)};
     `};
     ${({ secondary }) => secondary && css`
-      box-shadow: 0 0 0 0.2rem ${props => color(props.theme.colors.secondary).fade(0.6).toString()};
+      box-shadow: 0 0 0 0.2rem ${props => rgba(props.theme.colors.secondary, 0.6)};
     `};
     ${({ info }) => info && css`
-      box-shadow: 0 0 0 0.2rem ${props => color(props.theme.colors.info).fade(0.6).toString()};
+      box-shadow: 0 0 0 0.2rem ${props => rgba(props.theme.colors.info, 0.6)};
     `};
     ${({ warning }) => warning && css`
-      box-shadow: 0 0 0 0.2rem ${props => color(props.theme.colors.warning).fade(0.6).toString()};
+      box-shadow: 0 0 0 0.2rem ${props => rgba(props.theme.colors.warning, 0.6)};
     `};
     ${({ danger }) => danger && css`
-      box-shadow: 0 0 0 0.2rem ${props => color(props.theme.colors.danger).fade(0.6).toString()};
+      box-shadow: 0 0 0 0.2rem ${props => rgba(props.theme.colors.danger, 0.6)};
     `};
   }
   &:active {
     ${({ primary }) => primary && css`
-      background-color: ${props => color(props.theme.colors.primary).darken(0.2).toString()};
+      background-color: ${props => darken(0.2, props.theme.colors.primary)};
     `};
     ${({ secondary }) => secondary && css`
-      background-color: ${props => color(props.theme.colors.secondary).darken(0.2).toString()};
+      background-color: ${props => darken(0.2, props.theme.colors.secondary)};
     `};
     ${({ info }) => info && css`
-      background-color: ${props => color(props.theme.colors.info).darken(0.2).toString()};
+      background-color: ${props => darken(0.2, props.theme.colors.info)};
     `};
     ${({ warning }) => warning && css`
-      background-color: ${props => color(props.theme.colors.warning).darken(0.2).toString()};
+      background-color: ${props => darken(0.2, props.theme.colors.warning)};
     `};
     ${({ danger }) => danger && css`
-      background-color: ${props => color(props.theme.colors.danger).darken(0.2).toString()};
-      color: ${props => color(props.theme.colors.secondary).darken(0.2).toString()};
+      background-color: ${props => darken(0.2, props.theme.colors.danger)};
+      color: ${props => darken(0.2, props.theme.colors.secondary)};
     `};
   }
   &[disabled] {
-    background-color: ${color('#fff').darken(0.3).toString()};
-    color: ${color('#fff').darken(0.46).toString()};
-    text-shadow: 0 1px 1px ${color('#fff').darken(0.15).toString()};
+    background-color: ${darken(0.3, '#FFF')};
+    color: ${darken(0.46, '#FFF')};
+    text-shadow: 0 1px 1px ${darken(0.15, '#FFF')};
     &:focus,
     &:hover {
       outline: 0;

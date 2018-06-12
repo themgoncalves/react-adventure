@@ -55,6 +55,7 @@ For this reason we created the `React Adventure` in order to provide a **workabl
 | [ES8 ready](https://hackernoon.com/es8-was-released-and-here-are-its-main-new-features-ee9c394adf66)     | ✖ | ✔ | ✖ |
 | [React 16+](https://github.com/facebook/react/)     | ✖ | ✔ | ✔ |
 | [styled-components](https://github.com/styled-components/styled-components)     | ✖ | ✔ | ✔ |
+| [super-query](https://github.com/themgoncalves/super-query)     | ✖ | ✔ | ✔ |
 | [Webpack Aliases transformation](https://github.com/sebinsua/babel-plugin-webpack-aliases)     | ✖ | ✔ | ✔ |
 | [Loads environment vars from a `.env` file](https://github.com/motdotla/dotenv)     | ✖ | ✔ | ✖ |
 | [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)     | ✖ | ✔ | ✖ |
@@ -149,8 +150,6 @@ react-adventure
 │   │   ├── hoc
 │   │   │   ├── loadable                  # custom react-loadable wrapper
 │   │   │   │   └── index.js
-│   │   │   └── media-breakpoint          # styled-component media breakpoint ⟶ @media screen ...
-│   │   │       └── index.js
 │   │   ├── reducers                      # Redux Reducer
 │   │   │   ├── auth.js                   # authentication reducer
 │   │   │   └── index.js                  # root reducer ⟶ combine all reducers
@@ -312,7 +311,7 @@ yarn test:e2e
 | ----------------- |:-------------:| :-------------|
 | [babel-polyfill](https://babeljs.io/docs/usage/polyfill/)      | 6.26.0 | This will emulate a full ES2015+ environment and is intended to be used in an application rather than a library/tool. This polyfill is automatically loaded when using babel-node. |
 | [bootstrap](https://getbootstrap.com/)      | 4.1.1 | Build responsive, mobile-first projects on the web with the world's most popular front-end component library. |
-| [color](https://github.com/Qix-/color)      | 3.0.0 | Javascript color conversion and manipulation library |
+| [polished](https://github.com/styled-components/polished)      | 1.9.2 | A lightweight toolset for writing styles in JavaScript |
 | [history](https://github.com/ReactTraining/history)      | 4.7.2 | Manage session history with JavaScript |
 | [lodash](https://lodash.com/)      | 4.17.10 | A modern JavaScript utility library delivering modularity, performance & extras. |
 | [prop-types](https://github.com/facebook/prop-types)      | 15.6.1 | Runtime type checking for React props and similar objects |
@@ -329,6 +328,7 @@ yarn test:e2e
 | [redux-logger](https://github.com/evgenyrodionov/redux-logger)      | 3.0.6 | Logger for Redux |
 | [redux-saga](https://github.com/redux-saga/redux-saga)      | 0.16.0 | An alternative side effect model for Redux apps |
 | [styled-components](https://github.com/styled-components/styled-components)      | 3.2.6 | Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps without stress |
+| [super-query](https://github.com/themgoncalves/super-query)      | 0.1.1 | A super media-query for styled-component. Intuitive and easy of use. |
 <br />
 
 ### Development Dependencies

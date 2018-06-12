@@ -6,8 +6,8 @@
 
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import color from 'color';
-import mediaBreakpoint from 'hoc/media-breakpoint';
+import { darken } from 'polished';
+import SuperQuery from '@themgoncalves/super-query';
 
 const MainWrapper = styled.div`
   background-color: ${props => props.theme.colors.palette.color6};
@@ -22,7 +22,8 @@ const ErrorImageWrapper = styled.div`
     > img {
       margin: 0 auto;
     }
-    ${mediaBreakpoint.min.lg`
+    ${SuperQuery().all().and().minWidth()
+    .lg().css`
       &:first-child {
         padding-left: 100px;
       }
@@ -30,7 +31,8 @@ const ErrorImageWrapper = styled.div`
         padding-right: 100px;
       }
     `}
-    ${mediaBreakpoint.min.xl`
+    ${SuperQuery().all().and().minWidth()
+    .xl().css`
       &:first-child {
         padding-left: 140px;
       }
@@ -65,10 +67,10 @@ const GoBackButton = styled(Link)`
   &:focus,
   &:hover {
     outline: 0;
-    box-shadow: 0 0 0 0.2rem ${props => color(props.theme.colors.secondary).fade(0.6).toString()};
+    box-shadow: 0 0 0 0.2rem ${props => darken(0.6, props.theme.colors.secondary)};
   }
   &:active {
-    background-color: ${color('#fff').darken(0.1).toString()}; 
+    background-color: ${darken(0.1, '#FFF')}; 
   }
 `;
 

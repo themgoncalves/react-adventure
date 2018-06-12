@@ -33,11 +33,12 @@
   "author": "Marcos Gonçalves <https://github.com/themgoncalves/>",
   "license": "MIT",
   "dependencies": {
+    "@themgoncalves/super-query": "^0.1.1",
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.1.1",
-    "color": "^3.0.0",
     "history": "^4.7.2",
     "lodash": "^4.17.10",
+    "polished": "^1.9.2",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",

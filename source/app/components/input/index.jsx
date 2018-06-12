@@ -7,7 +7,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
-import color from 'color';
+import { rgba } from 'polished';
 
 function Input(props) {
   return (
@@ -26,19 +26,19 @@ const InputStyled = styled.input`
   &:active {
     outline: 0;
     ${({ primary }) => primary && css`
-      box-shadow: 0 0 0 0.2rem ${props => color(props.theme.colors.primary).fade(0.6).toString()};
+      box-shadow: 0 0 0 0.2rem ${props => rgba(props.theme.colors.primary, 0.6)};
     `};
     ${({ secondary }) => secondary && css`
-      box-shadow: 0 0 0 0.2rem ${props => color(props.theme.colors.secondary).fade(0.6).toString()};
+      box-shadow: 0 0 0 0.2rem ${props => rgba(props.theme.colors.secondary, 0.6)};
     `};
     ${({ info }) => info && css`
-      box-shadow: 0 0 0 0.2rem ${props => color(props.theme.colors.info).fade(0.6).toString()};
+      box-shadow: 0 0 0 0.2rem ${props => rgba(props.theme.colors.info, 0.6)};
     `};
     ${({ warning }) => warning && css`
-      box-shadow: 0 0 0 0.2rem ${props => color(props.theme.colors.warning).fade(0.6).toString()};
+      box-shadow: 0 0 0 0.2rem ${props => rgba(props.theme.colors.warning, 0.6)};
     `};
     ${({ danger }) => danger && css`
-      box-shadow: 0 0 0 0.2rem ${props => color(props.theme.colors.danger).fade(0.6).toString()};
+      box-shadow: 0 0 0 0.2rem ${props => rgba(props.theme.colors.danger, 0.6)};
     `};
   }
 `;
