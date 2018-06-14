@@ -10,8 +10,8 @@ import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 import animate from 'decorators/animate';
-import Button from 'components/button';
-import Input from 'components/input';
+import Button from 'components/v1/button';
+import Input from 'components/v1/input';
 import { authenticateUser } from 'actions';
 
 // Import Images

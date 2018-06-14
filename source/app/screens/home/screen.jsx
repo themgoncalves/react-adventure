@@ -12,7 +12,7 @@ import animate from 'decorators/animate';
 import PropTypes from 'prop-types';
 import { unauthenticateUser } from 'actions';
 import TheMgoncavesLogoImage from 'static/images/themgoncalves-white.png';
-import GitHubIcon from 'static/images/icons/github.svg';
+import { ReactComponent as GitHubIcon } from 'static/images/icons/github.svg';
 
 import ProjectInfo from '../../../../package.json';
 

@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import animate from 'decorators/animate';
+import animate from 'decorators/animate/index';
 import { LoadingWrapper, LoadingText } from './styles';
 
 @animate
