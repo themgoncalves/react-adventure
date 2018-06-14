@@ -45,8 +45,28 @@ module.exports = [
     loader: 'url-loader?limit=10000&mimetype=application/octet-stream',
   },
   {
-    test: /\.svg$/,
-    loader: 'svgr/webpack',
+    test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+    issuer: {
+      test: /\.jsx?$/,
+    },
+    use: ['svgr/webpack', {
+      loader: 'file-loader',
+      options: {
+        name: '[path][name]-[hash:8].[ext]',
+      },
+    }],
+  },
+  {
+    test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+    issuer: {
+      test: /\.s[ac]ss$/,
+    },
+    use: [{
+      loader: 'file-loader',
+      options: {
+        name: '[path][name]-[hash:8].[ext]',
+      },
+    }],
   },
   {
     test: /\.(jpe?g|png|gif|pdf|ico)$/,
