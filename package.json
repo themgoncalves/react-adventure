@@ -1,8 +1,8 @@
 {
-  "name": "react-redux-async-starter-kit",
-  "version": "2.0.1",
+  "name": "react-adventure",
+  "version": "2.0.2",
   "description": "React Adventure",
-  "main": "index.js",
+  "main": "source/application.jsx",
   "scripts": {
     "build": "NODE_ENV=production webpack --mode production  --progress --profile --colors",
     "start": "webpack-dev-server --mode development --progress --profile --colors",
@@ -55,6 +55,7 @@
     "styled-components": "^3.2.6"
   },
   "devDependencies": {
+    "@svgr/webpack": "^2.0.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
@@ -107,7 +108,6 @@
     "sass-loader": "^7.0.1",
     "scss": "^0.2.4",
     "style-loader": "^0.21.0",
-    "svgr": "^1.9.1",
     "url-loader": "^1.0.1",
     "webpack": "^4.6.0",
     "webpack-bundle-analyzer": "^2.11.1",
@@ -138,7 +138,7 @@
     ],
     "moduleNameMapper": {
       "^.+\\.(scss|less|css)$": "identity-obj-proxy",
-      "^.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/configurations/jest/__mocks__/file.js"
+      "^.+\\.(jpg|jpeg|png|gif||otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/configurations/jest/__mocks__/file.js"
     },
     "collectCoverage": true,
     "collectCoverageFrom": [

@@ -246,12 +246,11 @@ exports[`<Home /> should match snapshot 1`] = `
                             className="c5"
                           >
                             <a
-                              href="https://github.com/themgoncalves/react-redux-async-starter-kit"
+                              href="https://github.com/themgoncalves/react-adventure"
                               target="_black"
                             >
                                
                               <test-file-stub
-                                height={14}
                                 stroke="#fff"
                               />
                               GitHub

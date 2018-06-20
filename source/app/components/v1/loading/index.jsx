@@ -1,12 +1,12 @@
 /**
  * React Adventure
- * @author Marcos Gonçalves <marx_souza@yahoo.com.br>
- * @version 2.0.1
+ * @author Marcos Gonçalves <contact@themgoncalves.com>
+ * @version 2.0.2
  */
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import animate from 'decorators/animate/index';
+import animate from 'decorators/animate';
 import { LoadingWrapper, LoadingText } from './styles';
 
 @animate

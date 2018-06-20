@@ -49,7 +49,7 @@ module.exports = [
     issuer: {
       test: /\.jsx?$/,
     },
-    use: ['svgr/webpack', {
+    use: ['@svgr/webpack', {
       loader: 'file-loader',
       options: {
         name: '[path][name]-[hash:8].[ext]',

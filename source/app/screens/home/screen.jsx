@@ -1,7 +1,7 @@
 /**
  * React Adventure
- * @author Marcos Gonçalves <marx_souza@yahoo.com.br>
- * @version 2.0.1
+ * @author Marcos Gonçalves <contact@themgoncalves.com>
+ * @version 2.0.2
  */
 
 import React, { Component } from 'react';
@@ -70,8 +70,8 @@ export class Home extends Component {
                   )
                 }
                 <MenuItem>
-                  <a href="https://github.com/themgoncalves/react-redux-async-starter-kit" target="_black"> {/* eslint-disable-line no-script-url */}
-                    <GitHubIcon height={14} stroke="#fff" />
+                  <a href="https://github.com/themgoncalves/react-adventure" target="_black"> {/* eslint-disable-line no-script-url */}
+                    <GitHubIcon stroke="#fff" />
                     GitHub
                   </a>
                 </MenuItem>
