@@ -2,7 +2,7 @@
 > **React high-ending architecture & patterns** ready for use. Made for big and small projects.
 
 [![Known Vulnerabilities][vulnerabilities-image]][vulnerabilities-url]
-[![GitHub issues][issues-image]][issues-url] 
+[![GitHub issues][issues-image]][issues-url]
 [![GitHub stars][stars-image]][stars-url]
 [![GitHub forks][forks-image]][forks-url]
 [![Awesome][awesome-image]][awesome-url]
@@ -92,7 +92,7 @@ As Engineers, we're constantly looking for new ways to *improve* and *add new fe
 
 By this reason, we came up with this approach, which give us the ability to:
 
-Paraphrasing Steve Krug: 
+Paraphrasing Steve Krug:
 > _"Making every component, function or screen self-evident is like having good lighting in a store: **it just makes everything seem better**."_
 
 So we defined as a goal:
@@ -109,7 +109,6 @@ The bellow structure is the result of a several patterns studies and implementat
 
 ```sh
 react-adventure
-├── .github
 ├── configuration                         # Configuration folder
 │   ├── jest
 │   │   ├── __mocks__
@@ -135,11 +134,12 @@ react-adventure
 │   │   │   ├── index.js                  # main actions
 │   │   │   └── types.js                  # actions types
 │   │   ├── components                    # react components (dumb components) for universal use
-│   │   │   ├── button                    # button component
-│   │   │   ├── input                     # input component
-│   │   │   └── loading                   # loading screen component
-│   │   │       ├── index.jsx
-│   │   │       └── styles.js
+│   │   │   └── v1                        # component's version
+│   │   │      ├── button                 # button component
+│   │   │      ├── input                  # input component
+│   │   │      └── loading                # loading screen component
+│   │   │          ├── index.jsx
+│   │   │          └── styles.js
 │   │   ├── decorators                    # ES7 decorators
 │   │   │   ├── animate                   # @animate ⟶ screen entrance animation
 │   │   │   │   └── index.jsx
@@ -203,6 +203,8 @@ react-adventure
 ├── yarn.lock
 ├── yarn-error.log
 ```
+
+Note that in the `components` folder, there's a folder called `v1`, which is to represent the current components versions.
 
 ## Asynchronous Component Preview
 
@@ -430,6 +432,6 @@ Distributed under the MIT license. [Click here](/.github/LICENSE) for more infor
 [forks-url]: https://github.com/themgoncalves/react-adventure/network
 [awesome-image]: https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg
 [releases-image]: https://img.shields.io/github/downloads/atom/atom/total.svg
-[releases-url]: https://github.com/themgoncalves/react-redux-async-starter-kit
+[releases-url]: https://github.com/themgoncalves/react-adventure
 [awesome-url]: https://github.com/themgoncalves/react-adventure
 [wiki]: https://github.com/yourname/yourproject/wiki
