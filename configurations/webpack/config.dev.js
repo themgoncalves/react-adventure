@@ -1,30 +1,32 @@
 require('dotenv').config(); // Loads environment variables from a .env file into process.env
 const webpack = require('webpack');
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
+const DashboardPlugin = require('webpack-dashboard/plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CompressionPlugin = require('compression-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
-const SriPlugin = require('webpack-subresource-integrity');
-const path = require('path');
-const rules = require('./webpack.rules');
+const rules = require('./rules');
+
+const HOST = process.env.HOST || '127.0.0.1';
+const PORT = process.env.PORT || '8080';
 
 module.exports = {
   entry: {
     app:
-    [
-      'babel-polyfill',
-      'react-hot-loader/patch',
-      './source/application.jsx',
-    ],
+      [
+        'babel-polyfill',
+        'react-hot-loader/patch',
+        './source/application.jsx',
+      ],
   },
+  devtool: 'cheap-module-eval-source-map',
   output: {
     publicPath: '/',
     path: path.join(__dirname, '../../public'),
-    filename: 'js/[name].bundle.[hash].js',
-    chunkFilename: 'js/[name].[hash].[chunkhash].chunk.js',
-    crossOriginLoading: 'anonymous',
+    filename: 'js/[name].bundle.js',
+    chunkFilename: 'js/[name].chunk.js',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -46,16 +48,15 @@ module.exports = {
     rules,
   },
   performance: {
-    hints: 'error',
-    maxAssetSize: 250000,
-    maxEntrypointSize: 400000,
+    hints: 'warning',
+    maxAssetSize: 450000,
+    maxEntrypointSize: 8500000,
     assetFilter: function (assetFilename) {
       return assetFilename.endsWith('.css') || assetFilename.endsWith('.js');
     },
   },
   optimization: {
-    nodeEnv: 'production',
-    minimize: true,
+    nodeEnv: 'development',
     splitChunks: {
       cacheGroups: {
         commons: {
@@ -72,25 +73,30 @@ module.exports = {
     },
   },
   target: 'web',
+  devServer: {
+    contentBase: './public',
+    noInfo: true,
+    hot: true,
+    inline: true,
+    historyApiFallback: true,
+    port: PORT,
+    host: HOST,
+  },
   plugins: [
-    new WebpackCleanupPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.NamedModulesPlugin(),
     new webpack.optimize.ModuleConcatenationPlugin(),
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: '"production"',
-      },
+    new webpack.HotModuleReplacementPlugin(),
+    new BundleAnalyzerPlugin({
+      analyzerHost: HOST,
     }),
-    new SriPlugin({
-      hashFuncNames: ['sha256', 'sha384'],
-      enabled: true,
-    }),
-    new webpack.IgnorePlugin(/^\.\/locale$/, [/moment$/]),
-    new webpack.optimize.OccurrenceOrderPlugin(),
     new ExtractTextPlugin({
       disable: process.env.NODE_ENV === 'development',
       filename: 'css/[name].[hash].css',
       allChunks: true,
     }),
+    new webpack.IgnorePlugin(/^\.\/locale$/, [/moment$/]),
+    new DashboardPlugin(),
     new CopyWebpackPlugin([
       { from: './static/robots.txt', to: '' },
     ], {
@@ -101,21 +107,14 @@ module.exports = {
       favicon: './static/images/favicon.ico',
       minify: {
         collapseWhitespace: true,
-        preserveLineBreaks: false,
+        preserveLineBreaks: true,
       },
     }),
     /* new HtmlWebpackIncludeAssetsPlugin({
-        assets: [
-            'js/file.js',
-        ],
-        append: true,
-    }), */
-    new CompressionPlugin({
-      asset: '[path].gz[query]',
-      algorithm: 'gzip',
-      test: /\.js$|\.css$|\.html$/,
-      threshold: 10240,
-      minRatio: 0,
-    }),
+            assets: [
+                'js/file.js',
+            ],
+            append: true,
+        }), */
   ],
 };
