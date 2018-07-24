@@ -17,13 +17,13 @@ function Button(props) {
 }
 
 const ButtonStyled = styled.button`
-  ${({ primary }) => primary && css`
-    background-color: ${props => props.theme.colors.primary}; 
-    color: white;
-  `};
   ${({ secondary }) => secondary && css`
     background-color: ${props => props.theme.colors.secondary}; 
     color: ${props => darken(0.6, props.theme.colors.secondary)};
+  `};
+  ${({ primary }) => primary && css`
+    background-color: ${props => props.theme.colors.primary}; 
+    color: white;
   `};
   ${({ info }) => info && css`
     background-color: ${props => props.theme.colors.info}; 
@@ -47,11 +47,11 @@ const ButtonStyled = styled.button`
   &:focus,
   &:hover {
     outline: 0;
-    ${({ primary }) => primary && css`
-      box-shadow: 0 0 0 0.2rem ${props => rgba(props.theme.colors.primary, 0.6)};
-    `};
     ${({ secondary }) => secondary && css`
       box-shadow: 0 0 0 0.2rem ${props => rgba(props.theme.colors.secondary, 0.6)};
+    `};
+    ${({ primary }) => primary && css`
+      box-shadow: 0 0 0 0.2rem ${props => rgba(props.theme.colors.primary, 0.6)};
     `};
     ${({ info }) => info && css`
       box-shadow: 0 0 0 0.2rem ${props => rgba(props.theme.colors.info, 0.6)};
@@ -64,11 +64,11 @@ const ButtonStyled = styled.button`
     `};
   }
   &:active {
-    ${({ primary }) => primary && css`
-      background-color: ${props => darken(0.2, props.theme.colors.primary)};
-    `};
     ${({ secondary }) => secondary && css`
       background-color: ${props => darken(0.2, props.theme.colors.secondary)};
+    `};
+    ${({ primary }) => primary && css`
+      background-color: ${props => darken(0.2, props.theme.colors.primary)};
     `};
     ${({ info }) => info && css`
       background-color: ${props => darken(0.2, props.theme.colors.info)};

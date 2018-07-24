@@ -25,11 +25,11 @@ const InputStyled = styled.input`
   &:focus,
   &:active {
     outline: 0;
-    ${({ primary }) => primary && css`
-      box-shadow: 0 0 0 0.2rem ${props => rgba(props.theme.colors.primary, 0.6)};
-    `};
     ${({ secondary }) => secondary && css`
       box-shadow: 0 0 0 0.2rem ${props => rgba(props.theme.colors.secondary, 0.6)};
+    `};
+    ${({ primary }) => primary && css`
+      box-shadow: 0 0 0 0.2rem ${props => rgba(props.theme.colors.primary, 0.6)};
     `};
     ${({ info }) => info && css`
       box-shadow: 0 0 0 0.2rem ${props => rgba(props.theme.colors.info, 0.6)};
