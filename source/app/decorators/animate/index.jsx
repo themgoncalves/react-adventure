@@ -1,7 +1,7 @@
 /**
  * React Adventure
  * @author Marcos Gonçalves <contact@themgoncalves.com>
- * @version 2.0.2
+ * @version 2.1.0
  */
 
 import React from 'react';
