@@ -302,6 +302,8 @@ yarn test:e2e
 | `cypress:record` | start e2e tests with cypress in the record mode |
 | `cypress:chrome` | start e2e tests with cypress in the chrome mode |
 | `cypress:headed` | start e2e tests with cypress in the headed mode |
+| `styleguide` | start styleguidist server |
+| `styleguide:build` | build styleguidist |
 | `test` | start jest tests |
 | `test:watch` | start jest tests & watch files for modifications |
 | `test:coverage` | check the % of tests coverage |
