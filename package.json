@@ -9,7 +9,7 @@
     "start:dev": " webpack-dashboard --mode development -- webpack-dev-server",
     "start:silence": "webpack-dev-server --mode development",
     "lint": "eslint --ext js --ext jsx source || exit 0",
-    "lint:fix": "eslint --ext js --ext jsx source --fix|| exit 0",
+    "lint:fix": "eslint --ext js --ext jsx source --fix || exit 0",
     "cypress": "cypress run",
     "cypress:open": "cypress open",
     "cypress:record": "cypress run --record",
@@ -27,8 +27,12 @@
   },
   "keywords": [
     "react",
+    "redux",
+    "redux-saga",
     "webpack",
-    "sass"
+    "styled-components",
+    "sass",
+    "super-query"
   ],
   "author": "Marcos Gonçalves <https://github.com/themgoncalves/>",
   "license": "MIT",
