@@ -43,6 +43,7 @@ For this reason we created the `React Adventure` in order to provide a **workabl
 | [Output fiiles Treemap](https://github.com/webpack-contrib/webpack-bundle-analyzer)     |  ✖ | ✔ | ✖ |
 | [Assets compression served them with Content-Encoding](url)     | ✖ | ✖ | ✔ |
 | [Style Guide Centralized & Globally available](https://www.styled-components.com/docs/advanced)     | ✖ | ✔ | ✔ |
+| [Component Style Guide (React Styleguidist)](https://github.com/styleguidist/react-styleguidist)     | ✖ | ✔ | ✔ |
 | [HTML output minified](url)     | ✖ | ✔ | ✔ |
 | [E2E Tests](https://www.cypress.io/)     | ✔ | ✔ | ✖ |
 | [Snapshot testing](https://facebook.github.io/jest/docs/en/snapshot-testing.html)     | ✖ | ✔ | ✖ |
@@ -120,10 +121,16 @@ react-adventure
 │   │   ├── setup.env.js                  # jest env setup
 │   │   ├── setup.framework.js            # test framework jest setup
 │   │   └── setup.styled-components.js    # styled-component custom render functions
+│   ├── styleguidist
+│   │   ├── styles                        # CSS styles to be loaded into the style guide
+│   │   ├── wrappers
+│   │   │   └──styled-components          # Wrappers for Styled-Components
+│   │   │      └── ThemeWrapper.js        # Insert styled-components' theme into styleguidist env.
+│   │   └── config.js                     # Styleguidist config
 │   ├── webpack
-│   │   ├── webpack.config.dev.js         # Webpack development config
-│   │   ├── webpack.config.production.js  # Webpack production config
-│   │   └── webpack.rules.js              # Webpack rules
+│   │   ├── config.dev.js                 # Webpack development config
+│   │   ├── config.production.js          # Webpack production config
+│   │   └── rules.js                      # Webpack rules
 ├── cypress                               # cypress E2E directory
 ├── node_modules
 ├── scripts                               # custom scripts (.sh)
@@ -199,6 +206,7 @@ react-adventure
 ├── package.json
 ├── postcss.config.js
 ├── README.md
+├── styleguide.config.js
 ├── webpack.config.js
 ├── yarn.lock
 ├── yarn-error.log
@@ -381,6 +389,7 @@ yarn test:e2e
 | [npm-run-all](https://github.com/mysticatea/npm-run-all)      | 4.1.3 | A CLI tool to run multiple npm-scripts in parallel or sequential. |
 | [postcss-loader](https://github.com/postcss/postcss-loader)      | 2.1.4 | PostCSS loader for webpack |
 | [react-hot-loader](https://github.com/gaearon/react-hot-loader)      | 4.1.2 | Tweak React components in real time. |
+| [react-styleguidist](https://github.com/styleguidist/react-styleguidist) | 7.1.0 | Isolated React component development environment with a living style guide. |
 | [react-test-renderer](https://github.com/facebook/react/tree/master/packages/react-test-renderer)      | 16.3.2 | Provides an experimental React renderer that can be used to render React components to pure JavaScript objects, without depending on the DOM or a native mobile environment. |
 | [regenerator-runtime](https://github.com/facebook/regenerator/tree/master/packages/regenerator-runtime)      | 0.11.1 | Standalone runtime for Regenerator-compiled generator and `async` functions. |
 | [sass-extract](https://github.com/jgranstrom/sass-extract)      | 2.1.0 | Extract structured variables from sass files |

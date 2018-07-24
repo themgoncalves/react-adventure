@@ -41,8 +41,11 @@ class Loading extends Component {
 }
 
 Loading.propTypes = {
+  /** If there was an error during loading */
   error: PropTypes.bool,
+  /** If the loading had timed out */
   timedOut: PropTypes.bool,
+  /** If the loading has past delay */
   pastDelay: PropTypes.bool,
 };
 

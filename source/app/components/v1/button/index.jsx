@@ -92,14 +92,19 @@ const ButtonStyled = styled.button`
     }
   }
 `;
-
 Button.propTypes = {
+  /** Primary style */
   primary: PropTypes.bool,
+  /** Secondary style */
   secondary: PropTypes.bool,
+  /** Info style */
   info: PropTypes.bool,
+  /** Warning style */
   warning: PropTypes.bool,
+  /** Danger style */
   danger: PropTypes.bool,
-  children: PropTypes.node,
+  /** Button label */
+  children: PropTypes.string.isRequired,
 };
 
 Button.defaultProps = {
@@ -108,7 +113,7 @@ Button.defaultProps = {
   info: false,
   warning: false,
   danger: false,
-  children: null,
 };
 
+/** @component */
 export default Button;

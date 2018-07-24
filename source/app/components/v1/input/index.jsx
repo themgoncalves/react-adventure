@@ -21,6 +21,7 @@ const InputStyled = styled.input`
   padding: 8px 14px;
   border: none;
   border-radius: 3px;
+  box-sizing: border-box;
   transition: all ease 0.3s;
   &:focus,
   &:active {
@@ -44,11 +45,17 @@ const InputStyled = styled.input`
 `;
 
 Input.propTypes = {
+  /** Primary style */
   primary: PropTypes.bool,
+  /** Secondary style */
   secondary: PropTypes.bool,
+  /** Info style */
   info: PropTypes.bool,
+  /** Warning style */
   warning: PropTypes.bool,
+  /** Danger style */
   danger: PropTypes.bool,
+  /** Input type */
   type: PropTypes.oneOf([
     'text',
     'email',

@@ -1,0 +1,5 @@
+Basic Input:
+
+```jsx
+<Loading  />
+```
