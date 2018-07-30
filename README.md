@@ -121,15 +121,15 @@ react-adventure
 │   │   ├── setup.env.js                  # jest env setup
 │   │   ├── setup.framework.js            # test framework jest setup
 │   │   └── setup.styled-components.js    # styled-component custom render functions
-│   ├── project
-│   │   └── config.js                     # Project's configuration file
+│   ├── application
+│   │   └── settings.js                   # Project's settings file
 ├── cypress                               # cypress E2E directory
 │   ├── styleguidist
 │   │   ├── styles                        # CSS styles to be loaded into the style guide
 │   │   ├── wrappers
 │   │   │   └──styled-components          # Wrappers for Styled-Components
 │   │   │      └── ThemeWrapper.js        # Insert styled-components' theme into styleguidist env.
-│   │   └── config.js                     # Styleguidist config
+│   │   └── settings.js                     # Styleguidist config
 │   ├── webpack
 │   │   ├── config.dev.js                 # Webpack development config
 │   │   ├── config.production.js          # Webpack production config
@@ -207,10 +207,10 @@ react-adventure
 ├── cypress.json
 ├── jsconfig.json
 ├── package.json
-├── postcss.config.js
+├── postcss.settings.js
 ├── README.md
-├── styleguide.config.js
-├── webpack.config.js
+├── styleguide.settings.js
+├── webpack.settings.js
 ├── yarn.lock
 ├── yarn-error.log
 ```
