@@ -121,6 +121,9 @@ react-adventure
 │   │   ├── setup.env.js                  # jest env setup
 │   │   ├── setup.framework.js            # test framework jest setup
 │   │   └── setup.styled-components.js    # styled-component custom render functions
+│   ├── project
+│   │   └── config.js                     # Project's configuration file
+├── cypress                               # cypress E2E directory
 │   ├── styleguidist
 │   │   ├── styles                        # CSS styles to be loaded into the style guide
 │   │   ├── wrappers
@@ -389,6 +392,7 @@ yarn test:e2e
 | [jest-styled-components](https://github.com/styled-components/jest-styled-components)      | 5.0.1 | Jest utilities for Styled Components |
 | [node-sass](https://github.com/sass/node-sass)      | 4.9.0 | Node.js bindings to libsass |
 | [npm-run-all](https://github.com/mysticatea/npm-run-all)      | 4.1.3 | A CLI tool to run multiple npm-scripts in parallel or sequential. |
+| [offline-plugin](https://github.com/NekR/offline-plugin) | 5.0.5 | Offline plugin (ServiceWorker, AppCache) for webpack |
 | [postcss-loader](https://github.com/postcss/postcss-loader)      | 2.1.4 | PostCSS loader for webpack |
 | [react-hot-loader](https://github.com/gaearon/react-hot-loader)      | 4.1.2 | Tweak React components in real time. |
 | [react-styleguidist](https://github.com/styleguidist/react-styleguidist) | 7.1.0 | Isolated React component development environment with a living style guide. |
@@ -407,6 +411,7 @@ yarn test:e2e
 | [webpack-cli](https://github.com/webpack/webpack-cli)      | 2.1.0 | Webpack's Command Line Interface |
 | [webpack-dashboard](https://github.com/FormidableLabs/webpack-dashboard)      | 1.1.1 | A CLI dashboard for webpack dev server |
 | [webpack-dev-server](https://github.com/webpack/webpack-dev-server)      | 3.1.3 | Serves a webpack app. Updates the browser on changes. |
+| [webpack-manifest-plugin](https://github.com/danethurber/webpack-manifest-plugin) | 2.0.3 | Webpack plugin for generating asset manifests |
 | [webpack-subresource-integrity](https://github.com/waysact/webpack-subresource-integrity)      | 1.1.0-rc.4 | [Subresource Integrity](https://www.w3.org/TR/SRI/) (SRI) is a security feature that enables browsers to verify that files they fetch (for example, from a CDN) are delivered without unexpected manipulation. |
 
 <br />
