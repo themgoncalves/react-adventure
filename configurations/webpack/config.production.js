@@ -5,7 +5,9 @@ const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
 const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
+const OfflinePlugin = require('offline-plugin');
 const SriPlugin = require('webpack-subresource-integrity');
 const path = require('path');
 const rules = require('./rules');
@@ -96,6 +98,9 @@ module.exports = {
     ], {
       copyUnmodified: false,
     }),
+    new ManifestPlugin({
+      fileName: 'asset-manifest.json',
+    }),
     new HtmlWebpackPlugin({
       template: './source/index.hbs',
       favicon: './static/images/favicon.ico',
@@ -103,6 +108,17 @@ module.exports = {
         collapseWhitespace: true,
         preserveLineBreaks: false,
       },
+    }),
+    new OfflinePlugin({
+      publicPath: '/',
+      relativePaths: false,
+      ServiceWorker: {
+        output: 'service-worker.js',
+        events: true,
+        publicPath: '/service-worker.js',
+        navigateFallbackURL: '/',
+      },
+      AppCache: false,
     }),
     /* new HtmlWebpackIncludeAssetsPlugin({
         assets: [

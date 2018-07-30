@@ -6,7 +6,9 @@ const DashboardPlugin = require('webpack-dashboard/plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
 const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
+const OfflinePlugin = require('offline-plugin');
 const rules = require('./rules');
 
 const HOST = process.env.HOST || '127.0.0.1';
@@ -102,6 +104,7 @@ module.exports = {
     ], {
       copyUnmodified: false,
     }),
+    new ManifestPlugin(),
     new HtmlWebpackPlugin({
       template: './source/index.hbs',
       favicon: './static/images/favicon.ico',
@@ -109,6 +112,17 @@ module.exports = {
         collapseWhitespace: true,
         preserveLineBreaks: true,
       },
+    }),
+    new OfflinePlugin({
+      publicPath: '/',
+      relativePaths: false,
+      ServiceWorker: {
+        output: 'service-worker.js',
+        events: true,
+        publicPath: '/service-worker.js',
+        navigateFallbackURL: '/',
+      },
+      AppCache: false,
     }),
     /* new HtmlWebpackIncludeAssetsPlugin({
             assets: [

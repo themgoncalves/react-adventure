@@ -14,9 +14,9 @@ import 'styles/reset.scss';
 import 'styles/responsive-grid.scss';
 import 'styles/base.scss';
 
+import './service-worker.register';
 import configureStore from './app/store';
 import rootSaga from './app/sagas';
-
 
 const store = configureStore(history);
 store.runSaga(rootSaga);
