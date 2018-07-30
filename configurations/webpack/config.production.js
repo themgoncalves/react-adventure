@@ -11,6 +11,7 @@ const OfflinePlugin = require('offline-plugin');
 const SriPlugin = require('webpack-subresource-integrity');
 const path = require('path');
 const rules = require('./rules');
+const config = require('../project/config');
 
 module.exports = {
   entry: {
@@ -98,9 +99,11 @@ module.exports = {
     ], {
       copyUnmodified: false,
     }),
-    new ManifestPlugin({
-      fileName: 'asset-manifest.json',
-    }),
+    (config.pwa.assetsManifest.enabled &&
+      new ManifestPlugin({
+        fileName: config.pwa.assetsManifest.fileName,
+      })
+    ),
     new HtmlWebpackPlugin({
       template: './source/index.hbs',
       favicon: './static/images/favicon.ico',
@@ -109,17 +112,19 @@ module.exports = {
         preserveLineBreaks: false,
       },
     }),
-    new OfflinePlugin({
-      publicPath: '/',
-      relativePaths: false,
-      ServiceWorker: {
-        output: 'service-worker.js',
-        events: true,
-        publicPath: '/service-worker.js',
-        navigateFallbackURL: '/',
-      },
-      AppCache: false,
-    }),
+    (config.pwa.enabled &&
+      new OfflinePlugin({
+        publicPath: '/',
+        relativePaths: false,
+        ServiceWorker: {
+          output: config.pwa.serviceWorkerName,
+          events: true,
+          publicPath: `/${config.pwa.serviceWorkerName}`,
+          navigateFallbackURL: '/',
+        },
+        AppCache: false,
+      })
+    ),
     /* new HtmlWebpackIncludeAssetsPlugin({
         assets: [
             'js/file.js',

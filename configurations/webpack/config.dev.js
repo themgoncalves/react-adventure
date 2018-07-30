@@ -10,6 +10,7 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
 const OfflinePlugin = require('offline-plugin');
 const rules = require('./rules');
+const config = require('../project/config');
 
 const HOST = process.env.HOST || '127.0.0.1';
 const PORT = process.env.PORT || '8080';
@@ -104,7 +105,11 @@ module.exports = {
     ], {
       copyUnmodified: false,
     }),
-    new ManifestPlugin(),
+    (config.pwa.assetsManifest.enabled &&
+      new ManifestPlugin({
+        fileName: config.pwa.assetsManifest.fileName,
+      })
+    ),
     new HtmlWebpackPlugin({
       template: './source/index.hbs',
       favicon: './static/images/favicon.ico',
@@ -113,17 +118,19 @@ module.exports = {
         preserveLineBreaks: true,
       },
     }),
-    new OfflinePlugin({
-      publicPath: '/',
-      relativePaths: false,
-      ServiceWorker: {
-        output: 'service-worker.js',
-        events: true,
-        publicPath: '/service-worker.js',
-        navigateFallbackURL: '/',
-      },
-      AppCache: false,
-    }),
+    (config.pwa.enabled &&
+      new OfflinePlugin({
+        publicPath: '/',
+        relativePaths: false,
+        ServiceWorker: {
+          output: config.pwa.serviceWorkerName,
+          events: true,
+          publicPath: `/${config.pwa.serviceWorkerName}`,
+          navigateFallbackURL: '/',
+        },
+        AppCache: false,
+      })
+    ),
     /* new HtmlWebpackIncludeAssetsPlugin({
             assets: [
                 'js/file.js',
