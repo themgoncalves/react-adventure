@@ -137,5 +137,5 @@ module.exports = {
             ],
             append: true,
         }), */
-  ],
+  ].filter(plugin => plugin !== false),
 };
