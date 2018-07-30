@@ -10,7 +10,7 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
 const OfflinePlugin = require('offline-plugin');
 const rules = require('./rules');
-const config = require('../project/config');
+const config = require('../application/settings');
 
 const HOST = process.env.HOST || '127.0.0.1';
 const PORT = process.env.PORT || '8080';

@@ -11,7 +11,7 @@ const OfflinePlugin = require('offline-plugin');
 const SriPlugin = require('webpack-subresource-integrity');
 const path = require('path');
 const rules = require('./rules');
-const config = require('../project/config');
+const config = require('../application/settings');
 
 module.exports = {
   entry: {
