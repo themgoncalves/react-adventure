@@ -138,5 +138,5 @@ module.exports = {
       threshold: 10240,
       minRatio: 0,
     }),
-  ].filter(plugin => plugin !== false),
+  ].filter(plugin => plugin !== false), // remove 'false' output from conditional assertions
 };
