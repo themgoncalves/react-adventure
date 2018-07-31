@@ -2,7 +2,7 @@
  * React-Adventure
  * @desc Configuration file
  * @author Marcos Gonçalves <contact@themgoncalves.com>
- * @version 2.1.0
+ * @version 2.2.0
  */
 module.exports = {
   // project current version
