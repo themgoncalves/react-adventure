@@ -33,7 +33,7 @@ module.exports = {
        * Assets manifest file name
        * Please, do not confuse with manifest.json
        */
-      fileName: 'asset-manifest.json',
+      fileName: 'assets-manifest.json',
     },
   },
 };
