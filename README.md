@@ -1,5 +1,5 @@
 # ⛰ React Adventure
-> **React high-ending architecture & patterns** ready for use. Made for big and small projects.
+> **React high-ending architecture & patterns** ready for use. Made for big and small projects. _PWA Ready_.
 
 [![Known Vulnerabilities][vulnerabilities-image]][vulnerabilities-url]
 [![GitHub issues][issues-image]][issues-url]
@@ -26,6 +26,7 @@ For this reason we created the `React Adventure` in order to provide a **workabl
 
 | Feature        | Experimental or Beta  | For Development | For Production
 | ------------- |:-------------:|:-------------:|:-------------:|
+| [Progressive Web Application Ready](https://developers.google.com/web/progressive-web-apps/)     | ✖ | ✖ | ✔ |
 | [ES7 Decorators](https://github.com/tc39/proposal-decorators)     | ✔ | ✔ | ✖ |
 | [Asynchronous Components Loading](https://github.com/jamiebuilds/react-loadable)     | ✖ | ✔ | ✔ |
 | [Code Splitting & Chunks](https://webpack.js.org/configuration/optimization/)     | ✖ | ✔ | ✔ |
@@ -122,7 +123,7 @@ react-adventure
 │   │   ├── setup.framework.js            # test framework jest setup
 │   │   └── setup.styled-components.js    # styled-component custom render functions
 │   ├── application
-│   │   └── settings.js                   # Project's settings file
+│   │   └── settings.js                   # Application settings file
 ├── cypress                               # cypress E2E directory
 │   ├── styleguidist
 │   │   ├── styles                        # CSS styles to be loaded into the style guide
@@ -318,6 +319,23 @@ yarn test:e2e
 
 <br />
 
+## Settings available
+
+> To access the _application settings_ go to `configurations/application/settings.js`
+
+
+| Property | Description | Default Value |
+|---------| ----------- | ----------- |
+| `version` | Application version | _current application version_ |
+| `pwa` | Progressive Web Application | |
+| `pwa.enabled` | Enable or Disable. Production Only | `true` |
+| `pwa.serviceWorkerName` | Service Worker File Name | `service-worker.js` |
+| `pwa.assetsManifest` | Assets Manifest File | |
+| `pwa.assetsManifest.enabled` | Enable or Disable. Production Only| `false` |
+| `pwa.assetsManifest.fileName` | Assets manifest file name | `assets-manifest.json` |
+
+<br />
+
 ## Technological Stack
 
 ### Dependencies
@@ -344,6 +362,7 @@ yarn test:e2e
 | [redux-saga](https://github.com/redux-saga/redux-saga)      | 0.16.0 | An alternative side effect model for Redux apps |
 | [styled-components](https://github.com/styled-components/styled-components)      | 3.2.6 | Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps without stress |
 | [super-query](https://github.com/themgoncalves/super-query)      | 0.1.1 | A super media-query for styled-component. Intuitive and easy of use. |
+
 <br />
 
 ### Development Dependencies
@@ -419,7 +438,7 @@ yarn test:e2e
 ## Meta
 
 ### Author
-**Marcos Gonçalves** – [LinkedIn](http://linkedin.com/in/themgoncalves/) – [Website](http://www.themgoncalves.com)
+**Marcos Gonçalves** – [LinkedIn](http://linkedin.com/in/themgoncalves/) – [Website](http://themgoncalves.com)
 
 ### License
 Distributed under the MIT license. [Click here](/.github/LICENSE) for more information.
