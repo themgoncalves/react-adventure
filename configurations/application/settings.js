@@ -11,15 +11,23 @@ module.exports = {
    * Progressive Web Application configuration
    */
   pwa: {
-    // enable or disable the PWA
-    enabled: false,
-    // service worker file name
+    /**
+     * Enable or Disable the PWA
+     * Note: Production only
+     */
+    enabled: true,
+    /**
+     * Service Worker file name
+     */
     serviceWorkerName: 'service-worker.js',
     /**
      * Assets manifest
      */
     assetsManifest: {
-      // enable or disable the assets manifest
+      /**
+       * Enable or Disable the Assets Manifest
+       * Note: Production only
+       */
       enabled: false,
       /**
        * Assets manifest file name
