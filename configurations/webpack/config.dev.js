@@ -1,4 +1,3 @@
-require('dotenv').config(); // Loads environment variables from a .env file into process.env
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -8,12 +7,9 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
 const rules = require('./rules');
-const config = require('../application/settings');
+const settings = require('../application/settings');
 
-const HOST = process.env.HOST || '127.0.0.1';
-const PORT = process.env.PORT || '8080';
-
-module.exports = {
+let configuration = {
   entry: {
     app:
       [
@@ -59,37 +55,31 @@ module.exports = {
   optimization: {
     nodeEnv: 'development',
     splitChunks: {
+      name: false,
       cacheGroups: {
-        commons: {
-          test: /[\\/]node_modules[\\/]/,
+        vendors: {
           name: 'vendors',
+          test: /[\\/]node_modules[\\/]/,
           chunks: 'all',
           minChunks: 2,
+          priority: -10,
         },
         default: {
           minChunks: 2,
+          priority: -20,
           reuseExistingChunk: true,
         },
       },
     },
   },
   target: 'web',
-  devServer: {
-    contentBase: './public',
-    noInfo: true,
-    hot: true,
-    inline: true,
-    historyApiFallback: true,
-    port: PORT,
-    host: HOST,
-  },
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.NamedModulesPlugin(),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new BundleAnalyzerPlugin({
-      analyzerHost: HOST,
+      analyzerHost: settings.ssr.server.host,
     }),
     new ExtractTextPlugin({
       disable: process.env.NODE_ENV === 'development',
@@ -119,3 +109,25 @@ module.exports = {
         }), */
   ].filter(plugin => plugin !== false), // remove 'false' output from conditional assertions
 };
+
+if (!settings.ssr.enabled) {
+  configuration = Object.assign(
+    {},
+    configuration,
+    {
+      devServer: {
+        contentBase: path.join(__dirname, '../../public'),
+        open: true,
+        hot: true,
+        inline: true,
+        noInfo: true,
+        compress: true,
+        historyApiFallback: true,
+        port: settings.ssr.server.port,
+        host: settings.ssr.server.host,
+      },
+    },
+  );
+}
+
+module.exports = configuration;
