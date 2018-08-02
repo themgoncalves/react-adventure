@@ -11,8 +11,6 @@ import { Helmet } from 'react-helmet';
 import animate from 'decorators/animate';
 import PropTypes from 'prop-types';
 import { unauthenticateUser } from 'actions';
-import TheMgoncavesLogoImage from 'static/images/themgoncalves-white.png';
-import { ReactComponent as GitHubIcon } from 'static/images/icons/github.svg';
 
 import ProjectInfo from '../../../../package.json';
 
@@ -54,7 +52,6 @@ export class Home extends Component {
             <div className="row">
               <HeaderWrapper className="col-12">
                 <Link to="/">
-                  <Logo src={TheMgoncavesLogoImage} alt="TheMgoncalves logo" />
                 </Link>
               </HeaderWrapper>
               <Menu>
@@ -71,7 +68,7 @@ export class Home extends Component {
                 }
                 <MenuItem>
                   <a href="https://github.com/themgoncalves/react-adventure" target="_black"> {/* eslint-disable-line no-script-url */}
-                    <GitHubIcon stroke="#fff" />
+
                     GitHub
                   </a>
                 </MenuItem>

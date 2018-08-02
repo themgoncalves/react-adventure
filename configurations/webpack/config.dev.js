@@ -5,11 +5,12 @@ const DashboardPlugin = require('webpack-dashboard/plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
 const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
 const rules = require('./rules');
 const settings = require('../application/settings');
 
-let configuration = {
+module.exports = {
   entry: {
     app:
       [
@@ -93,14 +94,21 @@ let configuration = {
     ], {
       copyUnmodified: false,
     }),
-    new HtmlWebpackPlugin({
-      template: './source/index.hbs',
-      favicon: './static/images/favicon.ico',
-      minify: {
-        collapseWhitespace: true,
-        preserveLineBreaks: true,
-      },
-    }),
+    (settings.pwa.assetsManifest.enabled &&
+      new ManifestPlugin({
+        fileName: settings.pwa.assetsManifest.fileName,
+      })
+    ),
+    (!settings.ssr.enabled &&
+      new HtmlWebpackPlugin({
+        template: './source/index.hbs',
+        favicon: './static/images/favicon.ico',
+        minify: {
+          collapseWhitespace: true,
+          preserveLineBreaks: true,
+        },
+      })
+    ),
     /* new HtmlWebpackIncludeAssetsPlugin({
             assets: [
                 'js/file.js',
@@ -109,25 +117,3 @@ let configuration = {
         }), */
   ].filter(plugin => plugin !== false), // remove 'false' output from conditional assertions
 };
-
-if (!settings.ssr.enabled) {
-  configuration = Object.assign(
-    {},
-    configuration,
-    {
-      devServer: {
-        contentBase: path.join(__dirname, '../../public'),
-        open: true,
-        hot: true,
-        inline: true,
-        noInfo: true,
-        compress: true,
-        historyApiFallback: true,
-        port: settings.ssr.server.port,
-        host: settings.ssr.server.host,
-      },
-    },
-  );
-}
-
-module.exports = configuration;

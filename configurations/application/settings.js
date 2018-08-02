@@ -8,8 +8,14 @@
 require('dotenv').config(); // Loads environment variables from a .env file into process.env
 
 module.exports = {
-  // project current version
+  /**
+   * Application current version
+   */
   version: '2.2.0',
+  /**
+   * Application name
+   */
+  title: 'React Adventure',
   /**
    * Progressive Web Application configuration
    */
@@ -29,9 +35,8 @@ module.exports = {
     assetsManifest: {
       /**
        * Enable or Disable the Assets Manifest
-       * Note: Production only
        */
-      enabled: false,
+      enabled: true,
       /**
        * Assets manifest file name
        * Please, do not confuse with manifest.json
@@ -60,6 +65,10 @@ module.exports = {
        * http Port
        */
       port: process.env.PORT || '8080',
+      /**
+       * Path to Static Files
+       */
+      staticFilesPath: 'public',
     },
   },
 };

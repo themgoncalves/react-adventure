@@ -8,7 +8,7 @@ if [ -n "$target" ]; then
       echo $Cyan Server is offline...
       echo $Green Starting it now...
       echo $Reset
-      yarn start:dev:server:silence
+      yarn start
       exit 0
     };
 else

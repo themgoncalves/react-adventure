@@ -20,6 +20,7 @@
     "transform-runtime",
     "transform-class-properties",
     "transform-decorators-legacy",
+    "dynamic-import-node",
     ["webpack-alias", { "config": "./webpack.config.js" }]
   ],
   "env": {

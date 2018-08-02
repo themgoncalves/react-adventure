@@ -1,4 +1,5 @@
 #!/bin/sh
+source ./scripts/utils/colors.sh
 
 SERVER_TYPE="$1"
 SERVER_HOST="$2"
@@ -6,10 +7,12 @@ SERVER_PORT="$3"
 
 case $SERVER_TYPE in
     "ssr")
-        echo Server is SSR
+        echo $Dim Server Side Render $SERVER_HOST:$SERVER_PORT $Reset
+        yarn run-p build:dev start:server
         ;;
     "csr")
-        yarn start:dev:server
+        echo $Dim Client Side Render: $SERVER_HOST:$SERVER_PORT $Reset
+        yarn run-p build:dev start:server
         ;;
     *)
         echo Server render type is unknown

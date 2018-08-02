@@ -6,12 +6,13 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
+const nodeExternals = require('webpack-node-externals');
 const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
 const OfflinePlugin = require('offline-plugin');
 const SriPlugin = require('webpack-subresource-integrity');
 const path = require('path');
 const rules = require('./rules');
-const config = require('../application/settings');
+const settings = require('../application/settings');
 
 module.exports = {
   entry: {
@@ -29,6 +30,7 @@ module.exports = {
     chunkFilename: 'js/[name].[hash].[chunkhash].chunk.js',
     crossOriginLoading: 'anonymous',
   },
+  externals: [nodeExternals()],
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
@@ -99,27 +101,29 @@ module.exports = {
     ], {
       copyUnmodified: false,
     }),
-    (config.pwa.assetsManifest.enabled &&
+    (settings.pwa.assetsManifest.enabled &&
       new ManifestPlugin({
-        fileName: config.pwa.assetsManifest.fileName,
+        fileName: settings.pwa.assetsManifest.fileName,
       })
     ),
-    new HtmlWebpackPlugin({
-      template: './source/index.hbs',
-      favicon: './static/images/favicon.ico',
-      minify: {
-        collapseWhitespace: true,
-        preserveLineBreaks: false,
-      },
-    }),
-    (config.pwa.enabled &&
+    (!settings.ssr.enabled &&
+      new HtmlWebpackPlugin({
+        template: './source/index.hbs',
+        favicon: './static/images/favicon.ico',
+        minify: {
+          collapseWhitespace: true,
+          preserveLineBreaks: true,
+        },
+      })
+    ),
+    (settings.pwa.enabled &&
       new OfflinePlugin({
         publicPath: '/',
         relativePaths: false,
         ServiceWorker: {
-          output: config.pwa.serviceWorkerName,
+          output: settings.pwa.serviceWorkerName,
           events: true,
-          publicPath: `/${config.pwa.serviceWorkerName}`,
+          publicPath: `/${settings.pwa.serviceWorkerName}`,
           navigateFallbackURL: '/',
         },
         AppCache: false,

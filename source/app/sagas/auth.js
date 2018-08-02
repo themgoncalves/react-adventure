@@ -1,5 +1,5 @@
 import { take, fork, cancel, call, put, cancelled } from 'redux-saga/effects';
-import { push } from 'react-router-redux';
+import { push } from 'connected-react-router';
 import { AUTH_USER, UNAUTH_USER } from 'actions/types';
 
 function* logout() {

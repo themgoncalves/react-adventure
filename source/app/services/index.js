@@ -3,8 +3,15 @@
  * @author Marcos Gonçalves <contact@themgoncalves.com>
  * @version 2.2.0
  */
+import createBrowserHistory from 'history/createBrowserHistory';
+import createMemoryHistory from 'history/createMemoryHistory';
 
-import createHistory from 'history/createBrowserHistory';
+let history = null;
+if (typeof document !== 'undefined') {
+  history = createBrowserHistory();
+} else {
+  history = createMemoryHistory();
+}
 
-export const history = createHistory();
+export { history };
 export default history;

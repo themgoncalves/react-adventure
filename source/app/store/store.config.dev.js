@@ -7,7 +7,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware, { END } from 'redux-saga';
 import { createLogger } from 'redux-logger';
-import { routerMiddleware } from 'react-router-redux';
+import { connectRouter, routerMiddleware } from 'connected-react-router'
 import rootReducer from '../reducers';
 
 // Mock function
@@ -27,7 +27,7 @@ const mock = (fn) => {
 /* eslint-enable func-names */
 
 /* eslint-disable global-require */
-export default function configureStore(history) {
+export default function configureStore(history, initialState = {}) {
   // Insert mocked function to avoid redux erros on safari
   /* eslint-disable no-underscore-dangle */
   const reduxDevTools = (window.__REDUX_DEVTOOLS_EXTENSION__
@@ -38,7 +38,8 @@ export default function configureStore(history) {
   const sagaMiddleware = typeof createSagaMiddleware === 'function' ? createSagaMiddleware() : createSagaMiddleware.default();
 
   const store = createStore(
-    rootReducer,
+    connectRouter(history)(rootReducer),
+    initialState,
     compose(
       applyMiddleware(
         sagaMiddleware,
