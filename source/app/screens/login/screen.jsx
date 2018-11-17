@@ -1,7 +1,7 @@
 /**
  * React Adventure
  * @author Marcos Gonçalves <contact@themgoncalves.com>
- * @version 2.2.0
+ * @version 2.2.1
  */
 
 import React, { Component } from 'react';
@@ -9,10 +9,10 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
-import animate from 'decorators/animate';
+import animate from 'enhancers/animate';
 import Button from 'components/v1/button';
 import Input from 'components/v1/input';
-import { authenticateUser } from 'actions';
+import { authenticateUser } from 'state/actions';
 
 // Import Images
 import TheMgoncalvesLogoImage from 'static/images/themgoncalves-white.png';

@@ -1,7 +1,7 @@
 /**
  * React Adventure
  * @author Marcos Gonçalves <contact@themgoncalves.com>
- * @version 2.2.0
+ * @version 2.2.1
  */
 
 export default (target, key, descriptor) => {

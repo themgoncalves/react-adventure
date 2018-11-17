@@ -1,6 +1,6 @@
 {
   "name": "react-adventure",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "React Adventure",
   "main": "source/application.jsx",
   "scripts": {
@@ -44,6 +44,7 @@
     "bootstrap": "^4.1.1",
     "history": "^4.7.2",
     "lodash": "^4.17.10",
+    "offline-plugin": "^5.0.6",
     "polished": "^1.9.2",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
@@ -104,7 +105,6 @@
     "jest-styled-components": "^5.0.1",
     "node-sass": "^4.9.0",
     "npm-run-all": "^4.1.3",
-    "offline-plugin": "^5.0.5",
     "postcss-loader": "^2.1.5",
     "react-hot-loader": "^4.3.3",
     "react-styleguidist": "^7.1.0",

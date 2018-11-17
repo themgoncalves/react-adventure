@@ -1,10 +1,10 @@
 /**
  * React Adventure
  * @author Marcos Gonçalves <contact@themgoncalves.com>
- * @version 2.2.0
+ * @version 2.2.1
  */
 
-import Loadable from '../../hoc/loadable';
+import Loadable from 'enhancers/loadable';
 
 const LoginScreenAsync = Loadable({
   loader: () => import(/* webpackChunkName: "login", webpackPrefetch: true */ './screen.jsx'),

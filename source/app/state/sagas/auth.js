@@ -1,6 +1,6 @@
 import { take, fork, cancel, call, put, cancelled } from 'redux-saga/effects';
 import { push } from 'react-router-redux';
-import { AUTH_USER, UNAUTH_USER } from 'actions/types';
+import { AUTH_USER, UNAUTH_USER } from '../actions/types';
 
 function* logout() {
   yield put(UNAUTH_USER);

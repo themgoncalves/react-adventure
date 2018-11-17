@@ -1,12 +1,12 @@
 /**
  * React Adventure
  * @author Marcos Gonçalves <contact@themgoncalves.com>
- * @version 2.2.0
+ * @version 2.2.1
  */
 
 import React from 'react';
 import { StaticRouter } from 'react-router';
-import { defaultState } from 'reducers/auth';
+import { defaultState } from 'state/reducers/auth';
 
 import { Home } from './screen';
 
