@@ -41,7 +41,7 @@
   "dependencies": {
     "@themgoncalves/super-query": "^0.1.1",
     "babel-polyfill": "^6.26.0",
-    "bootstrap": "^4.1.1",
+    "bootstrap": "^4.3.1",
     "history": "^4.7.2",
     "lodash": "^4.17.10",
     "offline-plugin": "^5.0.6",
