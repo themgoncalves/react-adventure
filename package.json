@@ -48,7 +48,7 @@
     "polished": "^1.9.2",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1",
+    "react-dom": "^16.4.2",
     "react-helmet": "^5.2.0",
     "react-loadable": "^5.4.0",
     "react-redux": "^5.0.7",
